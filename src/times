@@ -1,0 +1,143 @@
+[{
+        "nome": "Selecione",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/logo.png"
+    },
+    {
+        "nome": "88",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/88.png"
+    },
+
+    {
+        "nome": "Construduarte Futebol Clube",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/construduarte-f-c.png"
+    }
+    ,
+    {
+        "nome": "Casa Grande",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/casa-grande.png"
+    },
+    {
+        "nome": "Vitinho Bets",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/vitinho-bets.png"
+    },
+    {
+        "nome": "Encantado",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/encantado.png"
+    },
+    {
+        "nome": "TJBET esporte Clube",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/tjbet-esporte-clube.png"
+    },
+    {
+        "nome": "Arsenal",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/arsenal.png"
+    },
+    {
+        "nome": "Esporte Clube Santo André",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/e-c-santo-andre.png"
+    },
+    {
+        "nome": "Os Lenhadas",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/os-lenhadas.png"
+    },
+    {
+        "nome": "Lagoense esporte Clube",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/lagoense-esporte-clube.png"
+    },
+    {
+        "nome": "Ameco Futebol Clube",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/ameco-futebol-clube.png"
+    },
+    {
+        "nome": "Oriente futebol Clube",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/oriente.png"
+    },
+    {
+        "nome": "Boca Junior",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/boca-junior.png"
+    }
+]
