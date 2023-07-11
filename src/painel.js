@@ -1,4 +1,5 @@
 const painelAtualiza = () => {
+    localStorage.setItem('atualiza', 1)
     const golCasa = document.querySelector('#golCasa').value
     const golVisitante = document.querySelector('#golVisitante').value
     const horarioPPartida = document.querySelector('#horarioPPartida').value
@@ -52,11 +53,6 @@ const painelAtualiza = () => {
     localStorage.setItem('tituloAviso', tituloAviso)
 
     localStorage.setItem('avisoInfoImportante', avisoInfoImportante)
-
-
-   
-
-
     
     
     localStorage.setItem('uniTimeA', `background-image: linear-gradient(to left, ${meiaoTA} 33%, ${shortTA} 30%, ${shortTA} 66%, ${camisaTA} 66%, ${camisaTA} 100%);`)
@@ -121,6 +117,7 @@ async function selecionaTime() {
 
   const imgTimeB = document.querySelector('#imgTimeB')
   imgTimeB.setAttribute('src', data[aoVivoB].logo)  
+  
   localStorage.setItem('imgTimeB',data[aoVivoB].logo)
 
 
