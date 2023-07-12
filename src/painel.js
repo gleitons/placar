@@ -1,89 +1,89 @@
 const painelAtualiza = () => {
-    localStorage.setItem('atualiza', 1)
-    const golCasa = document.querySelector('#golCasa').value
-    const golVisitante = document.querySelector('#golVisitante').value
-    const horarioPPartida = document.querySelector('#horarioPPartida').value
+  localStorage.setItem('atualiza', 1)
+  const golCasa = document.querySelector('#golCasa').value
+  const golVisitante = document.querySelector('#golVisitante').value
+  const horarioPPartida = document.querySelector('#horarioPPartida').value
 
-    const tituloAviso = document.querySelector('#tituloAviso').value
+  const tituloAviso = document.querySelector('#tituloAviso').value
 
-    const avisoInfoImportante = document.querySelector('#avisoInfoImportante').value
-
-    
+  const avisoInfoImportante = document.querySelector('#avisoInfoImportante').value
 
 
-    
-
-    const tituloAcima = document.querySelector('#tituloAcima').value
-
-   
-    //uniforme
-    const camisaTA = document.querySelector('#camisaTA').value
-    const shortTA = document.querySelector('#shortTA').value
-    const meiaoTA = document.querySelector('#meiaoTA').value
-
-    
 
 
-    const camisaTB = document.querySelector('#camisaTB').value
-    const shortTB = document.querySelector('#shortTB').value
-    const meiaoTB = document.querySelector('#meiaoTB').value
-
-    const faltasC = document.querySelector('#fCasa').value
-    const faltasV = document.querySelector('#fVisitante').value
-
-    localStorage.setItem('golC', golCasa); 
-    localStorage.setItem('golV', golVisitante)
-    localStorage.setItem('faltasC', faltasC); 
-    localStorage.setItem('faltasV', faltasV)
-
-    const minute = document.querySelector('#minute').textContent
-    const second = document.querySelector('#second').textContent
-    const millisecond = document.querySelector('#millisecond').textContent
-
-    const periodoTempos = document.querySelector('#periodoTempo').value
-
-    localStorage.setItem('tempo', `${minute}:${second}`)
-    localStorage.setItem('periodoTempo', periodoTempos)
-
-    localStorage.setItem('horarioPPartida', horarioPPartida)
-
-    localStorage.setItem('tituloAcima', tituloAcima)
 
 
-    localStorage.setItem('tituloAviso', tituloAviso)
+  const tituloAcima = document.querySelector('#tituloAcima').value
 
-    localStorage.setItem('avisoInfoImportante', avisoInfoImportante)
-    
-    
-    localStorage.setItem('uniTimeA', `background-image: linear-gradient(to left, ${meiaoTA} 33%, ${shortTA} 30%, ${shortTA} 66%, ${camisaTA} 66%, ${camisaTA} 100%);`)
 
-    localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
-    
+  //uniforme
+  const camisaTA = document.querySelector('#camisaTA').value
+  const shortTA = document.querySelector('#shortTA').value
+  const meiaoTA = document.querySelector('#meiaoTA').value
+
+
+
+
+  const camisaTB = document.querySelector('#camisaTB').value
+  const shortTB = document.querySelector('#shortTB').value
+  const meiaoTB = document.querySelector('#meiaoTB').value
+
+  const faltasC = document.querySelector('#fCasa').value
+  const faltasV = document.querySelector('#fVisitante').value
+
+  localStorage.setItem('golC', golCasa);
+  localStorage.setItem('golV', golVisitante)
+  localStorage.setItem('faltasC', faltasC);
+  localStorage.setItem('faltasV', faltasV)
+
+  const minute = document.querySelector('#minute').textContent
+  const second = document.querySelector('#second').textContent
+  const millisecond = document.querySelector('#millisecond').textContent
+
+  const periodoTempos = document.querySelector('#periodoTempo').value
+
+  localStorage.setItem('tempo', `${minute}:${second}`)
+  localStorage.setItem('periodoTempo', periodoTempos)
+
+  localStorage.setItem('horarioPPartida', horarioPPartida)
+
+  localStorage.setItem('tituloAcima', tituloAcima)
+
+
+  localStorage.setItem('tituloAviso', tituloAviso)
+
+  localStorage.setItem('avisoInfoImportante', avisoInfoImportante)
+
+
+  localStorage.setItem('uniTimeA', `background-image: linear-gradient(to left, ${meiaoTA} 33%, ${shortTA} 30%, ${shortTA} 66%, ${camisaTA} 66%, ${camisaTA} 100%);`)
+
+  localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
+
 }
 document.addEventListener('click', () => {
 
- painelAtualiza()
+  painelAtualiza()
 })
 
 const geradordeTimes = async () => {
-  const response =  await fetch('/src/times')
+  const response = await fetch('/src/times')
   const data = await response.json()
 
-  data.map( (time) => {
+  data.map((time) => {
     const selTime = document.querySelectorAll('.geraTimes')
-  
 
-    for(let i = 0; i < selTime.length; i++){
+
+    for (let i = 0; i < selTime.length; i++) {
       selTime[i].innerHTML += `<option>${time.nome}</option>`
     }
 
-    
+
   })
 }
 geradordeTimes();
 
 async function selecionaTime() {
-  const response =  await fetch('/src/times')
+  const response = await fetch('/src/times')
   const data = await response.json()
 
   const timeA = document.querySelector('#timeA')
@@ -92,7 +92,7 @@ async function selecionaTime() {
   const aoVivoa = document.querySelector('#aovivoTimeA')
   const aoVivoA = document.querySelector("#aovivoTimeA").selectedIndex
   const timeAoVivoA = aoVivoa.options[aoVivoa.selectedIndex].textContent
-  
+
 
   const aoVivob = document.querySelector('#aovivoTimeB')
   const aoVivoB = document.querySelector("#aovivoTimeB").selectedIndex
@@ -102,7 +102,7 @@ async function selecionaTime() {
   const proximoJogoA = document.querySelector("#sTime01").selectedIndex
   const TimePJogoA = proximoJogoa.options[proximoJogoa.selectedIndex].textContent
 
- 
+
 
   const proximoJogob = document.querySelector('#sTime02')
   const proximoJogoB = document.querySelector("#sTime02").selectedIndex
@@ -110,27 +110,27 @@ async function selecionaTime() {
 
 
   const imgTimeA = document.querySelector('#imgTimeA')
-  imgTimeA.setAttribute('src', data[aoVivoA].logo)  
-  localStorage.setItem('imgTimeA',data[aoVivoA].logo)
+  imgTimeA.setAttribute('src', data[aoVivoA].logo)
+  localStorage.setItem('imgTimeA', data[aoVivoA].logo)
 
-  
+
 
   const imgTimeB = document.querySelector('#imgTimeB')
-  imgTimeB.setAttribute('src', data[aoVivoB].logo)  
-  
-  localStorage.setItem('imgTimeB',data[aoVivoB].logo)
+  imgTimeB.setAttribute('src', data[aoVivoB].logo)
+
+  localStorage.setItem('imgTimeB', data[aoVivoB].logo)
 
 
 
   const imgProximaA = document.querySelector('#imgProximaA')
-  imgProximaA.setAttribute('src', data[proximoJogoA].logo)  
-  localStorage.setItem('imgProximaA',data[proximoJogoA].logo)
+  imgProximaA.setAttribute('src', data[proximoJogoA].logo)
+  localStorage.setItem('imgProximaA', data[proximoJogoA].logo)
 
 
 
   const imgProximaB = document.querySelector('#imgProximaB')
-  imgProximaB.setAttribute('src', data[proximoJogoB].logo)  
-  localStorage.setItem('imgProximaB',data[proximoJogoB].logo)
+  imgProximaB.setAttribute('src', data[proximoJogoB].logo)
+  localStorage.setItem('imgProximaB', data[proximoJogoB].logo)
 
   //times Mostrador
 
@@ -139,15 +139,15 @@ async function selecionaTime() {
   localStorage.setItem('TimePJogoA', TimePJogoA)
   localStorage.setItem('TimePJogoB', TimePJogoB)
 
-  
 
-  
+
+
   timeA.textContent = timeAoVivoA.toUpperCase()
   timeB.textContent = timeAoVivoB.toUpperCase()
 
 
 
-  
+
 }
 
 
@@ -215,27 +215,98 @@ localStorage.setItem('intervalo', 0)
 localStorage.setItem('situacao', 0)
 
 function intervalo() {
-  if(localStorage.getItem('intervalo') == '1'){
+  if (localStorage.getItem('intervalo') == '1') {
     localStorage.setItem('intervalo', 0)
     localStorage.setItem('situacao', 0)
   } else {
     localStorage.setItem('intervalo', 1)
     localStorage.setItem('situacao', 1)
   }
-  
+
 }
 
 function mostraInfoAdd() {
   document.querySelector('#blocoCima').classList.add('dnone')
   document.querySelector('#blocoBaixo').classList.remove('dnone')
-  
+  document.querySelector('#blocoImagens').classList.add('dnone')
+
+
+}
+function mostraIntervalo() {
+  document.querySelector('#blocoCima').classList.add('dnone')
+  document.querySelector('#blocoBaixo').classList.add('dnone')
+  document.querySelector('#blocoImagens').classList.remove('dnone')
+
 
 }
 function mostrarInfoInicio() {
   document.querySelector('#blocoCima').classList.remove('dnone')
   document.querySelector('#blocoBaixo').classList.add('dnone')
+  document.querySelector('#blocoImagens').classList.add('dnone')
+
 }
 
 function abrirNovaJanela() {
   window.open("/placar.html", "Placar Online", "height=600,width=1200");
 }
+function fecharDivSlide(idDiv) {
+  document.querySelector(`#divSlide${idDiv}`).remove()
+}
+function adicionarImgSlide() {
+
+  if (document.querySelectorAll('.divImg').length == null) {
+    var numeroDiv = 0
+  } else {
+    var numeroDiv = (document.querySelectorAll('.divImg').length) + 1
+  }
+  console.log(numeroDiv)
+  const OndeAddimage = document.querySelector('#imagensGeradas')
+  const divImg = document.createElement('div')
+  const inputImgDiv = document.createElement('input')
+  inputImgDiv.setAttribute('type', 'text')
+  divImg.setAttribute('id', `divSlide${numeroDiv}`)
+  inputImgDiv.setAttribute('class', 'inputImagens')
+
+
+  const btnImg = document.createElement('button')
+  btnImg.setAttribute('onclick', `fecharDivSlide(${numeroDiv})`)
+  btnImg.textContent = 'x'
+
+  divImg.appendChild(inputImgDiv)
+  divImg.appendChild(btnImg)
+
+  OndeAddimage.appendChild(divImg)
+}
+
+
+function pegarImagensSlide() {
+  var imgArray = []
+  const imagensTotais = document.querySelectorAll('.inputImagens');
+  for (let i = 0; i < imagensTotais.length; i++) {
+      console.log(imagensTotais[i].value)
+    if (imagensTotais[i].value != '') {
+      const linkimg = imagensTotais[i].value;
+      imgArray.push(linkimg)
+    }
+
+
+
+    localStorage.setItem('imagemSlide', JSON.stringify(imgArray))
+  }
+  btnCarrega.textContent = `Carregando ${imgArray.length} Imagens...`
+
+  setTimeout(() => {
+    btnCarrega.textContent = `Imagens Carregadas`
+  }, 10000)
+  setTimeout(() => {
+    btnCarrega.textContent = `Enviar Imagens`
+  }, 12000)
+  
+
+
+}
+function segundosImg() {
+  localStorage.setItem('segundos', document.querySelector('#segundosImagens').value)
+}
+
+

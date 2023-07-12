@@ -195,6 +195,19 @@
   border-radius: 50%;
   animation: aov 800ms infinite alternate-reverse linear;
 }
+#alteraImgSlides {
+  animation: slid 1s normal ;
+}
+@keyframes slid {
+  0% {
+    opacity: 0;
+  }
+}
+.inputImagens {
+  width: 70%;
+  padding: 5px;
+  margin: 5px auto;
+}
 
 .goll div img {
   position: absolute;
@@ -242,15 +255,28 @@ button {
 .menutopo {
   width: 400px;
   justify-content: space-between;
+  text-align: center;
   
 }
+
 .menutopo a {
+  text-align: center;
   gap: 10px;
   padding: 5px;
   color: white;
   border-radius: 8px;
   text-decoration: none;
   background-color: rgb(31, 38, 135);
+}
+.menutopo a:hover {
+  background-color: rgb(95, 105, 235);
+}
+.menutopo a:active {
+  box-shadow: inset black 0px 2px 5px 0px;
+  background-color: rgb(169, 174, 242);
+  font-size: .98em;
+  
+  transform: scale(.8);
 }
 input {
   padding: 1px;

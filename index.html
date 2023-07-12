@@ -12,6 +12,7 @@
         <nav class="menutopo">
             <li>Menu</li> <br>
             <a href="#" onclick="mostrarInfoInicio()">Inicio</a>
+            <a href="#" onclick="mostraIntervalo()">Intervalo</a> 
             <a href="#" onclick="mostraInfoAdd()">Informações Adicionais</a>
             <a href="#" onclick="abrirNovaJanela()">Abrir Placar</a>
         </nav>
@@ -89,15 +90,7 @@
                 <input type="number" name="" id="fVisitante" value="0">
             </div>
         </div>
-        <h2>Opções Especiais</h2>
-        <div>
-            <p>Clique em Abrir placar e COMEÇAR</p>
-            <button onclick="abrirNovaJanela()">Abrir Placar</button>
-            <button >COMEÇAR</button>
-            <button  onclick="intervalo()">INICIAR PARTIDA</button>
-            <button onclick="intervalo()">INTERVALO</button>
-            <button onclick="intervalo()">FINALIZAR PARTIDA (em manutenção)</button>
-        </div>
+       
     </div>
     <div id="blocoBaixo" class="informacoesAdicionais dnone">
         <h2>Informações Adicionais</h2>
@@ -159,6 +152,47 @@
             </div>
            
         </div>
+        
+    </div>
+    <div id="blocoImagens" class="painelControle dnone">
+        <div></div>
+        <h2>SLIDE IMAGEM DO INTERVALO</h2>
+        <h5>ADICIONE OS LINKS DAS IMAGENS:</h5>
+        <div>
+             
+            <div id="imagensGeradas">
+                <br>
+                <button onclick="intervalo()">INTERVALO</button>
+                <button  onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
+                
+                <div id="divSlide1" class="divImg">
+                    <input type="text" name="" id="imgSlide1" class="inputImagens" value="https://placaronline.netlify.app/src/logos/cartaz.jpg">
+                    <button onclick="fecharDivSlide(1)">x</button>
+                </div>
+                <div id="divSlide2" class="divImg">
+                    <input type="text" name="" id="imgSlide2" class="inputImagens" value="/src/logos/futuro-consultoria.png">
+                    <button onclick="fecharDivSlide(2)">x</button>
+                </div>
+                
+            </div>
+            <button onclick="adicionarImgSlide()" >Adicionar Imagem</button> <br> <br>
+            <button onclick="pegarImagensSlide()" id="btnCarrega">Enviar Imagens </button> <br>
+
+            <!-- <div>Quantidade de segundos onde cada Imagem Aparecerá: O Padrão é 10 segundos, não altere para deixar Padrão.</div> <br>
+            <input type="number" name="" id="segundosImagens" value="10"> Segundos <button onclick="segundosImg()">Alterar</button> -->
+
+            <h2>Opções Especiais</h2>
+            <div>
+                <p>Clique em Abrir placar e COMEÇAR</p>
+                <button onclick="abrirNovaJanela()">Abrir Placar</button>
+                <button >COMEÇAR</button>
+                <button  onclick="intervalo()">INICIAR PARTIDA</button>
+                <button onclick="intervalo()">INTERVALO</button>
+                <button onclick="intervalo()">FINALIZAR PARTIDA (em manutenção)</button>
+            </div>
+            
+        </div>
+      
     </div>
 
     <div>
