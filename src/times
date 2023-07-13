@@ -8,10 +8,10 @@
         }],
         "logo": "/src/logos/logo.png",
         "logom": "/src/logos/logo-min.png"
-       
+
     },
     {
-        "nome": "88",
+        "nome": "Superbets 88",
         "jogadores": [{
             "nome": "O Cara",
             "nascimento": "22/05/2023",
@@ -32,8 +32,7 @@
         }],
         "logo": "/src/logos/construduarte-f-c.png",
         "logom": "/src/logos/construduarte-f-c-min.png"
-    }
-    ,
+    },
     {
         "nome": "Casa Grande",
         "jogadores": [{
@@ -154,5 +153,27 @@
         }],
         "logo": "/src/logos/boca-junior.png",
         "logom": "/src/logos/boca-junior-min.png"
+    },
+    {
+        "nome": "MajoSports",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/majosports.png",
+        "logom": "/src/logos/majosports-min.png"
+    },
+    {
+        "nome": "Lancaster",
+        "jogadores": [{
+            "nome": "O Cara",
+            "nascimento": "22/05/2023",
+            "sexo": "m",
+            "posição": "goleiro"
+        }],
+        "logo": "/src/logos/lancaster.png",
+        "logom": "/src/logos/lancaster-min.png"
     }
 ]

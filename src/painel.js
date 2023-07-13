@@ -1,3 +1,30 @@
+const btnGols = document.querySelectorAll('.placaCentral i');
+
+
+
+
+function golsAtivos(seta) {
+  
+  if(seta == '0') {
+    const goldeCasa = parseInt(golCasa.value) + 1
+    golCasa.value = goldeCasa
+
+  } else if (seta == '1') {
+    const goldeCasa = parseInt(golCasa.value) - 1
+    golCasa.value = goldeCasa
+
+  } else if (seta == '2') {
+    const goldeVisitante = parseInt(golVisitante.value) + 1
+    golVisitante.value = goldeVisitante
+
+  } else  {
+    const goldeVisitante = parseInt(golVisitante.value) - 1
+    golVisitante.value = goldeVisitante
+
+  }
+  
+}
+
 const painelAtualiza = () => {
   localStorage.setItem('atualiza', 1)
   const golCasa = document.querySelector('#golCasa').value
@@ -7,11 +34,6 @@ const painelAtualiza = () => {
   const tituloAviso = document.querySelector('#tituloAviso').value
 
   const avisoInfoImportante = document.querySelector('#avisoInfoImportante').value
-
-
-
-
-
 
   const tituloAcima = document.querySelector('#tituloAcima').value
 
@@ -64,6 +86,9 @@ document.addEventListener('click', () => {
 
   painelAtualiza()
 })
+
+
+
 
 const geradordeTimes = async () => {
   const response = await fetch('/src/times')
