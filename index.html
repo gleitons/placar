@@ -10,14 +10,18 @@
 <body>
     <div class="painelControle">
         <nav class="menutopo">
-            <li>Menu</li> <br>
+            <div class="menuTo">
+                <li><img src="/src/logos/futuro-consultoria.png" alt=""></li>
+                <li>Futuro Consultoria</li> 
+            </div>
+            
             <a href="#" onclick="mostrarInfoInicio()">Inicio</a>
             <a href="#" onclick="mostraIntervalo()">Intervalo</a> 
             <a href="#" onclick="mostraInfoAdd()">Informações Adicionais</a>
             <a href="#" onclick="abrirNovaJanela()">Abrir Placar</a>
         </nav>
     </div>
-    <div id="blocoCima" class="painelControle ">
+    <div id="blocoCima" class="painelControle animt">
         <div></div>
         <h2>AO VIVO</h2>
         <h5>Times que estão Jogando:</h5>
@@ -29,6 +33,11 @@
                 </select> <br>
                 <img id="imgTimeA" src="/src/logos/logo.png" alt="">
             </div>
+            <!-- <div>
+                <div>
+                    <h1>0 x 0</h1>
+                </div>
+            </div> -->
             <div class="areaClean">
                 <p>Time 02</p>
                 <select name="" id="aovivoTimeB" class="geraTimes" onchange="selecionaTime()">
@@ -92,7 +101,7 @@
         </div>
        
     </div>
-    <div id="blocoBaixo" class="informacoesAdicionais dnone">
+    <div id="blocoBaixo" class="informacoesAdicionais animt dnone">
         <h2>Informações Adicionais</h2>
         <div class="placarTimesPainel">
             <div>
@@ -104,7 +113,7 @@
         
         </div>
         <h2>Imagens do intervalo</h2>
-        <div class="placarTimesPainel">
+        <div class="placarTimesPainel ">
             
             <div>
                 <p>Oppção Inativa</p>
@@ -154,7 +163,7 @@
         </div>
         
     </div>
-    <div id="blocoImagens" class="painelControle dnone">
+    <div id="blocoImagens" class="painelControle animt dnone">
         <div></div>
         <h2>SLIDE IMAGEM DO INTERVALO</h2>
         <h5>ADICIONE OS LINKS DAS IMAGENS:</h5>

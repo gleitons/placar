@@ -351,15 +351,41 @@ input {
     opacity: 0;
   }
 }
+.menuTo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  text-decoration: none;
+  list-style: none;
+
+}
+.menuTo img {
+  width: 150px;
+ 
+
+}
 
 .painelControle {
-  width: 90%;
+  max-width: 800px;
+  min-width: 450px;
   margin: auto;
   border: black solid 1px;
   padding: 20px;
+  
+}
+.animt {
+  animation: cimaBaixo 200ms normal    ;
+  transition: all;
+}
+@keyframes cimaBaixo {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 .informacoesAdicionais {
-  width: 90%;
+  max-width: 800px;
+  min-width: 450px;
   margin: 10px auto;
   border: black solid 1px;
   padding: 20px;
