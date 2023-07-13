@@ -6,7 +6,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/logo.png"
+        "logo": "/src/logos/logo.png",
+        "logom": "/src/logos/logo-min.png"
        
     },
     {
@@ -17,7 +18,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/88.png"
+        "logo": "/src/logos/88.png",
+        "logom": "/src/logos/88-min.png"
     },
 
     {
@@ -28,7 +30,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/construduarte-f-c.png"
+        "logo": "/src/logos/construduarte-f-c.png",
+        "logom": "/src/logos/construduarte-f-c-min.png"
     }
     ,
     {
@@ -39,7 +42,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/casa-grande.png"
+        "logo": "/src/logos/casa-grande.png",
+        "logom": "/src/logos/casa-grande-min.png"
     },
     {
         "nome": "Vitinho Bets",
@@ -49,7 +53,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/vitinho-bets.png"
+        "logo": "/src/logos/vitinho-bets.png",
+        "logom": "/src/logos/vitinho-bets-min.png"
     },
     {
         "nome": "Encantado",
@@ -59,7 +64,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/encantado.png"
+        "logo": "/src/logos/encantado.png",
+        "logom": "/src/logos/encantado-min.png"
     },
     {
         "nome": "TJBET esporte Clube",
@@ -69,7 +75,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/tjbet-esporte-clube.png"
+        "logo": "/src/logos/tjbet-esporte-clube.png",
+        "logom": "/src/logos/tjbet-esporte-clube-min.png"
     },
     {
         "nome": "Arsenal",
@@ -79,7 +86,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/arsenal.png"
+        "logo": "/src/logos/arsenal.png",
+        "logom": "/src/logos/arsenal-min.png"
     },
     {
         "nome": "Esporte Clube Santo André",
@@ -89,7 +97,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/e-c-santo-andre.png"
+        "logo": "/src/logos/e-c-santo-andre.png",
+        "logom": "/src/logos/e-c-santo-andre-min.png"
     },
     {
         "nome": "Os Lenhadas",
@@ -99,7 +108,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/os-lenhadas.png"
+        "logo": "/src/logos/os-lenhadas.png",
+        "logom": "/src/logos/os-lenhadas-min.png"
     },
     {
         "nome": "Lagoense esporte Clube",
@@ -109,7 +119,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/lagoense-esporte-clube.png"
+        "logo": "/src/logos/lagoense-esporte-clube.png",
+        "logom": "/src/logos/lagoense-esporte-clube-min.png"
     },
     {
         "nome": "Ameco Futebol Clube",
@@ -119,7 +130,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/ameco-futebol-clube.png"
+        "logo": "/src/logos/ameco-futebol-clube.png",
+        "logom": "/src/logos/ameco-futebol-clube-min.png"
     },
     {
         "nome": "Oriente futebol Clube",
@@ -129,7 +141,8 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/oriente.png"
+        "logo": "/src/logos/oriente.png",
+        "logom": "/src/logos/oriente-min.png"
     },
     {
         "nome": "Boca Junior",
@@ -139,6 +152,7 @@
             "sexo": "m",
             "posição": "goleiro"
         }],
-        "logo": "/src/logos/boca-junior.png"
+        "logo": "/src/logos/boca-junior.png",
+        "logom": "/src/logos/boca-junior-min.png"
     }
 ]

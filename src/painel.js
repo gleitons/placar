@@ -110,26 +110,26 @@ async function selecionaTime() {
 
 
   const imgTimeA = document.querySelector('#imgTimeA')
-  imgTimeA.setAttribute('src', data[aoVivoA].logo)
+  imgTimeA.setAttribute('src', data[aoVivoA].logom)
   localStorage.setItem('imgTimeA', data[aoVivoA].logo)
 
 
 
   const imgTimeB = document.querySelector('#imgTimeB')
-  imgTimeB.setAttribute('src', data[aoVivoB].logo)
+  imgTimeB.setAttribute('src', data[aoVivoB].logom)
 
   localStorage.setItem('imgTimeB', data[aoVivoB].logo)
 
 
 
   const imgProximaA = document.querySelector('#imgProximaA')
-  imgProximaA.setAttribute('src', data[proximoJogoA].logo)
+  imgProximaA.setAttribute('src', data[proximoJogoA].logom)
   localStorage.setItem('imgProximaA', data[proximoJogoA].logo)
 
 
 
   const imgProximaB = document.querySelector('#imgProximaB')
-  imgProximaB.setAttribute('src', data[proximoJogoB].logo)
+  imgProximaB.setAttribute('src', data[proximoJogoB].logom)
   localStorage.setItem('imgProximaB', data[proximoJogoB].logo)
 
   //times Mostrador
