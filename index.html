@@ -23,6 +23,7 @@
             <a href="#" onclick="mostraIntervalo()">Intervalo</a> 
             <a href="#" onclick="mostraInfoAdd()">Informações Adicionais</a>
             <a href="#" onclick="abrirNovaJanela()">Abrir Placar</a>
+            
         </nav>
     </div>
     <div id="blocoCima" class="painelControle animt">
@@ -32,7 +33,9 @@
         <div class="placarTimesPainel">            
            
             <div class="areaClean">
-                <p id="timeA">Selecione</p>
+                <strong>
+                    <p id="timeA">Selecione</p>
+                </strong>
                 <select name="" id="aovivoTimeA" class="geraTimes" onchange="selecionaTime()">
                     
                 </select> <br>
@@ -55,7 +58,9 @@
                 </div>
             </div>
             <div class="areaClean">
-                <p id="timeB">Selecione</p>
+                <strong>
+                    <p id="timeB">Selecione</p>
+                </strong>
                 <select name="" id="aovivoTimeB" class="geraTimes" onchange="selecionaTime()">
                     
                 </select><br>
@@ -67,7 +72,7 @@
         <h2>Faltas Cometidas</h2>
         <div class="placarTimesPainel">
             <div>
-                <p>FALTAS CASA</p>
+                <p id="faltasHomeA">FALTAS CASA</p>
                 <input type="number" name="" id="fCasa" value="0">
             </div>
             <div class="placarTimesPainel">
@@ -78,27 +83,27 @@
             
             </div>
             <div>
-                <p>FALTAS VISITANTES</p>
+                <p id="faltasHomeB">FALTAS VISITANTES</p>
                 <input type="number" name="" id="fVisitante" value="0">
             </div>
         </div>
         <h2>Cor do Uniforme</h2>
         <div class="placarTimesPainel">
             <div class="areaClean">
-                <p>Time 01</p>
-                <div>
-                    Camisa: <input type="color" name="" id="camisaTA"><br>
-                    Shorts : <input type="color" name="" id="shortTA"><br>
-                    Meião : <input type="color" name="" id="meiaoTA">
+                <p id="uniFA">Time 01</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTA"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTA"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTA"></div>
                 </div>
             </div>
             <div class="areaClean">
                 
-                <p>Time 02</p>
-                <div>
-                    Camisa: <input type="color" name="" id="camisaTB"><br>
-                    Shorts : <input type="color" name="" id="shortTB"><br>
-                    Meião : <input type="color" name="" id="meiaoTB">
+                <p id="uniFB">Time 02</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTB"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTB"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTB"></div>
                 </div>
             </div>
            
@@ -117,7 +122,7 @@
         <div class="placarTimesPainel">
             <div>
                 <p>Titulo que aparece no Placar</p>
-                ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG
+                <!-- ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG -->
                 </p>
                 <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo" value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> <button>Atualizar</button>
             </div>
@@ -186,12 +191,16 @@
                 <button  onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
                 
                 <div id="divSlide1" class="divImg">
-                    <input type="text" name="" id="imgSlide1" class="inputImagens" value="https://placaronline.netlify.app/src/logos/cartaz.jpg">
-                    <button onclick="fecharDivSlide(1)">x</button>
+                    <input type="text" name="" id="imgSlide1" class="inputImagens" value="https://placaronline.netlify.app/src/logos/cartaz.jpg"><button onclick="fecharDivSlide(1)">x</button>
                 </div>
                 <div id="divSlide2" class="divImg">
-                    <input type="text" name="" id="imgSlide2" class="inputImagens" value="/src/logos/futuro-consultoria.png">
-                    <button onclick="fecharDivSlide(2)">x</button>
+                    <input type="text" name="" id="imgSlide2" class="inputImagens" value="/src/logos/futuro-consultoria.png"><button onclick="fecharDivSlide(2)">x</button>
+                </div>
+                <div id="divSlide3" class="divImg">
+                    <input type="text" name="" id="imgSlide3" class="inputImagens" value="/src/logos/logo-lagoa.gif"><button onclick="fecharDivSlide(3)">x</button>
+                </div>
+                <div id="divSlide4" class="divImg">
+                    <input type="text" name="" id="imgSlide4" class="inputImagens" value="/src/logos/sec-esporte.gif"><button onclick="fecharDivSlide(4)">x</button>
                 </div>
                 
             </div>

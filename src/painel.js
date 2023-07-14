@@ -5,6 +5,7 @@ const btnGols = document.querySelectorAll('.placaCentral i');
 
 function golsAtivos(seta) {
   
+  
   if(seta == '0') {
     const goldeCasa = parseInt(golCasa.value) + 1
     golCasa.value = goldeCasa
@@ -169,6 +170,12 @@ async function selecionaTime() {
 
   timeA.textContent = timeAoVivoA.toUpperCase()
   timeB.textContent = timeAoVivoB.toUpperCase()
+
+  faltasHomeA.textContent = timeAoVivoA.toUpperCase()
+  faltasHomeB.textContent = timeAoVivoB.toUpperCase()
+
+  uniFA.textContent = timeAoVivoA.toUpperCase()
+  uniFB.textContent = timeAoVivoB.toUpperCase()
 
 
 
