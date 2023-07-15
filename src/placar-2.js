@@ -129,30 +129,44 @@ var atualizaOn = () => {
 function retiraGol() {
     document.querySelector('#aberturaGol').innerHTML = ``
     document.querySelector('#aberturaGol').classList.remove('gol')
-    
+
 }
 // window.onstorage = () => { };
 // //setInterval('atualizaOn()', 1000)
+
 window.onstorage = function (e) {
+    var golAtualC = document.querySelector('#timeCasa').textContent
+    var golAtualV = document.querySelector('#timeVisitante').textContent
+
+    console.log(parseInt(golAtualC) + 1)
+    console.log(golAtualV + 1 )
 
     if (e.key == 'golC') {
-        document.querySelector('#aberturaGol').innerHTML = `<div>
-        <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
-    </div>`
 
-    
-    document.querySelector('#aberturaGol').classList.add('gol')
-        
-        setTimeout('retiraGol()', 10000)
+        const gca = localStorage.getItem('golC')
+        if(parseInt(golAtualC) - 1 < gca){
+            document.querySelector('#aberturaGol').innerHTML = `<div>
+            <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
+        </div>`
+        }
+       
+
+
+        document.querySelector('#aberturaGol').classList.add('gol')
+
+        setTimeout('retiraGol()', 12000)
 
     } else if (e.key == 'golV') {
-        document.querySelector('#aberturaGol').innerHTML = `<div>
+        const gcv = localStorage.getItem('golV')
+        if(parseInt(golAtualV) - 1 < gcv){
+            document.querySelector('#aberturaGol').innerHTML = `<div>
         <img id="" src="${localStorage.getItem('imgTimeB')}" alt="">
     </div>`
-    
-    document.querySelector('#aberturaGol').classList.add('gol')
-       
-        setTimeout('retiraGol()', 10000)
+        }       
+
+        document.querySelector('#aberturaGol').classList.add('gol')
+
+        setTimeout('retiraGol()', 12000)
 
     } else {
 

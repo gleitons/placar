@@ -203,6 +203,11 @@
     opacity: 0;
   }
 }
+#mostraPainelS {
+  background-color: black;
+  color: yellow;
+  padding: 5px;
+}
 .inputImagens {
   width: 70%;
   padding: 5px;

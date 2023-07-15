@@ -7,6 +7,7 @@ function verificaLetras() {
   const letDigital = document.querySelector('#letDigital').value
   const qtdLetras = letDigital.length
 
+
   console.log(qtdLetras - (46))
   cRestante.textContent = (qtdLetras - (46)).toString().replace('-', '')
 
@@ -37,7 +38,7 @@ function golsAtivos(seta) {
 
 const painelAtualiza = () => {
   localStorage.setItem('atualiza', 1)
-  const letDigital = document.querySelector('#letDigital').value
+  const letDigital = document.querySelector('#mostraPainelS').textContent
   const golCasa = document.querySelector('#golCasa').value
   const golVisitante = document.querySelector('#golVisitante').value
   const horarioPPartida = document.querySelector('#horarioPPartida').value
@@ -48,6 +49,7 @@ const painelAtualiza = () => {
 
   const tituloAcima = document.querySelector('#tituloAcima').value
 
+  
 
   //uniforme
   const camisaTA = document.querySelector('#camisaTA').value
@@ -94,10 +96,16 @@ const painelAtualiza = () => {
 
   localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
 
+
+  const mensagensPadrao = [`${localStorage.getItem('mostraTimeA')} x ${localStorage.getItem('mostraTimeB')}`,`PROX: ${localStorage.getItem('TimePJogoA')} x ${localStorage.getItem('TimePJogoB')}`,`FALTAS: ${localStorage.getItem('mostraTimeA')}: ${localStorage.getItem('faltasC')} - ${localStorage.getItem('mostraTimeB')}: ${localStorage.getItem('faltasV')}`, `REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE`]
+
+  localStorage.setItem('itensAtualizado', JSON.stringify(mensagensPadrao))
+
 }
 document.addEventListener('click', () => {
-
+  carregaLetreiro()
   painelAtualiza()
+  
 })
 if(localStorage.getItem('atualizador') == null) {
   localStorage.setItem('atualiador', 0)
@@ -363,4 +371,28 @@ function segundosImg() {
   localStorage.setItem('segundos', document.querySelector('#segundosImagens').value)
 }
 
+function carregaLetreiro() {
+  const mPadraoA = document.querySelector('#mPadrao')
+  const mPadrao = mPadraoA.options[mPadraoA.selectedIndex].value
+  const data = JSON.parse(localStorage.getItem('itensAtualizado'))
+  const mostraPainelS = document.querySelector('#mostraPainelS')
+  
+  if(document.querySelector('#letDigital').value == '') {
+    if(mPadrao == '0') {
+      mostraPainelS.textContent = document.querySelector('#letDigital').value
+    } else if (mPadrao == '1') {
+      mostraPainelS.textContent = data[0].toUpperCase()
+    } else if (mPadrao == '2') {
+      mostraPainelS.textContent = data[1].toUpperCase()
+    } else if (mPadrao == '3'){
+      mostraPainelS.textContent = data[2].toString().toUpperCase()
+    }  else {
+      mostraPainelS.textContent =  data[3].toUpperCase()
+    }
+  
+  } else {
+    mostraPainelS.textContent = document.querySelector('#letDigital').value.toUpperCase()
+  }
 
+  
+}

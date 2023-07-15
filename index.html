@@ -35,6 +35,21 @@
             <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button>Enviar</button>
             <h4>Caracteres restantes: <span id="cRestante">46</span></h4>
         </div>
+        <div>
+            <h4>Aqui mensagens Padrões</h4>
+            <h5>* Deixe a opção acima em branco</h5>
+            <select name="" id="mPadrao" onchange="carregaLetreiro()">
+                <option value="0">DESATIVADO</option>
+                <option value="1">TIME A X TIME B</option>
+                <option value="2">PROX: TIME A X TIME B</option>
+                <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
+                <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>                
+            </select>
+            <h6>Aparecerá assim:</h6>
+            <div >
+                <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
+            </div>
+        </div>
         <br>
         <button onclick="intervalo()">INTERVALO</button>
         <button  onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
