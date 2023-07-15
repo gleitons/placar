@@ -160,6 +160,8 @@ window.onstorage = function (e) {
     atualizaOn()
 
 };
+atualizaOn()
+
 
 function horaAtual() {
     const horaAtualVivo = document.querySelector('#horaAtualVivo')

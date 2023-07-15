@@ -99,8 +99,15 @@ document.addEventListener('click', () => {
 
   painelAtualiza()
 })
+if(localStorage.getItem('atualizador') == null) {
+  localStorage.setItem('atualiador', 0)
+} else {
+  var numbT = localStorage.getItem('atualizador')
+} 
 
-
+document.addEventListener('onclick', () => {
+  localStorage.setItem('atualiador', numbT + 1)
+})
 
 
 const geradordeTimes = async () => {
