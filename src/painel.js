@@ -3,6 +3,15 @@ const btnGols = document.querySelectorAll('.placaCentral i');
 
 
 
+function verificaLetras() {
+  const letDigital = document.querySelector('#letDigital').value
+  const qtdLetras = letDigital.length
+
+  console.log(qtdLetras - (46))
+  cRestante.textContent = (qtdLetras - (46)).toString().replace('-', '')
+
+}
+
 function golsAtivos(seta) {
   
   
@@ -28,6 +37,7 @@ function golsAtivos(seta) {
 
 const painelAtualiza = () => {
   localStorage.setItem('atualiza', 1)
+  const letDigital = document.querySelector('#letDigital').value
   const golCasa = document.querySelector('#golCasa').value
   const golVisitante = document.querySelector('#golVisitante').value
   const horarioPPartida = document.querySelector('#horarioPPartida').value
@@ -64,6 +74,8 @@ const painelAtualiza = () => {
   const millisecond = document.querySelector('#millisecond').textContent
 
   const periodoTempos = document.querySelector('#periodoTempo').value
+
+  localStorage.setItem('letDigital', letDigital.toUpperCase())
 
   localStorage.setItem('tempo', `${minute}:${second}`)
   localStorage.setItem('periodoTempo', periodoTempos)
@@ -280,6 +292,9 @@ function mostrarInfoInicio() {
 
 function abrirNovaJanela() {
   window.open("/placar.html", "Placar Online", "height=600,width=1200");
+}
+function abrirNovaJanela2() {
+  window.open("/placar-2.html", "Placar Online", "height=600,width=1200");
 }
 function fecharDivSlide(idDiv) {
   document.querySelector(`#divSlide${idDiv}`).remove()

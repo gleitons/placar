@@ -21,10 +21,20 @@
             
             <a href="#" onclick="mostrarInfoInicio()">Inicio</a>
             <a href="#" onclick="mostraIntervalo()">Intervalo</a> 
-            <a href="#" onclick="mostraInfoAdd()">Informações Adicionais</a>
-            <a href="#" onclick="abrirNovaJanela()">Abrir Placar</a>
+            <!-- <a href="#" onclick="LetreiroDigital()">Letreiro Digital</a> -->
+            <a href="#" onclick="mostraInfoAdd()">Informações</a>           
+            <a href="#" onclick="abrirNovaJanela()">Placar 1</a>
+            <a href="#" onclick="abrirNovaJanela2()">Placar 2</a>
             
         </nav>
+    </div>
+    <div id="letreiro" class="painelControle">
+
+        <div class="ldigital">
+            <h4>Atenção: Não acentue - Qtd max de caracteres é 46</h4>
+            <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button>Enviar</button>
+            <h4>Caracteres restantes: <span id="cRestante">46</span></h4>
+        </div>
     </div>
     <div id="blocoCima" class="painelControle animt">
         <div></div>
