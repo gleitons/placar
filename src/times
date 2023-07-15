@@ -258,6 +258,19 @@
     ],
     "logo": "/src/logos/lagopatense.jpeg",
     "logom": "/src/logos/lagopatense.jpeg"
+  },
+  {
+    "nome": "A2Sports",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/a2sports.jpeg",
+    "logom": "/src/logos/a2sports.jpeg"
   }
 ]
 
