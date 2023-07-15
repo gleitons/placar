@@ -21,8 +21,7 @@
 }
 .placarCima {
   padding: 20px;
-  width: 100%;
-  
+  width: 100%;  
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,7 @@
   
 }
 .editPlacarCima {
-  height: 70vh;
+  height: 76vh;
 }
 
 
@@ -109,9 +108,7 @@
   left: 32px;
   position: absolute;
 }
-.propagandasEtc {
- 
-}
+
 .mostraPlacar {
   align-items: center;
   width: 85%;
@@ -142,7 +139,7 @@
 .mostraPlacar h1 {
   font-family: digital;
   margin-top: 5px;
-  font-size: 9em;
+  font-size: 10em;
   text-shadow: yellow 0px 0px 5px 0px;
   width: 100%;
   /* border: black solid 1px; */
@@ -160,7 +157,6 @@
 .mostraPlacar h3 span {
   color: yellow;
   padding: 2px 5px;
-
   background-color: rgb(0, 0, 0);
   border-radius: 8px;
   margin: 0px;
@@ -181,7 +177,7 @@
 
 .letreiroAnimado h1 {
   text-shadow: 0px 2px 12px yellow;
-  font-size: 14em;
+  font-size: 13em;
   font-family: digital;
   width: 100%;
   color: yellow;
@@ -282,8 +278,14 @@
   position: absolute;
   z-index: 99999999;
   width: 100%;
-  background-color: black;
-  
+  background-image: radial-gradient( rgb(242, 227, 13), rgb(0, 7, 82), rgb(0, 47, 255));
+  animation: grade 500ms infinite  ;  
+}
+@keyframes grade {
+  0% {
+    
+    background-image: linear-gradient(to top, rgb(255, 0, 0), black, rgb(255, 0, 0));
+  }
 }
 .gol div {
   height: 100vh;  
@@ -324,6 +326,8 @@ button {
   font-size: 1.1em;
   background-color: rgb(2, 74, 217);
   color: white;
+  cursor: pointer;
+  
 }
 .dnone {
   display: none;
@@ -334,8 +338,8 @@ button {
 .nomeCampeonato h1 {
   text-align: center;
   background-color: white;
-  margin-top: 20px;
-  width: 1080px;
+  
+  width: 100%;
   
 }
 .menutopo {
