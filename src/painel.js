@@ -298,10 +298,10 @@ function mostrarInfoInicio() {
 }
 
 function abrirNovaJanela() {
-  window.open("/placar.html", "Placar Online", "height=600,width=1200");
+  window.open("/placar.html", "Placar Online", "height=1000,width=1920");
 }
 function abrirNovaJanela2() {
-  window.open("/placar-2.html", "Placar Online", "height=600,width=1200");
+  window.open("/placar-2.html", "Placar Online", "height=1000,width=1920");
 }
 function fecharDivSlide(idDiv) {
   document.querySelector(`#divSlide${idDiv}`).remove()
