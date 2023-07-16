@@ -298,13 +298,17 @@
   box-shadow:  rgb(2, 74, 217) 5px 0px 100px 50px; 
   margin: auto;
   border-radius: 50%;  
+ 
   animation: gira 800ms infinite alternate-reverse linear; 
 }
 
 @keyframes gira {
   0% {
+    transform: matrix(0, 1, 1, 0, 0, 0);
+    
     transform: scale(0.8);
   }
+  
 }
 
 .gol div::after {

@@ -1,3 +1,8 @@
+console.log('Criado por: Gleiton Ap. Soares de Souza')
+console.warn('www.gleiton.com.br')
+console.error('Todos os direitos reservados ao criador')
+console.log('.....')
+
 const btnGols = document.querySelectorAll('.placaCentral i');
 
 
@@ -8,7 +13,7 @@ function verificaLetras() {
   const qtdLetras = letDigital.length
 
 
-  console.log(qtdLetras - (46))
+  
   cRestante.textContent = (qtdLetras - (46)).toString().replace('-', '')
 
 }
@@ -102,11 +107,7 @@ const painelAtualiza = () => {
   localStorage.setItem('itensAtualizado', JSON.stringify(mensagensPadrao))
 
 }
-document.addEventListener('click', () => {
-  carregaLetreiro()
-  painelAtualiza()
-  
-})
+
 if(localStorage.getItem('atualizador') == null) {
   localStorage.setItem('atualiador', 0)
 } else {
@@ -321,7 +322,7 @@ function adicionarImgSlide() {
   } else {
     var numeroDiv = (document.querySelectorAll('.divImg').length) + 1
   }
-  console.log(numeroDiv)
+ 
   const OndeAddimage = document.querySelector('#imagensGeradas')
   const divImg = document.createElement('div')
   const inputImgDiv = document.createElement('input')
@@ -345,7 +346,7 @@ function pegarImagensSlide() {
   var imgArray = []
   const imagensTotais = document.querySelectorAll('.inputImagens');
   for (let i = 0; i < imagensTotais.length; i++) {
-      console.log(imagensTotais[i].value)
+     
     if (imagensTotais[i].value != '') {
       const linkimg = imagensTotais[i].value;
       imgArray.push(linkimg)
@@ -395,4 +396,16 @@ function carregaLetreiro() {
   }
 
   
+}
+document.addEventListener('mousemove', () => {
+  eventos()
+  
+}, 'keyup')
+document.addEventListener('keyup', () => {
+  eventos()
+  
+},)
+function eventos() {
+  carregaLetreiro()
+  painelAtualiza()
 }

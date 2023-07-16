@@ -32,7 +32,7 @@
 
         <div class="ldigital">
             <h4>Atenção: Não acentue - Qtd max de caracteres é 46</h4>
-            <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button>Enviar</button>
+            <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> 
             <h4>Caracteres restantes: <span id="cRestante">46</span></h4>
         </div>
         <div>
@@ -51,8 +51,8 @@
             </div>
         </div>
         <br>
-        <button onclick="intervalo()">INTERVALO</button>
-        <button  onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
+        <button onclick="intervalo(), abrirNovaJanela()">INTERVALO</button>
+        <button  onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA</button> <br><br>
     </div>
     <div id="blocoCima" class="painelControle animt">
         <div></div>
@@ -152,7 +152,7 @@
                 <p>Titulo que aparece no Placar</p>
                 <!-- ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG -->
                 </p>
-                <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo" value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> <button>Atualizar</button>
+                <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo" value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> *atualizado automaticamente
             </div>
         
         </div>
