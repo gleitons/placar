@@ -69,21 +69,24 @@
                 </select> <br>
                 <img id="imgTimeA" src="/src/logos/logo.png" alt="">
             </div>
-            <div class="placaCentral">
-                <div class="marcadoPlaca">
-                    <div>
-                        <i class="bi bi-chevron-up " id="maisgc" onclick="golsAtivos(0)"></i> <br> <br>
-                        <i class="bi bi-chevron-down" id="menosgc" onclick="golsAtivos(1)"></i>                       
+            <div class="alinhabtn">
+                <div class="placaCentral">
+                    <div class="marcadoPlaca">
+                        <div>
+                            <i class="bi bi-chevron-up " id="maisgc" onclick="golsAtivos(0)"></i> <br> <br>
+                            <i class="bi bi-chevron-down" id="menosgc" onclick="golsAtivos(1)"></i>
+                        </div>
+                        <input id="golCasa" type="number" name="" id="" value="0">
                     </div>
-                    <input id="golCasa" type="number" name="" id="" value="0">
-                </div>
-                <div  class="marcadoPlaca">
-                    <input type="number" name="" id="golVisitante" value="0">
-                    <div>
-                        <i class="bi bi-chevron-up " id="maisgv" onclick="golsAtivos(2)"></i> <br> <br>
-                        <i class="bi bi-chevron-down " id="menosgv" onclick="golsAtivos(3)"></i>                       
+                    <div  class="marcadoPlaca">
+                        <input type="number" name="" id="golVisitante" value="0">
+                        <div>
+                            <i class="bi bi-chevron-up " id="maisgv" onclick="golsAtivos(2)"></i> <br> <br>
+                            <i class="bi bi-chevron-down " id="menosgv" onclick="golsAtivos(3)"></i>
+                        </div>
                     </div>
                 </div>
+                <button onclick="paraAnimacao()">Stop Animação</button>
             </div>
             <div class="areaClean">
                 <strong>

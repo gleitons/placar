@@ -208,6 +208,9 @@
   color: yellow;
   padding: 5px;
 }
+.alinhabtn {
+  text-align: center;
+}
 .inputImagens {
   width: 70%;
   padding: 5px;

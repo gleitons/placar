@@ -405,7 +405,14 @@ document.addEventListener('keyup', () => {
   eventos()
   
 },)
+document.addEventListener('click', () => {
+  eventos()
+  
+},)
 function eventos() {
   carregaLetreiro()
   painelAtualiza()
+}
+function paraAnimacao() {
+  localStorage.setItem('stop', 1)
 }

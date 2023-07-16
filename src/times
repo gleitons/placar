@@ -12,6 +12,46 @@
     "logo": "/src/logos/logo.png",
     "logom": "/src/logos/logo-min.png"
   },
+  
+  {
+    "nome": "Amigos Futebol Clube",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/amigos-fc.jpeg",
+    "logom": "/src/logos/amigos-fc.jpeg"
+  },
+  {
+    "nome": "Boca Junior",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/boca-junior.png",
+    "logom": "/src/logos/boca-junior-min.png"
+  },
+  {
+    "nome": "A2Sports.Bet",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/a2sports.jpeg",
+    "logom": "/src/logos/a2sports.jpeg"
+  },
   {
     "nome": "Superbets 88",
     "jogadores": [
@@ -50,19 +90,6 @@
     ],
     "logo": "/src/logos/casa-grande.png",
     "logom": "/src/logos/casa-grande-min.png"
-  },
-  {
-    "nome": "Vitinho Bets",
-    "jogadores": [
-      {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
-      }
-    ],
-    "logo": "/src/logos/vitinho-bets.png",
-    "logom": "/src/logos/vitinho-bets-min.png"
   },
   {
     "nome": "Encantado",
@@ -169,20 +196,7 @@
     "logom": "/src/logos/oriente-min.png"
   },
   {
-    "nome": "Boca Junior",
-    "jogadores": [
-      {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
-      }
-    ],
-    "logo": "/src/logos/boca-junior.png",
-    "logom": "/src/logos/boca-junior-min.png"
-  },
-  {
-    "nome": "MajoSports",
+    "nome": "MarjoSports",
     "jogadores": [
       {
         "nome": "O Cara",
@@ -260,7 +274,7 @@
     "logom": "/src/logos/lagopatense.jpeg"
   },
   {
-    "nome": "A2SPORTS.BET",
+    "nome": "União Bet",
     "jogadores": [
       {
         "nome": "O Cara",
@@ -269,8 +283,21 @@
         "posição": "goleiro"
       }
     ],
-    "logo": "/src/logos/a2sports.jpeg",
-    "logom": "/src/logos/a2sports.jpeg"
+    "logo": "/src/logos/uniao-bet.png",
+    "logom": "/src/logos/uniao-bet.png"
+  },
+  {
+    "nome": "União Bet B",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/vitinho-bets.png",
+    "logom": "/src/logos/vitinho-bets-min.png"
   }
 ]
 

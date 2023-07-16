@@ -138,8 +138,7 @@ window.onstorage = function (e) {
     var golAtualC = document.querySelector('#timeCasa').textContent
     var golAtualV = document.querySelector('#timeVisitante').textContent
 
-    console.log(parseInt(golAtualC) + 1)
-    console.log(golAtualV + 1 )
+  
 
     if (e.key == 'golC') {
 
@@ -148,8 +147,7 @@ window.onstorage = function (e) {
             document.querySelector('#aberturaGol').innerHTML = `<div>
             <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
         </div>`
-        }
-       
+        }   
 
 
         document.querySelector('#aberturaGol').classList.add('gol')
@@ -171,6 +169,12 @@ window.onstorage = function (e) {
     } else {
 
     }
+    if(e.key == 'stop') {
+        if(localStorage.getItem('stop') == 1)
+        retiraGol()
+        localStorage.setItem('stop', 0)
+       }
+    
     atualizaOn()
 
 };
