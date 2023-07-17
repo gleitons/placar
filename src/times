@@ -17,7 +17,7 @@
     "nome": "Amigos Futebol Clube",
     "jogadores": [
       {
-        "nome": "O Cara",
+        "nome": "O sCara",
         "nascimento": "22/05/2023",
         "sexo": "m",
         "posição": "goleiro"
