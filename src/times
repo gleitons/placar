@@ -222,6 +222,19 @@
     "logom": "/src/logos/lancaster-min.png"
   },
   {
+    "nome": "Lancaster Jr",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/lancaster-jr.png",
+    "logom": "/src/logos/lancaster-jr.png"
+  },
+  {
     "nome": "Schalke 04",
     "jogadores": [
       {
@@ -246,6 +259,20 @@
     ],
     "logo": "/src/logos/igreja-futebol-clube.jpeg",
     "logom": "/src/logos/igreja-futebol-clube.jpeg"
+  },
+  
+  {
+    "nome": "Juventus",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/juventus.png",
+    "logom": "/src/logos/juventus.png"
   },
   {
     "nome": "Lagoa Master Futebol Clube",
@@ -272,6 +299,82 @@
     ],
     "logo": "/src/logos/lagopatense.jpeg",
     "logom": "/src/logos/lagopatense.jpeg"
+  },{
+    "nome": "Manchester City",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/manchester-city.png",
+    "logom": "/src/logos/manchester-city.png"
+  },{
+    "nome": "psg",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/psg.png",
+    "logom": "/src/logos/psg.png"
+  },
+  {
+    "nome": "Real Madrid",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/real-madrid.png",
+    "logom": "/src/logos/real-madrid.png"
+  },
+  {
+    "nome": "Red Bull",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/red-bull.png",
+    "logom": "/src/logos/red-bull.png"
+  },
+  {
+    "nome": "Veracruz",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/veracruz.png",
+    "logom": "/src/logos/veracruz.png"
+  },
+  {
+    "nome": "Vila Real",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/vila-real.png",
+    "logom": "/src/logos/vila-real.png"
   },
   {
     "nome": "União Bet",
@@ -300,4 +403,3 @@
     "logom": "/src/logos/vitinho-bets-min.png"
   }
 ]
-
