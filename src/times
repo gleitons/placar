@@ -401,5 +401,18 @@
     ],
     "logo": "/src/logos/vitinho-bets.png",
     "logom": "/src/logos/vitinho-bets-min.png"
+  },
+  {
+    "nome": "Vila Junior",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/vila-junior.png",
+    "logom": "/src/logos/vila-junior.png"
   }
 ]
