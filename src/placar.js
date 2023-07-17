@@ -129,17 +129,27 @@ function retiraGol() {
 // window.onstorage = () => { };
 // //setInterval('atualizaOn()', 1000)
 window.onstorage = function (e) {
+    var golAtualC = document.querySelector('#timeCasa').textContent
+    var golAtualV = document.querySelector('#timeVisitante').textContent
 
     if (e.key == 'golC') {
-        document.querySelector('#goldeCasa').classList.add('goll')
+        const gca = localStorage.getItem('golC')
+        if(parseInt(golAtualC) - 1 < gca){ 
+            document.querySelector('#goldeCasa').classList.add('goll')
         document.querySelector('#placarComImgCimaA').classList.add('dnone')
         document.querySelector('#placarComImgCimaB').classList.add('dnone')
+        
+        }
         setTimeout('retiraGol()', 6000)
+        
 
     } else if (e.key == 'golV') {
+        const gcv = localStorage.getItem('golV')
+        if(parseInt(golAtualV) - 1 < gcv){
         document.querySelector('#goldoVisitante').classList.add('goll')
         document.querySelector('#placarComImgCimaA').classList.add('dnone')
         document.querySelector('#placarComImgCimaB').classList.add('dnone')
+        }
         setTimeout('retiraGol()', 6000)
 
     } else {
