@@ -152,7 +152,7 @@ window.onstorage = function (e) {
 
         document.querySelector('#aberturaGol').classList.add('gol')
 
-        setTimeout('retiraGol()', 6000)
+        setTimeout('retiraGol()', 5000)
 
     } else if (e.key == 'golV') {
         const gcv = localStorage.getItem('golV')
@@ -164,7 +164,7 @@ window.onstorage = function (e) {
 
         document.querySelector('#aberturaGol').classList.add('gol')
 
-        setTimeout('retiraGol()', 6000)
+        setTimeout('retiraGol()', 5000)
 
     } else {
 
