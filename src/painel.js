@@ -416,3 +416,33 @@ function eventos() {
 function paraAnimacao() {
   localStorage.setItem('stop', 1)
 }
+
+function darkMode(sel) {
+  if(sel == 0){
+    const seletorTema = document.querySelector('#seletorTema')
+    seletorTema.setAttribute('onclick', 'darkMode(1)')
+    localStorage.setItem('dmode', 0)
+  } else {
+    seletorTema.setAttribute('onclick', 'darkMode(0)')
+    localStorage.setItem('dmode', 1)
+  }
+  
+
+  const icone = document.querySelector('#temaDark').src
+  const alterb = document.querySelector('#temaDark')
+
+  if(icone == 'http://127.0.0.1:5500/src/logos/dark.png') {
+    alterb.setAttribute('src', '/src/logos/light.png')
+  } else {
+    alterb.setAttribute('src', '/src/logos/dark.png')
+  }
+  const corpo = document.body.classList.toggle('temaDark')
+
+  blocoCima.classList.toggle('temaDark')
+  blocoImagens.classList.toggle('temaDark')
+  letreiro.classList.toggle('temaDark')
+  const pnc = document.querySelector('.painelControle')
+  pnc.classList.toggle('temaDark')
+
+  
+}
