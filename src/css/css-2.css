@@ -579,4 +579,13 @@ input {
   border: rgb(208, 208, 208) solid 1px;
 }
 
-
+.animSai {
+  transform: scale(0);
+  animation: some 600ms normal linear;
+}
+@keyframes some {
+  0%{
+    transform: scale(1);
+    
+  }
+}

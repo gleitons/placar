@@ -307,7 +307,9 @@ function mostrarInfoInicio() {
 }
 
 function abrirNovaJanela() {
-  window.open("/placar.html", "Placar Online", "height=1000,width=1920");
+  localStorage.setItem('sai', 0)
+  setTimeout(()=>{window.open("/placar.html", "Placar Online", "height=1000,width=1920")}, 0)
+  
 }
 function abrirNovaJanela2() {
   window.open("/placar-2.html", "Placar Online", "height=1000,width=1920");
@@ -431,10 +433,10 @@ function darkMode(sel) {
   const icone = document.querySelector('#temaDark').src
   const alterb = document.querySelector('#temaDark')
 
-  if(icone == 'http://127.0.0.1:5500/src/logos/dark.png') {
+  if(icone == 'https://placaronline.netlify.app/src/logos/dark.png') {
     alterb.setAttribute('src', '/src/logos/light.png')
   } else {
-    alterb.setAttribute('src', '/src/logos/dark.png')
+    alterb.setAttribute('src', 'https://placaronline.netlify.app/src/logos/dark.png')
   }
   const corpo = document.body.classList.toggle('temaDark')
 

@@ -138,16 +138,25 @@ window.onstorage = function (e) {
     var golAtualC = document.querySelector('#timeCasa').textContent
     var golAtualV = document.querySelector('#timeVisitante').textContent
 
-  
+    if (e.key == 'sai'){
+        if (localStorage.getItem('sai') == 0) {
+            const po = document.querySelector('#po')
+            po.classList.add('animSai')
+        }
+    }
+
+   
+
+
 
     if (e.key == 'golC') {
 
         const gca = localStorage.getItem('golC')
-        if(parseInt(golAtualC) - 1 < gca){
+        if (parseInt(golAtualC) - 1 < gca) {
             document.querySelector('#aberturaGol').innerHTML = `<div>
             <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
         </div>`
-        }   
+        }
 
 
         document.querySelector('#aberturaGol').classList.add('gol')
@@ -156,11 +165,11 @@ window.onstorage = function (e) {
 
     } else if (e.key == 'golV') {
         const gcv = localStorage.getItem('golV')
-        if(parseInt(golAtualV) - 1 < gcv){
+        if (parseInt(golAtualV) - 1 < gcv) {
             document.querySelector('#aberturaGol').innerHTML = `<div>
         <img id="" src="${localStorage.getItem('imgTimeB')}" alt="">
     </div>`
-        }       
+        }
 
         document.querySelector('#aberturaGol').classList.add('gol')
 
@@ -169,12 +178,12 @@ window.onstorage = function (e) {
     } else {
 
     }
-    if(e.key == 'stop') {
-        if(localStorage.getItem('stop') == 1)
-        retiraGol()
+    if (e.key == 'stop') {
+        if (localStorage.getItem('stop') == 1)
+            retiraGol()
         localStorage.setItem('stop', 0)
-       }
-    
+    }
+
     atualizaOn()
 
 };
