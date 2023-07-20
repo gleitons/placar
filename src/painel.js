@@ -102,7 +102,7 @@ const painelAtualiza = () => {
   localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
 
 
-  const mensagensPadrao = [`${localStorage.getItem('mostraTimeA')} x ${localStorage.getItem('mostraTimeB')}`,`PROX: ${localStorage.getItem('TimePJogoA')} x ${localStorage.getItem('TimePJogoB')}`,`FALTAS: ${localStorage.getItem('mostraTimeA')}: ${localStorage.getItem('faltasC')} - ${localStorage.getItem('mostraTimeB')}: ${localStorage.getItem('faltasV')}`, `REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE`]
+  const mensagensPadrao = [`${localStorage.getItem('mostraTimeA')} x ${localStorage.getItem('mostraTimeB')}`,`PROX: ${localStorage.getItem('TimePJogoA')} x ${localStorage.getItem('TimePJogoB')} - ${localStorage.getItem('horarioPPartida')}hs`,`FALTAS: ${localStorage.getItem('mostraTimeA')}: ${localStorage.getItem('faltasC')} - ${localStorage.getItem('mostraTimeB')}: ${localStorage.getItem('faltasV')}`, `REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE`]
 
   localStorage.setItem('itensAtualizado', JSON.stringify(mensagensPadrao))
 
