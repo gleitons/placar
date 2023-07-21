@@ -32,25 +32,34 @@
     <div id="letreiro" class="painelControle ">
 
         <div class="ldigital">
-            <h4>Atenção: Não acentue - Qtd max de caracteres é 46</h4>
-            <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> 
-            <h4>Caracteres restantes: <span id="cRestante">46</span></h4>
-        </div>
-        <div>
-            <h4>Aqui mensagens Padrões</h4>
-            <h5>* Deixe a opção acima em branco</h5>
-            <select name="" id="mPadrao" onchange="carregaLetreiro()">
-                <option value="0">DESATIVADO</option>
-                <option value="1">TIME A X TIME B</option>
-                <option value="2">PROX: TIME A X TIME B - 00:00hs</option>
-                <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
-                <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>                
-            </select>
-            <h6>Aparecerá assim:</h6>
             <div >
-                <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
+                <button id="ldigital">*Abrir: Letreiro Digital</button>
+                <div id="escondeJanela" class="dnone">
+                    <h4>Atenção: Não acentue - Qtd max de caracteres é 46</h4>
+                    <h4>Aqui mensagens Padrões</h4>
+                    <h5>* Deixe a opção acima em branco</h5>
+                    <input type="text" name="" onkeyup="verificaLetras()" id="letDigital" value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> Restante: <span id="cRestante">46</span> <br>
+           
+                 <br>
+                <div class="selmpadrao">
+                   
+                    <select name="" id="mPadrao" onchange="carregaLetreiro()">
+                        <option value="0">DESATIVADO</option>
+                        <option value="1">TIME A X TIME B</option>
+                        <option value="2">PROX: TIME A X TIME B - 00:00hs</option>
+                        <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
+                        <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>                
+                    </select>
+                    <h6>Aparecerá assim:</h6>
+                    <div >
+                        <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
+            </div>
+           
+          
         <br>
         <button onclick="intervalo(), abrirNovaJanela()">INTERVALO</button>
         <button  onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA</button> <br><br>
@@ -119,56 +128,6 @@
                 <input type="number" name="" id="fVisitante" value="0">
             </div>
         </div>
-        <h2>Cor do Uniforme</h2>
-        <div class="placarTimesPainel">
-            <div class="areaClean">
-                <p id="uniFA">Time 01</p>
-                <div class="unif">
-                    <div>Camisa: <input type="color" name="" id="camisaTA"></div>
-                    <div>Shorts : <input type="color" name="" id="shortTA"></div>
-                    <div>Meião : <input type="color" name="" id="meiaoTA"></div>
-                </div>
-            </div>
-            <div class="areaClean">
-                
-                <p id="uniFB">Time 02</p>
-                <div class="unif">
-                    <div>Camisa: <input type="color" name="" id="camisaTB"></div>
-                    <div>Shorts : <input type="color" name="" id="shortTB"></div>
-                    <div>Meião : <input type="color" name="" id="meiaoTB"></div>
-                </div>
-            </div>
-           
-           
-        </div>
-        <button>Carrega uniforme</button>
-        
-       
-        
-       
-        
-       
-    </div>
-    <div id="blocoBaixo" class="informacoesAdicionais animt  dnone">
-        <h2>Informações Adicionais</h2>
-        <div class="placarTimesPainel ">
-            <div>
-                <p>Titulo que aparece no Placar</p>
-                <!-- ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG -->
-                </p>
-                <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo" value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> *atualizado automaticamente
-            </div>
-        
-        </div>
-        <h2>Imagens do intervalo</h2>
-        <div class="placarTimesPainel ">
-            
-            <div>
-                <p>Oppção Inativa</p>
-               
-            </div>
-           
-        </div>
         <h2>Próxima Partida</h2>
         <div class="placarTimesPainel">
             <div class="areaClean">
@@ -192,6 +151,59 @@
             </div>
            
         </div>
+      
+        
+       
+        
+       
+        
+       
+    </div>
+    <div id="blocoBaixo" class="informacoesAdicionais animt  dnone">
+        <h2>Informações Adicionais</h2>
+        <div class="placarTimesPainel ">
+            <div>
+                <p>Titulo que aparece no Placar</p>
+                <!-- ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG -->
+                </p>
+                <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo" value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> *atualizado automaticamente
+            </div>
+        
+        </div>
+
+        <h2>Cor do Uniforme</h2>
+        <div class="placarTimesPainel">
+            <div class="areaClean">
+                <p id="uniFA">Time 01</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTA"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTA"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTA"></div>
+                </div>
+            </div>
+            <div class="areaClean">
+                
+                <p id="uniFB">Time 02</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTB"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTB"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTB"></div>
+                </div>
+            </div>
+           
+           
+        </div>
+        <button>Carrega uniforme</button>
+        <h2>Imagens do intervalo</h2>
+        <div class="placarTimesPainel ">
+            
+            <div>
+                <p>Oppção Inativa</p>
+               
+            </div>
+           
+        </div>
+      
         <h2>Observações Importantes</h2>
         <div class="placarTimesPainel">
             <div class="areaClean">

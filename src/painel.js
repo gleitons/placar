@@ -445,6 +445,17 @@ function darkMode(sel) {
   letreiro.classList.toggle('temaDark')
   const pnc = document.querySelector('.painelControle')
   pnc.classList.toggle('temaDark')
-
   
 }
+
+const ldigital = document.querySelector('#ldigital')
+ldigital.addEventListener('click',() => {
+  const escondeJanela = document.querySelector('#escondeJanela')
+  escondeJanela.classList.toggle('dnone')
+  if(ldigital.textContent == '*Abrir: Letreiro Digital') {
+    ldigital.textContent = '*Fechar: Letreiro Digital'
+  } else {
+    ldigital.textContent = '*Abrir: Letreiro Digital'
+  }
+  
+})

@@ -252,6 +252,11 @@ button {
   font-size: 1.1em;
   background-color: rgb(2, 74, 217);
   color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(67, 128, 250);
+  box-shadow: blue 0px 2px 5px 0px;
 }
 .dnone {
   display: none;
@@ -449,7 +454,7 @@ input {
 
 .painelControle {
   background-color: #f7feff;
-  max-width: 800px;
+  max-width: 70%;
   min-width: 450px;
   margin: auto;
   border: black solid 1px;
@@ -458,7 +463,16 @@ input {
   border: rgb(225, 225, 225) solid 1px;
   box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
   border-radius: 0px 0px 12px 12px;
+  font-size: 1.5em;
   
+}
+.painelControle input {
+  padding: 5px;
+  font-size: 1.4em;
+  text-align: center;
+}
+.selmpadrao select {
+  font-size: 1.2em;
 }
 .ldigital input {
   width: 60%;
@@ -500,9 +514,14 @@ input {
   padding: 5px;
   border: rgb(208, 208, 208) solid 1px;
 }
+.placarTimesPainel select {
+  padding: 5px;
+  font-size: 1.2em;
+}
 .modeD {
   width: 35px;
 }
+
 
 
 .temaDark {
