@@ -271,10 +271,17 @@ button:hover {
   width: 1080px;
   
 }
+.informativo {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
 .menutopo {
-  width: 600px;
+  width: 80%;
   justify-content: space-between;
   text-align: inherit;
+  justify-content: space-between;
   
 }
 .placaCentral {
@@ -309,12 +316,14 @@ button:hover {
 .marcadoPlaca {
   display: flex;
   align-items: center;
+  color: white;
 }
 .menutopo a {
   text-align: center;
   gap: 10px;
   padding: 5px;
   color: white;
+  
   border-radius: 8px;
   text-decoration: none;
   background-color: rgb(31, 38, 135);
