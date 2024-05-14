@@ -1,5 +1,6 @@
 @font-face {
   font-family: digital;
+  /* src: url(../../src/font/ialin.ttf); */
   src: url(../../src/font/DS-DIGI.TTF);
 }
 :root {
@@ -111,8 +112,7 @@
 
 .mostraPlacar {
   align-items: center;
-  width: 85%;
-  
+  width: 80%;  
   margin: auto;
   text-align: center;
   background-image: linear-gradient(
@@ -191,6 +191,7 @@
   right: 3750px;
   bottom: 0px;
 }
+
 @keyframes ldigital {
   0% {
     right: -1850px;
@@ -203,12 +204,12 @@
 }
 .NomeTime {
   justify-content: space-between;
-  min-width: 15%;
+  /* min-width: 15%; */
   /* background-image: url('../logos/88.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; */
-  max-width: 20%;
+  width: 12%;
   height: 100%;
   border: rgb(255, 255, 255) solid 5px;
   border-radius: 8px;
@@ -222,7 +223,7 @@
  
 }
 .NomeTime p {
-  font-size: .8em;
+  font-size: .6em;
 }
 .mergin {
   margin: 500px auto;
@@ -588,5 +589,64 @@ input {
   0%{
     transform: scale(1);
     
+  }
+}
+
+.showTimeA {
+  width: 1920px;
+  font-size: 2em;
+  text-align: center;
+  
+}
+
+.showTimeA p {
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+height: fit-content;
+animation: stA 1s  linear   ;
+width: 1920px;
+transition: all 500ms;
+color: yellow;
+font-weight: 800;
+
+-webkit-text-stroke-width:2px;
+-webkit-text-stroke-color: black;
+/* margin: auto; */
+}
+.showTimeB {
+  width: 1920px;
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+}
+.showTimeB p {
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+height: fit-content;
+animation: stA 1s linear ;
+width: 1920px;
+transition: all 500ms;
+color: yellow;
+-webkit-text-stroke-width: 2px;
+font-weight: 800;
+-webkit-text-stroke-color: black;
+/* margin: auto; */
+}
+@keyframes stA {
+  from {
+    width: 192px;
+    opacity: 0;
+  }
+  to {
+    width: 1920px;
+    opacity: 1;
   }
 }

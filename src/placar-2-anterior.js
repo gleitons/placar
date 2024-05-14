@@ -3,7 +3,6 @@ var segundos = () => {
 
 
 }
-
 var atualizaOn = () => {
     const timeCasa = document.querySelector('#timeCasa')
     const timeVisitante = document.querySelector('#timeVisitante')
@@ -94,9 +93,12 @@ var atualizaOn = () => {
         mostrador.textContent = 'AO VIVO'
 
     } else {
+
         document.querySelector('#intervaloOn').style.display = 'block'
         mostrador.textContent = 'INTERVALO'
         const alteraImgSlides = document.querySelector('#alteraImgSlides')
+
+
         var images = JSON.parse(localStorage.getItem('imagemSlide'))
         const secon = segundos()
         let i = 0;
@@ -110,8 +112,18 @@ var atualizaOn = () => {
 
             i = i < images.length - 1 ? i + 1 : 0;
             alteraImgSlides.src = images[i]
+
+
         }, 10000);
+
+
     }
+
+
+
+
+
+
 
 }
 function retiraGol() {
@@ -121,48 +133,22 @@ function retiraGol() {
 }
 // window.onstorage = () => { };
 // //setInterval('atualizaOn()', 1000)
-function limpaCC() {
-    const idTime = document.querySelector('#goldeCasa') 
-    const idTimeB = document.querySelector('#goldoVisitante') 
-    idTime.classList.remove('showTimeA')
-    idTimeB.classList.remove('showTimeB')
-}
-function sTimeA() {
-   
-    const idTime = document.querySelector('#goldeCasa')    
-    idTime.classList.add('showTimeA')
-    // setTimeout(limpaCC, 5000)
-}
-function sTimeB() {
-   
-    const idTime = document.querySelector('#goldoVisitante')   
-    
-    idTime.classList.add('showTimeB')
-    // setTimeout(limpaCC, 5000)
-
-}
 
 window.onstorage = function (e) {
     var golAtualC = document.querySelector('#timeCasa').textContent
     var golAtualV = document.querySelector('#timeVisitante').textContent
-    const d = localStorage.getItem('mstimes')
-    if(d == 0){
-        sTimeA()
-        localStorage.setItem('mstimes', 0)
-    } else if (d == 1){
-        sTimeB()
-        localStorage.setItem('mstimes', 1)
-    } else {
-        limpaCC()
-        localStorage.setItem('mstimes', 2)
-    }
 
-    if (e.key == 'sai') {
+    if (e.key == 'sai'){
         if (localStorage.getItem('sai') == 0) {
             const po = document.querySelector('#po')
             po.classList.add('animSai')
         }
     }
+
+   
+
+
+
     if (e.key == 'golC') {
 
         const gca = localStorage.getItem('golC')
@@ -171,6 +157,8 @@ window.onstorage = function (e) {
             <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
         </div>`
         }
+
+
         document.querySelector('#aberturaGol').classList.add('gol')
 
         setTimeout('retiraGol()', 5000)

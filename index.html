@@ -82,6 +82,7 @@
                     
                 </select> <br>
                 <img id="imgTimeA" src="/src/logos/logo.png" alt="">
+                <button onclick="mostraShowT(0)">Mostrar Time A</button>
             </div>
             <div class="alinhabtn">
                 <div class="placaCentral">
@@ -100,16 +101,18 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="paraAnimacao()">Stop Animação</button>
+                <button onclick="paraAnimacao()">Stop Animação</button> <br>
+                <button onclick="mostraShowT(2)">Limpa times</button>
             </div>
             <div class="areaClean">
                 <strong>
                     <p id="timeB">Selecione</p>
                 </strong>
-                <select name="" id="aovivoTimeB" class="geraTimes" onchange="selecionaTime()">
-                    
+                <select name="" id="aovivoTimeB" class="geraTimes" onchange="selecionaTime()">                    
                 </select><br>
                 <img id="imgTimeB" src="/src/logos/logo.png" alt="">
+                <button onclick="mostraShowT(1)">Mostrar Time B</button>
+
             </div>
            
            

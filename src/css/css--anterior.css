@@ -1,6 +1,6 @@
 @font-face {
   font-family: digital;
-  /* src: url(../../src/font/tld.ttf); */
+  /* src: url(../../src/font/ialin.ttf); */
   src: url(../../src/font/DS-DIGI.TTF);
 }
 :root {
@@ -13,7 +13,6 @@
   box-sizing: border-box;
 }
 
-
 .placarOn {
   width: 100%;
   height: 100vh;
@@ -23,7 +22,7 @@
 }
 .placarCima {
   padding: 20px;
-  width: 90%;
+  width: 100%;  
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -39,6 +38,11 @@
   border: white solid 5px;
   
 }
+.editPlacarCima {
+  height: 76vh;
+}
+
+
 .fundoP {
   background-image: linear-gradient(
     to bottom,
@@ -47,7 +51,7 @@
     rgb(123, 122, 122)
   );
   box-shadow: rgba(0, 0, 0, 0.614) 0px 2px 5px 0px;
-  padding: 2px;
+  
 }
 .placarImagem {
   width: 90%;
@@ -72,18 +76,18 @@
   width: 250px;
   border-radius: 8px;
 }
-.aoVivo {
+.placarImagem .aoVivo {
   position: absolute;
-    width: 448px;
-    background-color: rgb(203, 0, 0);
-    text-align: center;
-    padding: 2px;
-    top: -49px;
-    left: 39%;
-    border-radius: 12px 12px 0px 0px;
-    font-size: 1em;
-    padding: -27px;
-    color: white;
+  width: 200px;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 2px;
+  top: 0px;
+  left: 44%;
+  border-radius: 0px 0px 12px 12px;
+  font-size: x-large;
+  padding: 5px;
+  color: white;
 }
 .corCamisa {
   width: 250px;
@@ -105,12 +109,11 @@
   left: 32px;
   position: absolute;
 }
-.propagandasEtc {
-  height: 10%;
-}
+
 .mostraPlacar {
   align-items: center;
-  width: 60%;
+  width: 85%;
+  
   margin: auto;
   text-align: center;
   background-image: linear-gradient(
@@ -119,7 +122,7 @@
     rgb(102, 102, 102),
     rgb(85, 85, 85)
   );
-  padding: 5px;
+  padding: 10px;
   border-radius: 8px;
 }
 .aoVivo {
@@ -128,8 +131,8 @@
   background-color: rgb(203, 0, 0);
   text-align: center;
   padding: 2px;
-  top: -38px;
-  left: 42%;
+  top: -4px;
+  left: 44%;
   border-radius: 12px 12px 0px 0px;
   font-size: x-large;
   padding: 5px;
@@ -138,14 +141,61 @@
 .mostraPlacar h1 {
   font-family: digital;
   margin-top: 5px;
-  font-size: 3em;
+  font-size: 10em;
   text-shadow: yellow 0px 0px 5px 0px;
   width: 100%;
   /* border: black solid 1px; */
   border-radius: 8px;
 }
+.mostraPlacar h3 #periodoTempoMostra {
+  font-family: digital;
+  margin-top: 5px;
+  font-size: 1em;
+  text-shadow: yellow 0px 0px 5px 0px;
+  width: 100%;
+  /* border: black solid 1px; */
+  border-radius: 8px;
+}
+.mostraPlacar h3 span {
+  color: yellow;
+  padding: 2px 5px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  margin: 0px;
+}
 .tickSegundos {
   animation: tick 1s infinite alternate-reverse  ;
+}
+.letreiroAnimado {
+  z-index: 9999999;
+  width: 350%;
+  background-color: rgb(0, 0, 0);
+  height: 20%;
+  position: fixed;
+  bottom: -8px;
+  margin: 10px auto;
+  
+}
+
+.letreiroAnimado h1 {
+  text-shadow: 0px 2px 12px yellow;
+  font-size: 13em;
+  font-family: digital;
+  width: 100%;
+  color: yellow;
+  padding: 0px 0px;
+  /* background-color: rgb(0, 0, 0); */
+  border-radius: 8px;
+  margin: 0px;
+  animation: ldigital 60s infinite linear ;
+  position: absolute;
+  right: 3750px;
+  bottom: 0px;
+}
+@keyframes ldigital {
+  0% {
+    right: -1850px;
+  }
 }
 @keyframes tick {
   0% {
@@ -154,15 +204,29 @@
 }
 .NomeTime {
   justify-content: space-between;
-  width: 35%;
+  /* min-width: 15%; */
+  /* background-image: url('../logos/88.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  width: 12%;
+  height: 100%;
   border: rgb(255, 255, 255) solid 5px;
   border-radius: 8px;
-  background-color: rgb(228, 228, 228);
+  background-color: white;
   text-align: center;
   display: flex;
-  align-items: center;
+  
+  padding-top: 100%;
   padding: 5px;
-  font-size: .5em;
+  
+ 
+}
+.NomeTime p {
+  font-size: .8em;
+}
+.mergin {
+  margin: 500px auto;
 }
 
 .NomeTime div img {
@@ -174,11 +238,11 @@
 
 .mostraPlacar h1 span {
   color: yellow;
-  padding: 2px 20px;
+  padding: 2px 5px;
 
   background-color: rgb(0, 0, 0);
   border-radius: 8px;
-  margin: 2px;
+  margin: 0px;
 }
 .placarIntervalo {
   text-align: center;
@@ -206,46 +270,61 @@
     opacity: 0;
   }
 }
-#mostraPainelS {
-  background-color: black;
-  color: yellow;
-  padding: 5px;
-}
-.alinhabtn {
-  text-align: center;
-}
 .inputImagens {
-  width: 70%;
+  width: 90%;
   padding: 5px;
   margin: 5px auto;
 }
 
-.goll div img {
+.gol {
   position: absolute;
-  width: 800px;
-  height: 800px;
-  box-shadow:  rgb(2, 74, 217) 5px 0px 100px 50px;
-  top: 0px;
-  left: 384px;
-  animation: gira 600ms infinite alternate-reverse linear;
+  z-index: 99999999;
+  width: 100%;
+  background-image: radial-gradient( rgb(242, 227, 13), rgb(0, 7, 82), rgb(0, 47, 255));
+  animation: grade 500ms infinite  ;  
 }
-@keyframes gira {
+@keyframes grade {
   0% {
-    transform: scale(0.8);
+    
+    background-image: linear-gradient(to top, rgb(255, 0, 0), black, rgb(255, 0, 0));
   }
 }
-.goll div::after {
+.gol div {
+  height: 100vh;  
+  border: black solid 1px;
+  margin: auto;
+  text-align: center;
+}
+.gol div img {
+  height: 100%;
+  box-shadow:  rgb(2, 74, 217) 5px 0px 100px 50px; 
+  margin: auto;
+  border-radius: 50%;  
+ 
+  animation: gira 800ms infinite alternate-reverse linear; 
+}
+
+@keyframes gira {
+  0% {
+    transform: matrix(0, 1, 1, 0, 0, 0);
+    
+    transform: scale(0.8);
+  }
+  
+}
+
+.gol div::after {
   content: "GOLLLLL!!";
   position: absolute;
-  width: 800px;
-  border-radius: 30px;
-  
+  width: 100%;
+  border-radius: 30px;  
   top: 290px;
-  font-size: 3em;
+  font-size: 12em;
   background-color: rgb(2, 74, 217);
   color: white;
   font-weight: 700;
-  left: 384px;
+  left: 0;
+  height: 30%;
   animation: aov 800ms infinite alternate-reverse linear;
 }
 button {
@@ -254,10 +333,7 @@ button {
   background-color: rgb(2, 74, 217);
   color: white;
   cursor: pointer;
-}
-button:hover {
-  background-color: rgb(67, 128, 250);
-  box-shadow: blue 0px 2px 5px 0px;
+  
 }
 .dnone {
   display: none;
@@ -268,21 +344,14 @@ button:hover {
 .nomeCampeonato h1 {
   text-align: center;
   background-color: white;
-  margin-top: 20px;
-  width: 1080px;
+  
+  width: 100%;
   
 }
-.informativo {
-  background-color: red;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-}
 .menutopo {
-  width: 80%;
+  width: 600px;
   justify-content: space-between;
   text-align: inherit;
-  justify-content: space-between;
   
 }
 .placaCentral {
@@ -317,14 +386,12 @@ button:hover {
 .marcadoPlaca {
   display: flex;
   align-items: center;
-  color: white;
 }
 .menutopo a {
   text-align: center;
   gap: 10px;
   padding: 5px;
   color: white;
-  
   border-radius: 8px;
   text-decoration: none;
   background-color: rgb(31, 38, 135);
@@ -405,6 +472,7 @@ input {
   background-color: rgb(0, 0, 0);
   border-radius: 8px;
   color: white;
+  font-size: 1.3em;
 }
 
 @keyframes aov {
@@ -464,7 +532,7 @@ input {
 
 .painelControle {
   background-color: #f7feff;
-  max-width: 70%;
+  max-width: 800px;
   min-width: 450px;
   margin: auto;
   border: black solid 1px;
@@ -473,19 +541,7 @@ input {
   border: rgb(225, 225, 225) solid 1px;
   box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
   border-radius: 0px 0px 12px 12px;
-  font-size: 1.5em;
   
-}
-.painelControle input {
-  padding: 5px;
-  font-size: 1.4em;
-  text-align: center;
-}
-.selmpadrao select {
-  font-size: 1.2em;
-}
-.ldigital input {
-  width: 60%;
 }
 #tituloAcima {
   width:100%;
@@ -524,21 +580,14 @@ input {
   padding: 5px;
   border: rgb(208, 208, 208) solid 1px;
 }
-.placarTimesPainel select {
-  padding: 5px;
-  font-size: 1.2em;
-}
-.modeD {
-  width: 35px;
-}
 
-
-
-.temaDark {
-  background-color: rgb(84, 84, 84);
-  color: white;
+.animSai {
+  transform: scale(0);
+  animation: some 600ms normal linear;
 }
-.temaDark .placarTimesPainel {
-  
-  background-color: rgb(40, 39, 39);
+@keyframes some {
+  0%{
+    transform: scale(1);
+    
+  }
 }

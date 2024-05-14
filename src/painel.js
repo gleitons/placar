@@ -415,6 +415,9 @@ function eventos() {
   carregaLetreiro()
   painelAtualiza()
 }
+function mostraShowT(n) {
+  localStorage.setItem('mstimes', n)
+}
 function paraAnimacao() {
   localStorage.setItem('stop', 1)
 }
