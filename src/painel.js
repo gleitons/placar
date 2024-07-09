@@ -6,7 +6,18 @@ console.log('.....')
 const btnGols = document.querySelectorAll('.placaCentral i');
 
 
-
+function desativarTorcida(valor) {
+  const btnnfo = document.querySelector('#torcidaAudio');
+  if (valor === 1) {
+    localStorage.setItem('audioTorcida', 1);
+    btnnfo.textContent = 'DESATIVAR SOM JOGO';
+    btnnfo.setAttribute('onclick', 'desativarTorcida(0)');
+  } else {
+    localStorage.setItem('audioTorcida', 0);
+    btnnfo.textContent = 'ATIVAR SOM JOGO';
+    btnnfo.setAttribute('onclick', 'desativarTorcida(1)');
+  }
+}
 
 function verificaLetras() {
   const letDigital = document.querySelector('#letDigital').value

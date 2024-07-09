@@ -3,8 +3,30 @@ var segundos = () => {
 
 
 }
+function tocaSom(n) {
+    const torcida = document.querySelectorAll('audio')[0]
+    if (n == 1) {
+        torcida.volume = 0.2
+        torcida.play()
+        torcida.loop = true;
+    } else {
+        torcida.loop = false;
+        torcida.pause();
+        torcida.currentTime = 0;
+    }
+
+}
+// tocaSom(1)
+function golTorcida() {
+    const torcida = document.querySelectorAll('audio')[1]
+    torcida.volume = 1
+    torcida.play()
+    // torcida.loop = true;  
+
+}
 
 var atualizaOn = () => {
+
     const timeCasa = document.querySelector('#timeCasa')
     const timeVisitante = document.querySelector('#timeVisitante')
 
@@ -122,34 +144,41 @@ function retiraGol() {
 // window.onstorage = () => { };
 // //setInterval('atualizaOn()', 1000)
 function limpaCC() {
-    const idTime = document.querySelector('#goldeCasa') 
-    const idTimeB = document.querySelector('#goldoVisitante') 
+    const idTime = document.querySelector('#goldeCasa')
+    const idTimeB = document.querySelector('#goldoVisitante')
     idTime.classList.remove('showTimeA')
     idTimeB.classList.remove('showTimeB')
 }
 function sTimeA() {
-   
-    const idTime = document.querySelector('#goldeCasa')    
+
+    const idTime = document.querySelector('#goldeCasa')
     idTime.classList.add('showTimeA')
     // setTimeout(limpaCC, 5000)
 }
 function sTimeB() {
-   
-    const idTime = document.querySelector('#goldoVisitante')   
-    
+
+    const idTime = document.querySelector('#goldoVisitante')
+
     idTime.classList.add('showTimeB')
     // setTimeout(limpaCC, 5000)
 
 }
 
 window.onstorage = function (e) {
+    const verificaAudioTorcida = localStorage.getItem('audioTorcida')
+    console.log(verificaAudioTorcida)
+    if (verificaAudioTorcida == 1) {
+        tocaSom(1)
+    } else {
+        tocaSom(0)
+    }
     var golAtualC = document.querySelector('#timeCasa').textContent
     var golAtualV = document.querySelector('#timeVisitante').textContent
     const d = localStorage.getItem('mstimes')
-    if(d == 0){
+    if (d == 0) {
         sTimeA()
         localStorage.setItem('mstimes', 0)
-    } else if (d == 1){
+    } else if (d == 1) {
         sTimeB()
         localStorage.setItem('mstimes', 1)
     } else {
@@ -170,17 +199,20 @@ window.onstorage = function (e) {
             document.querySelector('#aberturaGol').innerHTML = `<div>
             <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
         </div>`
+            golTorcida()
         }
         document.querySelector('#aberturaGol').classList.add('gol')
 
         setTimeout('retiraGol()', 5000)
 
     } else if (e.key == 'golV') {
+
         const gcv = localStorage.getItem('golV')
         if (parseInt(golAtualV) - 1 < gcv) {
             document.querySelector('#aberturaGol').innerHTML = `<div>
         <img id="" src="${localStorage.getItem('imgTimeB')}" alt="">
     </div>`
+            golTorcida()
         }
 
         document.querySelector('#aberturaGol').classList.add('gol')

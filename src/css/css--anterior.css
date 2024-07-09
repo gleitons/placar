@@ -349,9 +349,11 @@ button {
   
 }
 .menutopo {
-  width: 600px;
+  width:100%;
   justify-content: space-between;
   text-align: inherit;
+  display: flex;
+  margin: auto;
   
 }
 .placaCentral {
@@ -481,12 +483,14 @@ input {
   }
 }
 .menuTo {
+  width: 100%;
   display: flex;
   align-items: center;
-  font-size: 1.1em;
+  font-size: .8em;
   text-decoration: none;
   list-style: none;
   position: relative;
+  justify-content: space-between;
   overflow: hidden;
   margin: 10px auto;
   
@@ -574,6 +578,7 @@ input {
   margin: 5px auto;
 }
 .placarTimesPainel {
+  width:200px;
   display: flex;
   justify-content: space-between;
   background-color: rgb(224, 224, 224);
@@ -590,4 +595,7 @@ input {
     transform: scale(1);
     
   }
+}
+.fDosTimes {
+  width: 50px;
 }
