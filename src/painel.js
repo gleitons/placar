@@ -5,6 +5,15 @@ console.log('.....')
 
 const btnGols = document.querySelectorAll('.placaCentral i');
 
+function tiraAviso() {
+  const ase = document.querySelector('#aSenha').value;
+  if(ase == 'tim') {
+    alert('Senha correta. Obrigado por utilizar o sistema.')
+    document.querySelector('.informativo').style.display = 'none'
+  } else {
+    alert('Senha Incorreta!! Tente novamente ou deixe o aviso e use normalmente.')
+  }
+}
 
 function desativarTorcida(valor) {
   const btnnfo = document.querySelector('#torcidaAudio');
