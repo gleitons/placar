@@ -176,9 +176,11 @@ window.onstorage = function (e) {
     var golAtualV = document.querySelector('#timeVisitante').textContent
     const d = localStorage.getItem('mstimes')
     if (d == 0) {
+        limpaCC()
         sTimeA()
         localStorage.setItem('mstimes', 0)
     } else if (d == 1) {
+        limpaCC()
         sTimeB()
         localStorage.setItem('mstimes', 1)
     } else {
