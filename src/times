@@ -13,33 +13,33 @@
     "logom": "/src/logos/logo.png"
   },
   {
-    "nome": "União Bet",
+    "nome": "AABB Bocaiúva",
     "jogadores": [
       {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
       }
     ],
-    "logo": "/src/logos/uniao-bet.png",
-    "logom": "/src/logos/uniao-bet.png"
+    "logo": "/src/logos/aabb-bocaiuva.jpeg",
+    "logom": "/src/logos/aabb-bocaiuva.jpeg"
   },
   {
-    "nome": "DrogaCenter F. C.",
+    "nome": "Avaí",
     "jogadores": [
       {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
       }
     ],
-    "logo": "/src/logos/drogacenter-f-c.jpeg",
-    "logom": "/src/logos/drogacenter-f-c.jpeg"
+    "logo": "/src/logos/avai.jpeg",
+    "logom": "/src/logos/avai.jpeg"
   },
   {
-    "nome": "Veteranos F.C",
+    "nome": "Boca Junior",
     "jogadores": [
       {
         "nome": "O Cara",
@@ -48,21 +48,8 @@
         "posição": "goleiro"
       }
     ],
-    "logo": "/src/logos/veteranos-f-c.jpeg",
-    "logom": "/src/logos/veteranos-f-c.jpeg"
-  },
-  {
-    "nome": "Schalke 04",
-    "jogadores": [
-      {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
-      }
-    ],
-    "logo": "/src/logos/schalke-04.jpeg",
-    "logom": "/src/logos/schalke-04.jpeg"
+    "logo": "/src/logos/boca-junior.jpeg",
+    "logom": "/src/logos/boca-junior.jpeg"
   },
   {
     "nome": "Boca Juniors",
@@ -91,7 +78,7 @@
     "logom": "/src/logos/casa-grande-f.c.jpeg"
   },
   {
-    "nome": "Boca Junior",
+    "nome": "DrogaCenter F. C.",
     "jogadores": [
       {
         "nome": "O Cara",
@@ -100,34 +87,8 @@
         "posição": "goleiro"
       }
     ],
-    "logo": "/src/logos/boca-junior.jpeg",
-    "logom": "/src/logos/boca-junior.jpeg"
-  },
-  {
-    "nome": "SpaceNet F.C",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
-    "logo": "/src/logos/spacenet.f.c.jpeg",
-    "logom": "/src/logos/spacenet.f.c.jpeg"
-  },
-  {
-    "nome": "Lancaster City F.C",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
-    "logo": "/src/logos/lancaster-city-f.c.jpeg",
-    "logom": "/src/logos/lancaster-city-f.c.jpeg"
+    "logo": "/src/logos/drogacenter-f-c.jpeg",
+    "logom": "/src/logos/drogacenter-f-c.jpeg"
   },
   {
     "nome": "Estrelinha E. C",
@@ -143,20 +104,20 @@
     "logom": "/src/logos/estrelinha-e-c.jpeg"
   },
   {
-    "nome": "Vitória de Minas E. C",
+    "nome": "Lagoense esporte Clube",
     "jogadores": [
       {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
       }
     ],
-    "logo": "/src/logos/vitoria-de-minas.jpeg",
-    "logom": "/src/logos/vitoria-de-minas.jpeg"
+    "logo": "/src/logos/lagoense-esporte-clube.png",
+    "logom": "/src/logos/lagoense-esporte-clube-min.png"
   },
   {
-    "nome": "Vila junior F.C",
+    "nome": "Lancaster City F.C",
     "jogadores": [
       {
         "nome": "",
@@ -165,34 +126,8 @@
         "posição": ""
       }
     ],
-    "logo": "/src/logos/vila-junior-f-c.jpeg",
-    "logom": "/src/logos/vila-junior-f-c.jpeg"
-  },
-  {
-    "nome": "Avaí",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
-    "logo": "/src/logos/avai.jpeg",
-    "logom": "/src/logos/avai.jpeg"
-  },
-  {
-    "nome": "Villa Real rede óptical",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
-    "logo": "/src/logos/vila-real-rede-optical.jpeg",
-    "logom": "/src/logos/vila-real-rede-optical.jpeg"
+    "logo": "/src/logos/lancaster-city-f.c.jpeg",
+    "logom": "/src/logos/lancaster-city-f.c.jpeg"
   },
   {
     "nome": "Patio F.C",
@@ -221,7 +156,7 @@
     "logom": "/src/logos/sao-joao-pacui.jpeg"
   },
   {
-    "nome": "Lagoense esporte Clube",
+    "nome": "Schalke 04",
     "jogadores": [
       {
         "nome": "O Cara",
@@ -230,11 +165,24 @@
         "posição": "goleiro"
       }
     ],
-    "logo": "/src/logos/lagoense-esporte-clube.png",
-    "logom": "/src/logos/lagoense-esporte-clube-min.png"
+    "logo": "/src/logos/schalke-04.jpeg",
+    "logom": "/src/logos/schalke-04.jpeg"
   },
   {
-    "nome": "AABB Bocaiúva",
+    "nome": "Selecione",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/logo.png",
+    "logom": "/src/logos/logo.png"
+  },
+  {
+    "nome": "SpaceNet F.C",
     "jogadores": [
       {
         "nome": "",
@@ -243,7 +191,72 @@
         "posição": ""
       }
     ],
-    "logo": "/src/logos/aabb-bocaiuva.jpeg",
-    "logom": "/src/logos/aabb-bocaiuva.jpeg"
+    "logo": "/src/logos/spacenet.f.c.jpeg",
+    "logom": "/src/logos/spacenet.f.c.jpeg"
+  },
+  {
+    "nome": "União Bet",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/uniao-bet.png",
+    "logom": "/src/logos/uniao-bet.png"
+  },
+  {
+    "nome": "Veteranos F.C",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/veteranos-f-c.jpeg",
+    "logom": "/src/logos/veteranos-f-c.jpeg"
+  },
+  {
+    "nome": "Villa Real rede óptical",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/vila-real-rede-optical.jpeg",
+    "logom": "/src/logos/vila-real-rede-optical.jpeg"
+  },
+  {
+    "nome": "Vila junior F.C",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/vila-junior-f-c.jpeg",
+    "logom": "/src/logos/vila-junior-f-c.jpeg"
+  },
+  {
+    "nome": "Vitória de Minas E. C",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/vitoria-de-minas.jpeg",
+    "logom": "/src/logos/vitoria-de-minas.jpeg"
   }
 ]
