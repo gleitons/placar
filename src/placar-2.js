@@ -16,6 +16,7 @@ function tocaSom(n) {
     }
 
 }
+
 // tocaSom(1)
 function golTorcida() {
     const torcida = document.querySelectorAll('audio')[1]

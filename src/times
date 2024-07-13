@@ -169,19 +169,6 @@
     "logom": "/src/logos/schalke-04.jpeg"
   },
   {
-    "nome": "Selecione",
-    "jogadores": [
-      {
-        "nome": "O Cara",
-        "nascimento": "22/05/2023",
-        "sexo": "m",
-        "posição": "goleiro"
-      }
-    ],
-    "logo": "/src/logos/logo.png",
-    "logom": "/src/logos/logo.png"
-  },
-  {
     "nome": "SpaceNet F.C",
     "jogadores": [
       {

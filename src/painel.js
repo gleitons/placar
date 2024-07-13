@@ -5,6 +5,7 @@ console.log('.....')
 
 const btnGols = document.querySelectorAll('.placaCentral i');
 
+
 function tiraAviso() {
   const ase = document.querySelector('#aSenha').value;
   if(ase == 'tim') {
@@ -14,6 +15,7 @@ function tiraAviso() {
     alert('Senha Incorreta!! Tente novamente ou deixe o aviso e use normalmente.')
   }
 }
+
 
 function desativarTorcida(valor) {
   const btnnfo = document.querySelector('#torcidaAudio');
@@ -332,6 +334,7 @@ function abrirNovaJanela() {
   
 }
 function abrirNovaJanela2() {
+  localStorage.setItem('audioTorcida', 1);
   window.open("/placar-2.html", "Placar Online", "height=1000,width=1920");
 }
 function fecharDivSlide(idDiv) {
