@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" type="image/x-icon">
     <title>Painel - Gleiton Soares</title>
     
 </head>
@@ -247,22 +248,41 @@
                 <button  onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
                 
                 <div id="divSlide1" class="divImg">
-                    <input type="text" name="" id="imgSlide1" class="inputImagens" value="https://placaronline.netlify.app/src/logos/cartaz.jpg"><button onclick="fecharDivSlide(1)">x</button>
+                    <input type="text" name="" id="imgSlide1" class="inputImagens" value="/src/logos/cartaz-2.png"><button onclick="fecharDivSlide(1)">x</button>
                 </div>
-                <div id="divSlide2" class="divImg">
+                <!-- <div id="divSlide2" class="divImg">
                     <input type="text" name="" id="imgSlide2" class="inputImagens" value="/src/logos/futuro-consultoria.png"><button onclick="fecharDivSlide(2)">x</button>
-                </div>
-                <div id="divSlide3" class="divImg">
-                    <input type="text" name="" id="imgSlide3" class="inputImagens" value="/src/logos/logo-lagoa.gif"><button onclick="fecharDivSlide(3)">x</button>
-                </div>
+                </div> -->
+                <!-- <div id="divSlide3" class="divImg">
+                    <input type="text" name="" id="imgSlide3" class="inputImagens" value="/src/logos/logo-lagoa.gif"><button onclick="fecharDivSlide(2)">x</button>
+                </div> -->
                 <div id="divSlide4" class="divImg">
-                    <input type="text" name="" id="imgSlide4" class="inputImagens" value="/src/logos/sec-esporte.gif"><button onclick="fecharDivSlide(4)">x</button>
+                    <input type="text" name="" id="imgSlide4" class="inputImagens" value="/src/logos/sec-esporte.gif"><button onclick="fecharDivSlide(2)">x</button>
                 </div>
                 
             </div>
             <button onclick="adicionarImgSlide()" >Adicionar Imagem</button> <br> <br>
-            <button onclick="pegarImagensSlide()" id="btnCarrega">Enviar Imagens </button> <br>
-
+            <button onclick="pegarImagensSlide()" id="btnCarrega">Enviar Imagens </button> <br> <br>
+            <button style="background-color: red; " onclick="limpSl()" id="limpaLocalStorage" >Limpe todas as Imagens</button> <br>
+            <div id="deate" style="background-color: red; color: white; padding: 10px; border-radius: 10px; display: none;">
+                <p>Atenção: Isso irá resetar todas as suas configurações padrões, não resete se tiver utilizando o sistema. Deve ser utilizada se as imagens do intervalo estiver com problemas. utilize quando não estiver com o sistema funcionando.</p>
+                <button style="background-color: green;" onclick="fechadeate()">Sair</button> <button style="background-color: white; color: black;" onclick="limpaLoc()">Limpar Imagens</button>
+            </div>
+            <script>
+                function limpSl() {
+                    const deate = document.querySelector('#deate')
+                    alert('ATENÇÃO - TENHA CUIDADO COM ESSA OPÇÃO')
+                    deate.style.display = 'block'
+                }
+                function fechadeate() {
+                     const deate = document.querySelector('#deate')
+                    deate.style.display = 'none'
+                }
+                function limpaLoc() {
+                    localStorage.clear();
+                    window.location.reload()
+                }
+            </script>
             <!-- <div>Quantidade de segundos onde cada Imagem Aparecerá: O Padrão é 10 segundos, não altere para deixar Padrão.</div> <br>
             <input type="number" name="" id="segundosImagens" value="10"> Segundos <button onclick="segundosImg()">Alterar</button> -->
 
