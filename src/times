@@ -52,6 +52,19 @@
     "logom": "/src/logos/avai.jpeg"
   },
   {
+    "nome": "Baixada City F.C",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/baixada-city-f-c.jpeg",
+    "logom": "/src/logos/baixada-city-f-c.jpeg"
+  },
+  {
     "nome": "Barcelona",
     "jogadores": [
       {
@@ -130,6 +143,45 @@
     "logom": "/src/logos/estrelinha-e-c.jpeg"
   },
   {
+    "nome": "JL esporte Clube",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/jl-esporteclube.jpeg",
+    "logom": "/src/logos/jl-esporteclube.jpeg"
+  },
+  {
+    "nome": "Juventus",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/juventus-2024.png",
+    "logom": "/src/logos/juventus-2024.png"
+  },
+  {
+    "nome": "Juventus S.J.L",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/juventus-s-j-l.jpeg",
+    "logom": "/src/logos/juventus-s-j-l.jpeg"
+  },
+  {
     "nome": "Lagoense esporte Clube",
     "jogadores": [
       {
@@ -180,6 +232,19 @@
     ],
     "logo": "/src/logos/patio-f-c.png",
     "logom": "/src/logos/patio-f-c.png"
+  },
+  {
+    "nome": "PSG",
+    "jogadores": [
+      {
+        "nome": "O Cara",
+        "nascimento": "22/05/2023",
+        "sexo": "m",
+        "posição": "goleiro"
+      }
+    ],
+    "logo": "/src/logos/psg.png",
+    "logom": "/src/logos/psg.png"
   },
   {
     "nome": "Real Madrid",
@@ -260,7 +325,7 @@
     "logom": "/src/logos/veteranos-f-c.jpeg"
   },
   {
-    "nome": "Villa Real rede óptical",
+    "nome": "Vila Branca F.C",
     "jogadores": [
       {
         "nome": "",
@@ -269,8 +334,8 @@
         "posição": ""
       }
     ],
-    "logo": "/src/logos/vila-real-rede-optical.jpeg",
-    "logom": "/src/logos/vila-real-rede-optical.jpeg"
+    "logo": "/src/logos/vila-branca-f-c.jpeg",
+    "logom": "/src/logos/vila-branca-f-c.jpeg"
   },
   {
     "nome": "Vila junior F.C",
@@ -284,6 +349,19 @@
     ],
     "logo": "/src/logos/vila-junior-f-c.jpeg",
     "logom": "/src/logos/vila-junior-f-c.jpeg"
+  },
+  {
+    "nome": "Villa Real rede óptical",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/vila-real-rede-optical.jpeg",
+    "logom": "/src/logos/vila-real-rede-optical.jpeg"
   },
   {
     "nome": "Vitória de Minas E. C",

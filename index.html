@@ -325,7 +325,7 @@
             console.log(selecao)       
             const resp = await fetch(`/src/${selecao}`)
             const data = await resp.json()
-            qtdTimesON.textContent = data.length
+            qtdTimesON.textContent = data.length - 1
         }
         qtdTimes(0)
     </script>
