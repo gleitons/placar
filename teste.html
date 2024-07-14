@@ -26,5 +26,15 @@
     <div class="container">
         <img src="/src/logos/ameco-futebol-clube - cขpia.png" alt="Imagem" class="image">
     </div>
+    <script>
+        const qtdTimes = async (sel) => {
+            const selecao = sel == 0 ? 'times' : 'times-anteriores';   
+            console.log(selecao)       
+            const resp = await fetch(`/src/${selecao}`)
+            const data = await resp.json()
+            console.log(data.length)
+        }
+        qtdTimes(0)
+    </script>
 </body>
 </html>

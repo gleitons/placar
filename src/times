@@ -26,6 +26,19 @@
     "logom": "/src/logos/aabb-bocaiuva.jpeg"
   },
   {
+    "nome": "Agrofeno",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/agrofeno.png",
+    "logom": "/src/logos/agrofeno.png"
+  },
+  {
     "nome": "Avaí",
     "jogadores": [
       {
@@ -37,6 +50,19 @@
     ],
     "logo": "/src/logos/avai.jpeg",
     "logom": "/src/logos/avai.jpeg"
+  },
+  {
+    "nome": "Barcelona",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/barcelona.png",
+    "logom": "/src/logos/barcelona.png"
   },
   {
     "nome": "Boca Junior",
@@ -130,6 +156,19 @@
     "logom": "/src/logos/lancaster-city-f.c.jpeg"
   },
   {
+    "nome": "Meninos da Vila",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/meninos-da-vila.png",
+    "logom": "/src/logos/meninos-da-vila.png"
+  },
+  {
     "nome": "Patio F.C",
     "jogadores": [
       {
@@ -141,6 +180,19 @@
     ],
     "logo": "/src/logos/patio-f-c.png",
     "logom": "/src/logos/patio-f-c.png"
+  },
+  {
+    "nome": "Real Madrid",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/real-madrid.jpg",
+    "logom": "/src/logos/real-madrid.jpg"
   },
   {
     "nome": "São João do Pacuí",
