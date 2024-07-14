@@ -76,8 +76,8 @@
     </div>
     <div id="blocoCima" class="painelControle animt ">
         <div></div>
-        <h2>Painel de Controle - AO VIVO</h2>
-        <h5>Times que estão Jogando:</h5>
+        <h2>Painel de Controle - AO VIVO </h2>
+        <h5>Times que estão Jogando: - Total de Times: <span id="qtdTimesON">...</span></h5>
         <div class="placarTimesPainel ">            
            
             <div class="areaClean">
@@ -318,6 +318,17 @@
     </div>
 
     <script src="./src/painel.js"></script>
+
+    <script>
+        const qtdTimes = async (sel) => {
+            const selecao = sel == 0 ? 'times' : 'times-anteriores';   
+            console.log(selecao)       
+            const resp = await fetch(`/src/${selecao}`)
+            const data = await resp.json()
+            qtdTimesON.textContent = data.length
+        }
+        qtdTimes(0)
+    </script>
 
 </body>
 </html>
