@@ -169,6 +169,19 @@
     "logom": "/src/logos/estrelinha-e-c.jpeg"
   },
   {
+    "nome": "Galaticos",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/galaticos.jpeg",
+    "logom": "/src/logos/galaticos.jpeg"
+  },
+  {
     "nome": "JL esporte Clube",
     "jogadores": [
       {
