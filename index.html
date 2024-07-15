@@ -7,14 +7,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" type="image/x-icon">
     <title>Painel - Gleiton Soares</title>
+    <style>
+        .container {
+            perspective: 1000px;
+        }
+        .image {
+            width: 200px;
+            animation: rotate3D 120s infinite linear;
+        }
+        @keyframes rotate3D {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
     
 </head>
 <body >
     <div class="painelControle">
         <nav class="menutopo">
             <div class="menuTo">
-                <div class="imgLogoA" >
-                    <img style="width: 80px;" src="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" alt="">
+                <div class="imgLogoA container" >
+                    <img style="width: 80px;" class="" src="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" alt="Logo">
                     <!-- <img src="/src/logos/logo-futuro-consultoria.png" alt=""> -->
                 </div>
                 <li>Futuro Consultoria <br>26.300.217/0001-00</li> 
