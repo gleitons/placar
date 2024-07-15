@@ -186,7 +186,7 @@
   /* background-color: rgb(0, 0, 0); */
   border-radius: 8px;
   margin: 0px;
-  animation: ldigital 60s infinite linear ;
+  animation: ldigital 30s infinite linear ;
   position: absolute;
   right: 3750px;
   bottom: 0px;
