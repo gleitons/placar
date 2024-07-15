@@ -5,6 +5,9 @@ console.log('.....')
 
 const btnGols = document.querySelectorAll('.placaCentral i');
 
+function limpaLetDigital() {
+  letDigital.value = '';
+}
 
 function tiraAviso() {
   const ase = document.querySelector('#aSenha').value;
