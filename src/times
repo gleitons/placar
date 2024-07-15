@@ -39,6 +39,32 @@
     "logom": "/src/logos/agrofeno.png"
   },
   {
+    "nome": "Alto Esporte",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/alto-esporte.png",
+    "logom": "/src/logos/alto-esporte.png"
+  },
+  {
+    "nome": "Ameco Bocaiúva",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/ameco-bocaiuva.png",
+    "logom": "/src/logos/ameco-bocaiuva.png"
+  },
+  {
     "nome": "Avaí",
     "jogadores": [
       {
