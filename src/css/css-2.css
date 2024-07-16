@@ -166,14 +166,13 @@
   animation: tick 1s infinite alternate-reverse  ;
 }
 .letreiroAnimado {
-  z-index: 9999999;
+  z-index: 9;
   width: 350%;
   background-color: rgb(0, 0, 0);
   height: 20%;
   position: fixed;
-  bottom: -8px;
+  /* bottom: -8px; */
   margin: 10px auto;
-  
 }
 
 .letreiroAnimado h1 {
