@@ -9,9 +9,23 @@ function limpaLetDigital() {
   letDigital.value = '';
 }
 
+//DESATIVA CONFETE E SEMPRE INICIA COM ELE ATIVADO
+localStorage.setItem('cConfete', 1)
+function ativaDesativaConfete() {
+    const verificaC = localStorage.getItem('cConfete');
+    if(verificaC == 1) {
+      localStorage.setItem('cConfete', 0);
+      aConfete.innerHTML = 'ATIVAR CONFETE -  <i class="bi bi-emoji-laughing-fill"></i>'
+    } else {
+      localStorage.setItem('cConfete', 1)
+      aConfete.innerHTML = 'DESATIVAR CONFETE - <i class="bi bi-emoji-frown-fill"></i>'
+    }
+    console.log(verificaC)
+}
+
 function tiraAviso() {
   const ase = document.querySelector('#aSenha').value;
-  if(ase == 'tim') {
+  if (ase == 'tim') {
     alert('Senha correta. Obrigado por utilizar o sistema.')
     document.querySelector('.informativo').style.display = 'none'
   } else {
@@ -38,15 +52,15 @@ function verificaLetras() {
   const qtdLetras = letDigital.length
 
 
-  
+
   cRestante.textContent = (qtdLetras - (46)).toString().replace('-', '')
 
 }
 
 function golsAtivos(seta) {
-  
-  
-  if(seta == '0') {
+
+
+  if (seta == '0') {
     const goldeCasa = parseInt(golCasa.value) + 1
     golCasa.value = goldeCasa
 
@@ -58,13 +72,14 @@ function golsAtivos(seta) {
     const goldeVisitante = parseInt(golVisitante.value) + 1
     golVisitante.value = goldeVisitante
 
-  } else  {
+  } else {
     const goldeVisitante = parseInt(golVisitante.value) - 1
     golVisitante.value = goldeVisitante
 
   }
-  
+
 }
+
 
 const painelAtualiza = () => {
   localStorage.setItem('atualiza', 1)
@@ -73,25 +88,29 @@ const painelAtualiza = () => {
   const golVisitante = document.querySelector('#golVisitante').value
   const horarioPPartida = document.querySelector('#horarioPPartida').value
 
-  const tituloAviso = document.querySelector('#tituloAviso').value
+  const tituloAvisoIn = document.querySelector('#tituloAviso')
+  const tituloAviso = tituloAvisoIn != null ? tituloAvisoIn.value : ''
 
-  const avisoInfoImportante = document.querySelector('#avisoInfoImportante').value
+  const avisoInfoImportanteIn = document.querySelector('#avisoInfoImportante')
+  const avisoInfoImportante = avisoInfoImportanteIn != null ? avisoInfoImportanteIn.value : ''
 
-  const tituloAcima = document.querySelector('#tituloAcima').value
-
-  
-
-  //uniforme
-  const camisaTA = document.querySelector('#camisaTA').value
-  const shortTA = document.querySelector('#shortTA').value
-  const meiaoTA = document.querySelector('#meiaoTA').value
+  const tituloAcimaIn = document.querySelector('#tituloAcima')
+  const tituloAcima = tituloAcimaIn != null ? tituloAcimaIn.value : ''
 
 
 
 
-  const camisaTB = document.querySelector('#camisaTB').value
-  const shortTB = document.querySelector('#shortTB').value
-  const meiaoTB = document.querySelector('#meiaoTB').value
+  // //uniforme
+  // const camisaTA = document.querySelector('#camisaTA').value
+  // const shortTA = document.querySelector('#shortTA').value
+  // const meiaoTA = document.querySelector('#meiaoTA').value
+
+
+
+
+  // const camisaTB = document.querySelector('#camisaTB').value
+  // const shortTB = document.querySelector('#shortTB').value
+  // const meiaoTB = document.querySelector('#meiaoTB').value
 
   const faltasC = document.querySelector('#fCasa').value
   const faltasV = document.querySelector('#fVisitante').value
@@ -101,9 +120,9 @@ const painelAtualiza = () => {
   localStorage.setItem('faltasC', faltasC);
   localStorage.setItem('faltasV', faltasV)
 
-  const minute = document.querySelector('#minute').textContent
-  const second = document.querySelector('#second').textContent
-  const millisecond = document.querySelector('#millisecond').textContent
+  // const minute = document.querySelector('#minute').textContent
+  // const second = document.querySelector('#second').textContent
+  // const millisecond = document.querySelector('#millisecond').textContent
 
   const periodoTempos = document.querySelector('#periodoTempo').value
 
@@ -122,38 +141,46 @@ const painelAtualiza = () => {
   localStorage.setItem('avisoInfoImportante', avisoInfoImportante)
 
 
-  localStorage.setItem('uniTimeA', `background-image: linear-gradient(to left, ${meiaoTA} 33%, ${shortTA} 30%, ${shortTA} 66%, ${camisaTA} 66%, ${camisaTA} 100%);`)
+  // localStorage.setItem('uniTimeA', `background-image: linear-gradient(to left, ${meiaoTA} 33%, ${shortTA} 30%, ${shortTA} 66%, ${camisaTA} 66%, ${camisaTA} 100%);`)
 
-  localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
+  // localStorage.setItem('uniTimeB', `background-image: linear-gradient(to left, ${meiaoTB} 33%, ${shortTB} 30%, ${shortTB} 66%, ${camisaTB} 66%, ${camisaTB} 100%);`)
 
 
-  const mensagensPadrao = [`${localStorage.getItem('mostraTimeA')} x ${localStorage.getItem('mostraTimeB')}`,`PROX: ${localStorage.getItem('TimePJogoA')} x ${localStorage.getItem('TimePJogoB')} - ${localStorage.getItem('horarioPPartida')}hs`,`FALTAS: ${localStorage.getItem('mostraTimeA')}: ${localStorage.getItem('faltasC')} - ${localStorage.getItem('mostraTimeB')}: ${localStorage.getItem('faltasV')}`, `REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE`]
+  const mensagensPadrao = [`${localStorage.getItem('mostraTimeA')} x ${localStorage.getItem('mostraTimeB')}`, `PROX: ${localStorage.getItem('TimePJogoA')} x ${localStorage.getItem('TimePJogoB')} - ${localStorage.getItem('horarioPPartida')}hs`, `FALTAS: ${localStorage.getItem('mostraTimeA')}: ${localStorage.getItem('faltasC')} - ${localStorage.getItem('mostraTimeB')}: ${localStorage.getItem('faltasV')}`, `REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE`]
 
   localStorage.setItem('itensAtualizado', JSON.stringify(mensagensPadrao))
 
 }
 
-if(localStorage.getItem('atualizador') == null) {
+if (localStorage.getItem('atualizador') == null) {
   localStorage.setItem('atualiador', 0)
 } else {
   var numbT = localStorage.getItem('atualizador')
-} 
+}
 
 document.addEventListener('onclick', () => {
   localStorage.setItem('atualiador', numbT + 1)
 })
 
+const linkT = 'https://cadastros-two.vercel.app'
 
 const geradordeTimes = async () => {
-  const response = await fetch('/src/times')
+  // const response = await fetch('/src/times')
+  const response = await fetch(`${linkT}/api/items`)
+
   const data = await response.json()
 
+  data.sort((a, b) => a.name.localeCompare(b.name))
+  qtdTimesON.innerHTML = data.length
+
+  aovivoTimeA.innerHTML = '<option>Selecione</option>'
+  aovivoTimeB.innerHTML = '<option>Selecione</option>'
+  
   data.map((time) => {
+
     const selTime = document.querySelectorAll('.geraTimes')
-
-
     for (let i = 0; i < selTime.length; i++) {
-      selTime[i].innerHTML += `<option>${time.nome}</option>`
+      selTime[i].innerHTML += `<option>${time.name}</option>`
     }
 
 
@@ -162,8 +189,12 @@ const geradordeTimes = async () => {
 geradordeTimes();
 
 async function selecionaTime() {
-  const response = await fetch('/src/times')
+  const response = await fetch(`${linkT}/api/items`)
   const data = await response.json()
+
+  data.sort((a, b) => a.name.localeCompare(b.name))
+  console.log(data)
+
 
   const timeA = document.querySelector('#timeA')
   const timeB = document.querySelector('#timeB')
@@ -189,27 +220,28 @@ async function selecionaTime() {
 
 
   const imgTimeA = document.querySelector('#imgTimeA')
-  imgTimeA.setAttribute('src', data[aoVivoA].logom)
-  localStorage.setItem('imgTimeA', data[aoVivoA].logo)
+  console.log(`${aoVivoA}`)
+  imgTimeA.setAttribute('src', `${data[aoVivoA - 1].imageUrl}`)
+  localStorage.setItem('imgTimeA', `${data[aoVivoA - 1].imageUrl}`)
 
 
 
   const imgTimeB = document.querySelector('#imgTimeB')
-  imgTimeB.setAttribute('src', data[aoVivoB].logom)
+  imgTimeB.setAttribute('src', `${data[aoVivoB - 1].imageUrl}`)
 
-  localStorage.setItem('imgTimeB', data[aoVivoB].logo)
+  localStorage.setItem('imgTimeB', `${data[aoVivoB - 1].imageUrl}`)
 
 
 
   const imgProximaA = document.querySelector('#imgProximaA')
-  imgProximaA.setAttribute('src', data[proximoJogoA].logom)
-  localStorage.setItem('imgProximaA', data[proximoJogoA].logo)
+  imgProximaA.setAttribute('src', `${data[proximoJogoA].imageUrl}`)
+  localStorage.setItem('imgProximaA', `${data[proximoJogoA].imageUrl}`)
 
 
 
   const imgProximaB = document.querySelector('#imgProximaB')
-  imgProximaB.setAttribute('src', data[proximoJogoB].logom)
-  localStorage.setItem('imgProximaB', data[proximoJogoB].logo)
+  imgProximaB.setAttribute('src', `${data[proximoJogoB].imageUrl}`)
+  localStorage.setItem('imgProximaB', `${data[proximoJogoB].imageUrl}`)
 
   //times Mostrador
 
@@ -227,8 +259,8 @@ async function selecionaTime() {
   faltasHomeA.textContent = timeAoVivoA.toUpperCase()
   faltasHomeB.textContent = timeAoVivoB.toUpperCase()
 
-  uniFA.textContent = timeAoVivoA.toUpperCase()
-  uniFB.textContent = timeAoVivoB.toUpperCase()
+  // uniFA.textContent = timeAoVivoA.toUpperCase()
+  // uniFB.textContent = timeAoVivoB.toUpperCase()
 
 
 
@@ -250,9 +282,9 @@ let millisecond = 0;
 
 let cron;
 
-document.form_main.start.onclick = () => start();
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+// document.form_main.start.onclick = () => start();
+// document.form_main.pause.onclick = () => pause();
+// document.form_main.reset.onclick = () => reset();
 
 function start() {
   pause();
@@ -333,8 +365,8 @@ function mostrarInfoInicio() {
 
 function abrirNovaJanela() {
   localStorage.setItem('sai', 0)
-  setTimeout(()=>{window.open("/placar.html", "Placar Online", "height=1000,width=1920")}, 0)
-  
+  setTimeout(() => { window.open("/placar.html", "Placar Online", "height=1000,width=1920") }, 0)
+
 }
 function abrirNovaJanela2() {
   localStorage.setItem('audioTorcida', 1);
@@ -350,7 +382,7 @@ function adicionarImgSlide() {
   } else {
     var numeroDiv = (document.querySelectorAll('.divImg').length) + 1
   }
- 
+
   const OndeAddimage = document.querySelector('#imagensGeradas')
   const divImg = document.createElement('div')
   const inputImgDiv = document.createElement('input')
@@ -370,32 +402,41 @@ function adicionarImgSlide() {
 }
 
 
-function pegarImagensSlide() {
+async function pegarImagensSlide() {
   var imgArray = []
-  const imagensTotais = document.querySelectorAll('.inputImagens');
-  for (let i = 0; i < imagensTotais.length; i++) {
-     
-    if (imagensTotais[i].value != '') {
-      const linkimg = imagensTotais[i].value;
-      imgArray.push(linkimg)
-    }
+
+  const uData = await fetch(`${linkT}/api/imagens-intervalo`)
+  const images = await uData.json();
+
+  images.map((e) => {
+    imgArray.push(e.imageUrl)
+  })
+
+  localStorage.setItem('imagemSlide', JSON.stringify(imgArray))
 
 
+  // const imagensTotais = document.querySelectorAll('.inputImagens');
+  // for (let i = 0; i < imagensTotais.length; i++) {
 
-    localStorage.setItem('imagemSlide', JSON.stringify(imgArray))
-  }
-  btnCarrega.textContent = `Carregando ${imgArray.length} Imagens...`
+  //   if (imagensTotais[i].value != '') {
+  //     const linkimg = imagensTotais[i].value;
+  //     imgArray.push(linkimg)
+  //   }
+  //   localStorage.setItem('imagemSlide', JSON.stringify(imgArray))
+  // }
+  // btnCarrega.textContent = `Carregando ${imgArray.length} Imagens...`
 
-  setTimeout(() => {
-    btnCarrega.textContent = `Imagens Carregadas`
-  }, 10000)
-  setTimeout(() => {
-    btnCarrega.textContent = `Enviar Imagens`
-  }, 12000)
-  
-
+  // setTimeout(() => {
+  //   btnCarrega.textContent = `Imagens Carregadas`
+  // }, 10000)
+  // setTimeout(() => {
+  //   btnCarrega.textContent = `Enviar Imagens`
+  // }, 12000)
 
 }
+pegarImagensSlide()
+
+
 function segundosImg() {
   localStorage.setItem('segundos', document.querySelector('#segundosImagens').value)
 }
@@ -405,37 +446,37 @@ function carregaLetreiro() {
   const mPadrao = mPadraoA.options[mPadraoA.selectedIndex].value
   const data = JSON.parse(localStorage.getItem('itensAtualizado'))
   const mostraPainelS = document.querySelector('#mostraPainelS')
-  
-  if(document.querySelector('#letDigital').value == '') {
-    if(mPadrao == '0') {
+
+  if (document.querySelector('#letDigital').value == '') {
+    if (mPadrao == '0') {
       mostraPainelS.textContent = document.querySelector('#letDigital').value
     } else if (mPadrao == '1') {
       mostraPainelS.textContent = data[0].toUpperCase()
     } else if (mPadrao == '2') {
       mostraPainelS.textContent = data[1].toUpperCase()
-    } else if (mPadrao == '3'){
+    } else if (mPadrao == '3') {
       mostraPainelS.textContent = data[2].toString().toUpperCase()
-    }  else {
-      mostraPainelS.textContent =  data[3].toUpperCase()
+    } else {
+      mostraPainelS.textContent = data[3].toUpperCase()
     }
-  
+
   } else {
     mostraPainelS.textContent = document.querySelector('#letDigital').value.toUpperCase()
   }
 
-  
+
 }
 document.addEventListener('mousemove', () => {
   eventos()
-  
+
 }, 'keyup')
 document.addEventListener('keyup', () => {
   eventos()
-  
+
 },)
 document.addEventListener('click', () => {
   eventos()
-  
+
 },)
 function eventos() {
   carregaLetreiro()
@@ -449,7 +490,7 @@ function paraAnimacao() {
 }
 
 function darkMode(sel) {
-  if(sel == 0){
+  if (sel == 0) {
     const seletorTema = document.querySelector('#seletorTema')
     seletorTema.setAttribute('onclick', 'darkMode(1)')
     localStorage.setItem('dmode', 0)
@@ -457,12 +498,12 @@ function darkMode(sel) {
     seletorTema.setAttribute('onclick', 'darkMode(0)')
     localStorage.setItem('dmode', 1)
   }
-  
+
 
   const icone = document.querySelector('#temaDark').src
   const alterb = document.querySelector('#temaDark')
 
-  if(icone == 'https://placaronline.netlify.app/src/logos/dark.png') {
+  if (icone == 'https://placaronline.netlify.app/src/logos/dark.png') {
     alterb.setAttribute('src', '/src/logos/light.png')
   } else {
     alterb.setAttribute('src', 'https://placaronline.netlify.app/src/logos/dark.png')
@@ -474,17 +515,17 @@ function darkMode(sel) {
   letreiro.classList.toggle('temaDark')
   const pnc = document.querySelector('.painelControle')
   pnc.classList.toggle('temaDark')
-  
+
 }
 
 const ldigital = document.querySelector('#ldigital')
-ldigital.addEventListener('click',() => {
+ldigital.addEventListener('click', () => {
   const escondeJanela = document.querySelector('#escondeJanela')
   escondeJanela.classList.toggle('dnone')
-  if(ldigital.textContent == '*Abrir: Letreiro Digital') {
+  if (ldigital.textContent == '*Abrir: Letreiro Digital') {
     ldigital.textContent = '*Fechar: Letreiro Digital'
   } else {
     ldigital.textContent = '*Abrir: Letreiro Digital'
   }
-  
+
 })

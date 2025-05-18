@@ -26,7 +26,7 @@ function golTorcida() {
 
 }
 
-var atualizaOn = () => {
+var atualizaOn = async () => {
 
     const timeCasa = document.querySelector('#timeCasa')
     const timeVisitante = document.querySelector('#timeVisitante')
@@ -43,8 +43,8 @@ var atualizaOn = () => {
     const goldeCasaimg = document.querySelector('#goldeCasa')
     const goldoVisitanteimg = document.querySelector('#goldoVisitante')
 
-    goldeCasaimg.setAttribute('style', `background-image: url('${localStorage.getItem('imgTimeA')}'); background-size: contain; background-repeat: no-repeat;background-position: center;`)
-    goldoVisitanteimg.setAttribute('style', `background-image: url('${localStorage.getItem('imgTimeB')}'); background-size: contain; background-repeat: no-repeat;background-position: center;`)
+    goldeCasaimg.setAttribute('style', `background-image: url('${localStorage.getItem('imgTimeA')}'); background-size: cover; background-repeat: no-repeat;background-position: center;`)
+    goldoVisitanteimg.setAttribute('style', `background-image: url('${localStorage.getItem('imgTimeB')}'); background-size: cover; background-repeat: no-repeat;background-position: center;`)
 
 
     //mostrador time
@@ -110,36 +110,42 @@ var atualizaOn = () => {
 
     horarioPPartida.textContent = localStorage.getItem('horarioPPartida')
 
-    const mostrador = document.querySelector('#mostrador')
-    if (localStorage.getItem('intervalo') == '0') {
+    const mostrador = document.querySelector('#mostrador');
 
-        document.querySelector('#intervaloOn').style.display = 'none'
-        mostrador.textContent = 'AO VIVO'
-
+    if (localStorage.getItem('intervalo') === '0') {
+        document.querySelector('#intervaloOn').style.display = 'none';
+        mostrador.textContent = 'AO VIVO';
     } else {
-        document.querySelector('#intervaloOn').style.display = 'block'
-        mostrador.textContent = 'INTERVALO'
-        const alteraImgSlides = document.querySelector('#alteraImgSlides')
-        var images = JSON.parse(localStorage.getItem('imagemSlide'))
-        const secon = segundos()
-        let i = 0;
-        setInterval(() => {
-            // const imgP = document.querySelector('img')
-            // const intervaloOn = document.querySelector('#intervaloOn')
-            // //<img id="alteraImgSlides" src="./src/logos/cartaz.jpg" alt="">
-            // imgP.setAttribute('id', 'alteraImgSlides')
-            // imgP.setAttribute('alt', 'Futuro Consultoria')
-            // intervaloOn.appendChild(imgP)
+        document.querySelector('#intervaloOn').style.display = 'block';
+        mostrador.textContent = 'INTERVALO';
 
-            i = i < images.length - 1 ? i + 1 : 0;
-            alteraImgSlides.src = images[i]
-        }, 10000);
+        const alteraImgSlides = document.querySelector('#alteraImgSlides');
+        const images = JSON.parse(localStorage.getItem('imagemSlide') || '[]');
+
+        let i = 0;
+
+        // Aplica imagem inicial
+        alteraImgSlides.src = images[i];
+        alteraImgSlides.classList.add('fade');
+
+        setInterval(() => {
+            i = (i + 1) % images.length;
+            alteraImgSlides.classList.remove('fade'); // remove animação anterior
+
+            // Força reflow para reiniciar a animação
+            void alteraImgSlides.offsetWidth;
+
+            alteraImgSlides.src = images[i];
+            alteraImgSlides.classList.add('fade'); // reaplica a animação
+        }, 5000); // <-- 5 segundos
     }
+
 
 }
 function retiraGol() {
     document.querySelector('#aberturaGol').innerHTML = ``
-    document.querySelector('#aberturaGol').classList.remove('gol')
+    document.querySelector('#aberturaGol').style.display = 'none'
+    //  document.querySelector('#aberturaGol').style.display = 
 
 }
 // window.onstorage = () => { };
@@ -165,6 +171,65 @@ function sTimeB() {
 
 }
 
+function mostraConfig() {
+  const diAsc = document.querySelector('#asConfig');
+
+  if (diAsc.style.display === 'block') {
+    diAsc.style.display = 'none';
+    diAsc.classList.remove('asc');
+  } else {
+    diAsc.style.display = 'block';
+    diAsc.classList.add('asc');
+  }
+}
+
+
+function mostrarGol() {
+    const animacao = document.getElementById("aberturaGol");
+    animacao.style.display = "flex"; // Mostrar tela
+    const verValorConfete = localStorage.getItem('cConfete')
+
+    // Disparar confetes
+    const duration = 5 * 1000;
+    if(verValorConfete == 1) {
+        const end = Date.now() + duration;
+        
+        (function frame() {
+            confetti({
+                particleCount: 7,
+                angle: 60,
+                spread: 120,
+                origin: { x: 0.73 },
+                colors: ['#ff0', '#0f0', '#00f', '#f00'],
+            });
+            confetti({
+                particleCount: 7,
+                angle: 120,
+                spread: 120,
+                origin: { x: 0.25 },
+                colors: ['#ff0', '#0f0', '#00f', '#f00'],
+            });
+             confetti({
+                particleCount: 7,
+                angle: -95,
+                spread: 360,
+                origin: { x: 0.5, y: 0},
+                colors: ['#ff0', '#0f0', '#00f', '#f00'],
+            });
+            
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    }
+
+    // Esconde após 5 segundos
+    setTimeout(() => {
+        animacao.style.display = "none";
+    }, duration);
+}
+
+
 window.onstorage = function (e) {
     const verificaAudioTorcida = localStorage.getItem('audioTorcida')
     console.log(verificaAudioTorcida)
@@ -189,6 +254,8 @@ window.onstorage = function (e) {
         localStorage.setItem('mstimes', 2)
     }
 
+    const verValorConfete = localStorage.getItem('cConfete')
+
     if (e.key == 'sai') {
         if (localStorage.getItem('sai') == 0) {
             const po = document.querySelector('#po')
@@ -199,12 +266,23 @@ window.onstorage = function (e) {
 
         const gca = localStorage.getItem('golC')
         if (parseInt(golAtualC) - 1 < gca) {
-            document.querySelector('#aberturaGol').innerHTML = `<div>
-            <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
-        </div>`
+            document.querySelector('#aberturaGol').innerHTML = `
+             <div class="confetes" id="confetes"></div>
+            <div class="conteudo-gol">
+                <img src="${localStorage.getItem('imgTimeA')}" alt="Logo do Time">
+                <div class="texto-gol">GOOOOL!!!</div>
+            </div>
+            `
+            //     <div>
+            //     <img id="" src="${localStorage.getItem('imgTimeA')}" alt="">
+            // </div>
+            
+            mostrarGol();
+            
             golTorcida()
         }
-        document.querySelector('#aberturaGol').classList.add('gol')
+        document.querySelector('#aberturaGol').classList.add('gol-shsow')
+
 
         setTimeout('retiraGol()', 5000)
 
@@ -212,13 +290,23 @@ window.onstorage = function (e) {
 
         const gcv = localStorage.getItem('golV')
         if (parseInt(golAtualV) - 1 < gcv) {
-            document.querySelector('#aberturaGol').innerHTML = `<div>
-        <img id="" src="${localStorage.getItem('imgTimeB')}" alt="">
-    </div>`
+            document.querySelector('#aberturaGol').innerHTML = `
+            
+             <div class="confetes" id="confetes"></div>
+            <div class="conteudo-gol">
+                <img src="${localStorage.getItem('imgTimeB')}" alt="Logo do Time">
+                <div class="texto-gol">GOOOOL!!!</div>
+            </div>
+           `
+                    // < div >
+                    // <img id="" src="${localStorage.getItem('imgTimeB')}" alt="">
+                    // </>
+            mostrarGol();
             golTorcida()
         }
 
-        document.querySelector('#aberturaGol').classList.add('gol')
+        document.querySelector('#aberturaGol').classList.add('gol-show')
+        // mostrarGol()
 
         setTimeout('retiraGol()', 5000)
 
@@ -233,8 +321,10 @@ window.onstorage = function (e) {
 
     atualizaOn()
 
+
 };
 atualizaOn()
+
 
 
 function horaAtual() {

@@ -120,6 +120,7 @@ var atualizaOn = () => {
 }
 atualizaOn()
 
+
 function retiraGol() {
     document.querySelector('#goldeCasa').classList.remove('goll')
     document.querySelector('#goldoVisitante').classList.remove('goll')

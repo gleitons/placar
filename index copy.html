@@ -9,15 +9,6 @@
     <link rel="shortcut icon" href="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg"
         type="image/x-icon">
     <title>Painel - Gleiton Soares</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WYB2K3F9CQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WYB2K3F9CQ');
-    </script>
     <style>
         /* Reset and base styles */
         * {
@@ -68,7 +59,7 @@
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             border-radius: 8px;
-            /* padding: 10px; */
+            padding: 10px;
             width: 100%;
         }
 
@@ -370,21 +361,21 @@
 <body>
     <div class="painelControle">
         <nav class="menutopo">
-            <div class="menuTo" style="display: flex; width: 100%; font-size: small;">
+            <div class="menuTo" style="display: flex; width: 100%;">
                 <div class="imgLogoA container">
                     <img style="width: 80px;" class=""
                         src="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" alt="Logo">
                     <!-- <img src="/src/logos/logo-futuro-consultoria.png" alt=""> -->
                 </div>
                 <li>Futuro Consultoria <br>26.300.217/0001-00</li>
-                <div class="infoCima" style="margin-left: 50px;">
-                    <a href="#" onclick="mostrarInfoInicio(), geradordeTimes()">INÍCIO</a>
-                    <a href="#" onclick="mostraIntervalo()">ANÚNCIOS</a>
+                <div class="infoCima">
+                    <a href="#" onclick="mostrarInfoInicio()">Inicio</a>
+                    <a href="#" onclick="mostraIntervalo()">Intervalo</a>
                     <!-- <a href="#" onclick="LetreiroDigital()">Letreiro Digital</a> -->
-                    <a href="#" onclick="mostraInfoAdd()">TIMES</a>
+                    <a href="#" onclick="mostraInfoAdd()">Informações</a>
                     <!-- <a href="#" onclick="abrirNovaJanela()">Placar 1</a> -->
-                    <a href="#" onclick="abrirNovaJanela2()">ABRIR PLACAR</a>
-
+                    <a href="#" onclick="abrirNovaJanela2()">Abrir Placar</a>
+                    <!-- <abbr title="Tema escuro ou claro - Falta ajustes"><a href="#" id="seletorTema" onclick="darkMode(0)"><img id="temaDark" class="modeD" src="/src/logos/dark.png" alt=""></a></abbr> -->
                 </div>
 
             </div>
@@ -401,23 +392,61 @@
 
         </nav>
     </div>
+    <div id="letreiro" class="painelControle ">
 
-    <div id="blocoCima" class="painelControle animt " style="font-size: medium;">
+        <div class="ldigital" >
+            <div>
+                <button id="ldigital">*Abrir: Letreiro Digital</button> <button
+                    onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i class="bi bi-pause-circle-fill"></i></button>
+                <button onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA <i class="bi bi-play-circle-fill"></i></button> <button
+                    style="background-color: green;" id="torcidaAudio" onclick="desativarTorcida(0)">CONFIG -
+                    AUDIO</button>
+                <!-- <button style="background-color: rgb(102, 0, 128);" id="torcidaAudioGol"  onclick="desativargOLTorcida()">DESATIVAR SOM GOL</button> -->
+                <br><br>
+                <div id="escondeJanela" style="background-color: rgb(202, 244, 218); padding: 5px;" class="dnone">
+                    <h4>Atenção:<span style="color: red;"> <strong>Não acentue</strong></span> - Qtd max de caracteres é
+                        46</h4>
+                    <h4>Aqui mensagens Padrões</h4>
+                    <h5>* Deixe a opção acima em branco</h5>
+                    <input type="text" name="" onkeyup="verificaLetras()" id="letDigital"
+                        value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button
+                        onclick="limpaLetDigital()">Limpar</button> Restante: <span id="cRestante">46</span> <br>
+                    <br>
+                    <div class="selmpadrao">
+
+                        <select name="" id="mPadrao" onchange="carregaLetreiro()">
+                            <option value="0">DESATIVADO</option>
+                            <option value="1">TIME A X TIME B</option>
+                            <option value="2">PROX: TIME A X TIME B - 00:00hs</option>
+                            <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
+                            <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>
+                        </select>
+                        <h6>Aparecerá assim:</h6>
+                        <div>
+                            <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
+                        </div>
+                        <div>
+
+
+                            <h4>Velocidade das Informações ao Passar:</h4>
+                            *Essa opção estará disponível em versões futuras.
+                            <div class="velocidadesLeitorDg">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+
+    </div>
+    <div id="blocoCima" class="painelControle animt ">
         <div></div>
         <h2>Painel de Controle - AO VIVO </h2>
-        <div style="display: flex; gap: 20px;">
-            <button onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i
-                    class="bi bi-pause-circle-fill"></i>
-            </button>
-            <button style="background-color: green;" onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA <i
-                    class="bi bi-play-circle-fill"></i>
-            </button>
-            <h5>Times que estão Jogando: - Total de Times: <span id="qtdTimesON">...</span></h5>
-            <button id="aConfete" style="background-color: rgb(184, 82, 82);" onclick="ativaDesativaConfete()">DESATIVAR
-                CONFETE - <i class="bi bi-emoji-frown-fill"></i>
-            </button>
-
-        </div>
+        <h5>Times que estão Jogando: - Total de Times: <span id="qtdTimesON">...</span></h5>
         <div class="placarTimesPainel ">
 
             <div class="areaClean">
@@ -464,7 +493,6 @@
 
 
         </div>
-
         <h2>Faltas Cometidas</h2>
         <div class="placarTimesPainel">
             <div>
@@ -483,62 +511,8 @@
                 <input type="number" name="" class="fDosTimes" id="fVisitante" value="0">
             </div>
         </div>
-        <div id="letreiro" class="painelControle ">
-
-            <div class="ldigital">
-                <div>
-                    <button id="ldigital">*Abrir: Letreiro Digital</button>
-                    <button onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i
-                            class="bi bi-pause-circle-fill"></i></button>
-                    <button onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA <i
-                            class="bi bi-play-circle-fill"></i></button>
-                    <button style="background-color: green;" id="torcidaAudio" onclick="desativarTorcida(0)">CONFIG -
-                        AUDIO</button>
-                    <!-- <button style="background-color: rgb(102, 0, 128);" id="torcidaAudioGol"  onclick="desativargOLTorcida()">DESATIVAR SOM GOL</button> -->
-                    <br><br>
-                    <div id="escondeJanela" style="background-color: rgb(202, 244, 218); padding: 5px;" class="dnone">
-                        <h4>Atenção:<span style="color: red;"> <strong>Não acentue</strong></span> - Qtd max de
-                            caracteres é
-                            46</h4>
-                        <h4>Aqui mensagens Padrões</h4>
-                        <h5>* Deixe a opção acima em branco</h5>
-                        <input type="text" name="" onkeyup="verificaLetras()" id="letDigital"
-                            value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button
-                            onclick="limpaLetDigital()">Limpar</button> Restante: <span id="cRestante">46</span> <br>
-                        <br>
-                        <div class="selmpadrao">
-
-                            <select name="" id="mPadrao" onchange="carregaLetreiro()">
-                                <option value="0">DESATIVADO</option>
-                                <option value="1">TIME A X TIME B</option>
-                                <option value="2">PROX: TIME A X TIME B - 00:00hs</option>
-                                <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
-                                <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>
-                            </select>
-                            <h6>Aparecerá assim:</h6>
-                            <div>
-                                <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
-                            </div>
-                            <div>
-
-
-                                <h4>Velocidade das Informações ao Passar:</h4>
-                                *Essa opção estará disponível em versões futuras.
-                                <div class="velocidadesLeitorDg">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <br>
-
-        </div>
         <h2>Próxima Partida</h2>
-        <div class="placarTimesPainel" style="visibility: hidden;">
+        <div class="placarTimesPainel">
             <div class="areaClean">
                 <p>Time 01</p>
                 <select name="" id="sTime01" class="geraTimes" onchange="selecionaTime()">
@@ -560,23 +534,155 @@
             </div>
 
         </div>
-    </div>
-    <div id="blocoBaixo" class="informacoesAdicionais animt  dnone" style="height: 100vh; width: 100%;">
-        <iframe src="https://cadastros-two.vercel.app/times/" width="100%" height="100%" frameborder="0"></iframe>
 
-    </div>
-    <div id="blocoImagens" class="painelControle animt  dnone" style="height: 100vh;">
 
-        <iframe src="https://cadastros-two.vercel.app/times/imagens-intervalo" width="100%" height="100%"
-            frameborder="0"></iframe>
+
+
+
 
 
     </div>
+    <div id="blocoBaixo" class="informacoesAdicionais animt  dnone">
+        <h2>Informações Adicionais</h2>
+        <div class="placarTimesPainel ">
+            <div>
+                <p>Titulo que aparece no Placar</p>
+                <!-- ATUAL:<p>CAMPEONATO DE FÉRIAS DE LAGOA DOS PATOS MG -->
+                </p>
+                <input type="text" name="" id="tituloAcima" placeholder="Insira um novo Titulo"
+                    value="TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS"> *atualizado automaticamente
+            </div>
 
-    <div style="margin-bottom: 30px;">
+        </div>
+
+        <h2>Cor do Uniforme</h2>
+        <div class="placarTimesPainel">
+            <div class="areaClean">
+                <p id="uniFA">Time 01</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTA"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTA"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTA"></div>
+                </div>
+            </div>
+            <div class="areaClean">
+
+                <p id="uniFB">Time 02</p>
+                <div class="unif">
+                    <div>Camisa: <input type="color" name="" id="camisaTB"></div>
+                    <div>Shorts : <input type="color" name="" id="shortTB"></div>
+                    <div>Meião : <input type="color" name="" id="meiaoTB"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <button>Carrega uniforme</button>
+        <h2>Imagens do intervalo</h2>
+        <div class="placarTimesPainel ">
+
+            <div>
+                <p>Oppção Inativa</p>
+
+            </div>
+
+        </div>
+
+        <h2>Observações Importantes</h2>
+        <div class="placarTimesPainel">
+            <div class="areaClean">
+                <input type="text" name="" id="tituloAviso" placeholder="Titulo"><br> <br>
+                <textarea name="" id="avisoInfoImportante" cols="30" rows="10"
+                    placeholder="digite o aviso">MANTENHA O LOCAL LIMPO - JOGUE O LIXO NO LIXO</textarea>
+                <button>Postar Aviso</button>
+            </div>
+            <div>
+
+
+            </div>
+            <div>
+                <p>Oppção Inativa</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="blocoImagens" class="painelControle animt  dnone">
+        <div></div>
+        <h2>SLIDE IMAGEM DO INTERVALO</h2>
+        <h5>ADICIONE OS LINKS DAS IMAGENS:</h5>
+        <div>
+
+            <div id="imagensGeradas">
+                <br>
+                <button onclick="intervalo()">INTERVALO</button>
+                <button onclick="intervalo()">INICIAR PARTIDA</button> <br><br>
+
+                <div id="divSlide1" class="divImg">
+                    <input type="text" name="" id="imgSlide1" class="inputImagens"
+                        value="/src/logos/cartaz-2.png"><button onclick="fecharDivSlide(1)">x</button>
+                </div>
+                <!-- <div id="divSlide2" class="divImg">
+                    <input type="text" name="" id="imgSlide2" class="inputImagens" value="/src/logos/futuro-consultoria.png"><button onclick="fecharDivSlide(2)">x</button>
+                </div> -->
+                <!-- <div id="divSlide3" class="divImg">
+                    <input type="text" name="" id="imgSlide3" class="inputImagens" value="/src/logos/logo-lagoa.gif"><button onclick="fecharDivSlide(2)">x</button>
+                </div> -->
+                <div id="divSlide4" class="divImg">
+                    <input type="text" name="" id="imgSlide4" class="inputImagens"
+                        value="/src/logos/sec-esporte.gif"><button onclick="fecharDivSlide(2)">x</button>
+                </div>
+
+            </div>
+            <button onclick="adicionarImgSlide()">Adicionar Imagem</button> <br> <br>
+            <button onclick="pegarImagensSlide()" id="btnCarrega">Enviar Imagens </button> <br> <br>
+            <button style="background-color: red; " onclick="limpSl()" id="limpaLocalStorage">Limpe todas as
+                Imagens</button> <br>
+            <div id="deate"
+                style="background-color: red; color: white; padding: 10px; border-radius: 10px; display: none;">
+                <p>Atenção: Isso irá resetar todas as suas configurações padrões, não resete se tiver utilizando o
+                    sistema. Deve ser utilizada se as imagens do intervalo estiver com problemas. utilize quando não
+                    estiver com o sistema funcionando.</p>
+                <button style="background-color: green;" onclick="fechadeate()">Sair</button> <button
+                    style="background-color: white; color: black;" onclick="limpaLoc()">Limpar Imagens</button>
+            </div>
+            <script>
+                function limpSl() {
+                    const deate = document.querySelector('#deate')
+                    alert('ATENÇÃO - TENHA CUIDADO COM ESSA OPÇÃO')
+                    deate.style.display = 'block'
+                }
+                function fechadeate() {
+                    const deate = document.querySelector('#deate')
+                    deate.style.display = 'none'
+                }
+                function limpaLoc() {
+                    localStorage.clear();
+                    window.location.reload()
+                }
+            </script>
+            <!-- <div>Quantidade de segundos onde cada Imagem Aparecerá: O Padrão é 10 segundos, não altere para deixar Padrão.</div> <br>
+            <input type="number" name="" id="segundosImagens" value="10"> Segundos <button onclick="segundosImg()">Alterar</button> -->
+
+            <h2>Opções Especiais</h2>
+            <div>
+                <p>Clique em Abrir placar e COMEÇAR</p>
+                <button onclick="abrirNovaJanela()">Abrir Placar</button>
+                <button>COMEÇAR</button>
+                <button onclick="intervalo()">INICIAR PARTIDA</button>
+                <button onclick="intervalo()">INTERVALO</button>
+                <button onclick="intervalo()">FINALIZAR PARTIDA (em manutenção)</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
         por: Gleiton Aparecido Soares de Souza
     </div>
-    <!-- <div>
+    <div>
         <form name="form_main">
             <div>
                 <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span
@@ -589,12 +695,25 @@
             <button type="button" name="pause">pause</button>
             <button type="button" name="reset">reset</button>
         </form>
-    </div> -->
+    </div>
 
     <script src="./src/painel.js"></script>
 
+    <script>
+        // const qtdTimes = async (sel) => {
+        //     const selecao = sel == 0 ? 'times' : 'times-anteriores';
+        //     console.log(selecao)
+        //     const resp = await fetch(`/src/${selecao}`)
+        //     const data = await resp.json()
+        //     qtdTimesON.textContent = data.length - 1
+        // }
+        // qtdTimes(0)
 
-
+        // const velocidadesLeitorDg = document.querySelector('.velocidadesLeitorDg')
+        // for(let i = 1; i <= 10; i++){
+        //     velocidadesLeitorDg.innerHTML += `<button  style="background-color: gray;" type="button" disabled >${i * 10}</button>`
+        // }
+    </script>
 
 </body>
 

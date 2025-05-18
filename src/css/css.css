@@ -106,7 +106,7 @@
   position: absolute;
 }
 .propagandasEtc {
-  height: 10%;
+  height: 0%;
 }
 .mostraPlacar {
   align-items: center;
@@ -128,8 +128,8 @@
   background-color: rgb(203, 0, 0);
   text-align: center;
   padding: 2px;
-  top: -38px;
-  left: 42%;
+  top: 170px;
+  left: 45%;
   border-radius: 12px 12px 0px 0px;
   font-size: x-large;
   padding: 5px;
@@ -182,10 +182,12 @@
 }
 .placarIntervalo {
   text-align: center;
-  height: 70vh;
+  margin: auto;
+  height: 80vh;
+  
 }
 .placarIntervalo img {
-  height: 60vh;
+  height: 100%;
 }
 .aoVivo span::after {
   height: 20px;
@@ -303,7 +305,7 @@ button:hover {
   background-color: blue;
   color: white;
   padding: 2px 5px;
-  transition: 200ms;
+  transition: 100ms;
 }
 .placaCentral i:active {
   background-color: rgb(0, 0, 42);
@@ -322,12 +324,13 @@ button:hover {
 .menutopo a {
   text-align: center;
   gap: 10px;
-  padding: 5px;
+  padding: 0px 25px;
   color: white;
   
   border-radius: 8px;
   text-decoration: none;
-  background-color: rgb(31, 38, 135);
+  background-color: rgb(39, 48, 179);
+  border: white solid 1px;
 }
 .menutopo a:hover {
   background-color: rgb(95, 105, 235);
@@ -420,13 +423,13 @@ input {
   list-style: none;
   position: relative;
   overflow: hidden;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   
 
 }
 .menuTo img {
   width: 150px;
-  margin: 10px;
+  /* margin: 10px; */
   position: relative;
   overflow: hidden;
 
@@ -443,12 +446,12 @@ input {
 .imgLogoA::after {
   content: "";
   rotate: 12deg;
-  height: 100px;
-  width: 500px;
+  height: 50px;
+  width: 200px;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.143) , rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.136)) ;
   position: absolute;
-  top: -150px;
-  left:  -68px;
+  top: -250px;
+  left:  -8px;
   animation: brilho 5s infinite linear   ;
 }
 @keyframes brilho {
@@ -464,11 +467,11 @@ input {
 
 .painelControle {
   background-color: #f7feff;
-  max-width: 70%;
+  max-width: 80%;
   min-width: 450px;
   margin: auto;
   border: black solid 1px;
-  padding: 20px;
+  padding: 10px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: rgb(225, 225, 225) solid 1px;
   box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
@@ -502,7 +505,7 @@ input {
   }
 }
 .informacoesAdicionais {
-  max-width: 800px;
+  max-width: 100%;
   min-width: 450px;
   margin:  auto;
   border: rgb(225, 225, 225) solid 1px;
@@ -511,7 +514,7 @@ input {
   padding: 20px;
 }
 .painelControle h2 {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .areaClean img {
   width: 50px;

@@ -1,10 +1,11 @@
 @font-face {
   font-family: digital;
   /* src: url(../../src/font/ialin.ttf); */
-  src: url(../../src/font/DS-DIGI.TTF);
+  /* src: url(../../src/font/DS-DIGI.TTF); */
+  src: url(../../src/font/DS-DIGIB.TTF);
 }
 :root {
-    --fundoVidro: rgba(1, 57, 83, 0.795);
+  --fundoVidro: rgba(1, 57, 83, 0.795);
 }
 
 * {
@@ -22,7 +23,7 @@
 }
 .placarCima {
   padding: 20px;
-  width: 100%;  
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -30,18 +31,16 @@
   font-size: 3em;
   align-items: center;
   position: relative;
-  background: var( --fundoVidro);
+  background: var(--fundoVidro);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: white solid 5px;
-  
 }
 .editPlacarCima {
   height: 76vh;
 }
-
 
 .fundoP {
   background-image: linear-gradient(
@@ -51,14 +50,13 @@
     rgb(123, 122, 122)
   );
   box-shadow: rgba(0, 0, 0, 0.614) 0px 2px 5px 0px;
-  
 }
 .placarImagem {
   width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  background: var( --fundoVidro);
+  background: var(--fundoVidro);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -67,10 +65,9 @@
   font-size: 3em;
   border: white solid 5px;
   align-items: center;
-  
+
   margin-top: 10px;
   padding: 10px 20px;
-  
 }
 .placarImagem div img {
   width: 250px;
@@ -112,7 +109,7 @@
 
 .mostraPlacar {
   align-items: center;
-  width: 80%;  
+  width: 80%;
   margin: auto;
   text-align: center;
   background-image: linear-gradient(
@@ -143,13 +140,14 @@
   font-size: 10em;
   text-shadow: yellow 0px 0px 5px 0px;
   width: 100%;
+  /* font-weight: 600; */
   /* border: black solid 1px; */
   border-radius: 8px;
 }
 .mostraPlacar h3 #periodoTempoMostra {
   font-family: digital;
   margin-top: 5px;
-  font-size: 1em;
+  font-size: 1.5em;
   text-shadow: yellow 0px 0px 5px 0px;
   width: 100%;
   /* border: black solid 1px; */
@@ -163,15 +161,15 @@
   margin: 0px;
 }
 .tickSegundos {
-  animation: tick 1s infinite alternate-reverse  ;
+  animation: tick 1s infinite alternate-reverse;
 }
 .letreiroAnimado {
   z-index: 9;
   width: 350%;
   background-color: rgb(0, 0, 0);
-  height: 20%;
+  height: 18%;
   position: fixed;
-  /* bottom: -8px; */
+  bottom: -8px;
   margin: 10px auto;
 }
 
@@ -185,7 +183,7 @@
   /* background-color: rgb(0, 0, 0); */
   border-radius: 8px;
   margin: 0px;
-  animation: ldigital 30s infinite linear ;
+  animation: ldigital 30s infinite linear;
   position: absolute;
   right: 3750px;
   bottom: 0px;
@@ -201,8 +199,11 @@
     opacity: 0;
   }
 }
+.mostradorTime {
+  display: block;
+}
 .NomeTime {
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* min-width: 15%; */
   /* background-image: url('../logos/88.png');
   background-size: contain;
@@ -212,27 +213,64 @@
   height: 100%;
   border: rgb(255, 255, 255) solid 5px;
   border-radius: 8px;
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
-  display: flex;
-  
-  padding-top: 100%;
+  /* display: flex; */
+
+  /* padding-top: 100%; */
   padding: 5px;
-  
- 
 }
+.NomeTime {
+  position: relative;
+  overflow: hidden;
+  width: 20%; /* ou um valor fixo se quiser */
+  height: 100%; /* ou maior se necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(15px); /* pode aumentar para mais desfoque */
+  z-index: 0;
+}
+
+.NomeTime > *:not(.background-blur) {
+  position: relative;
+  z-index: 1;
+}
+
+.background-blur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* escurece o fundo */
+}
+
 .NomeTime p {
-  font-size: .6em;
+  font-size: 0.6em;
 }
 .mergin {
   margin: 500px auto;
+  width: 100%;
 }
 
 .NomeTime div img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: rgb(2, 74, 217) solid 5px;
+  width: 100%;
+  /* height: 100px; */
+  /* border-radius: 50%; */
+  /* border: rgb(2, 74, 217) solid 5px; */
+  margin-top: 100%;
 }
 
 .mostraPlacar h1 span {
@@ -243,13 +281,38 @@
   border-radius: 8px;
   margin: 0px;
 }
+.generator {
+  position: fixed;
+  /* background-color: rgb(255, 255, 255); */
+  left: 5px;
+  bottom: 5px;
+  font-size: 3em;
+}
+.girand > i{
+  animation: giradodaPeste 500ms linear infinite;
+}
+
+@keyframes giradodaPeste {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .placarIntervalo {
   text-align: center;
+  width: 100%;
+  margin: auto;
   height: 70vh;
 }
 .placarIntervalo img {
-  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  /* height: 60vh; */
 }
+
 .aoVivo span::after {
   height: 20px;
   width: 20px;
@@ -262,7 +325,7 @@
   animation: aov 800ms infinite alternate-reverse linear;
 }
 #alteraImgSlides {
-  animation: slid 1s normal ;
+  animation: slid 1s normal;
 }
 @keyframes slid {
   0% {
@@ -279,44 +342,52 @@
   position: absolute;
   z-index: 99999999;
   width: 100%;
-  background-image: radial-gradient( rgb(242, 227, 13), rgb(0, 7, 82), rgb(0, 47, 255));
-  animation: grade 500ms infinite  ;  
+  background-image: radial-gradient(
+    rgb(242, 227, 13),
+    rgb(0, 7, 82),
+    rgb(0, 47, 255)
+  );
+  animation: grade 500ms infinite;
 }
+
 @keyframes grade {
   0% {
-    
-    background-image: linear-gradient(to top, rgb(255, 0, 0), black, rgb(255, 0, 0));
+    background-image: linear-gradient(
+      to top,
+      rgb(255, 0, 0),
+      black,
+      rgb(255, 0, 0)
+    );
   }
 }
 .gol div {
-  height: 100vh;  
+  height: 100vh;
   border: black solid 1px;
   margin: auto;
   text-align: center;
 }
 .gol div img {
   height: 100%;
-  box-shadow:  rgb(2, 74, 217) 5px 0px 100px 50px; 
+  box-shadow: rgb(2, 74, 217) 5px 0px 100px 50px;
   margin: auto;
-  border-radius: 50%;  
- 
-  animation: gira 800ms infinite alternate-reverse linear; 
+  border-radius: 50%;
+
+  animation: gira 800ms infinite alternate-reverse linear;
 }
 
 @keyframes gira {
   0% {
     transform: matrix(0, 1, 1, 0, 0, 0);
-    
+
     transform: scale(0.8);
   }
-  
 }
 
 .gol div::after {
   content: "GOLLLLL!!";
   position: absolute;
   width: 100%;
-  border-radius: 30px;  
+  border-radius: 30px;
   top: 290px;
   font-size: 12em;
   background-color: rgb(2, 74, 217);
@@ -326,13 +397,109 @@
   height: 30%;
   animation: aov 800ms infinite alternate-reverse linear;
 }
+
+/*TESTE*/
+
+canvas.confetti-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100000000 !important; /* super na frente de tudo */
+}
+
+.gol-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff0000, #008cff, #ff7300, #001dff);
+  background-size: 600% 600%;
+  animation: fundoGol 5s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes fundoGol {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.conteudo-gol {
+  text-align: center;
+  animation: zoomGol 0.5s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes zoomGol {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.conteudo-gol img {
+  height: 650px;
+  border-radius: 50%;
+  border: 10px solid white;
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5);
+  animation: pulsaLogo 1.2s infinite alternate;
+}
+
+@keyframes pulsaLogo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.texto-gol {
+  font-size: 8em;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px rgb(255, 145, 0), 0 0 40px rgb(0, 47, 255),
+    0 0 60px rgb(255, 8, 0);
+  animation: pulseGol 1s infinite alternate;
+  margin-top: 20px;
+}
+
+@keyframes pulseGol {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/*OLGDFD*/
+
 button {
   padding: 5px;
   font-size: 1.1em;
   background-color: rgb(2, 74, 217);
   color: white;
   cursor: pointer;
-  
 }
 .dnone {
   display: none;
@@ -343,15 +510,13 @@ button {
 .nomeCampeonato h1 {
   text-align: center;
   background-color: white;
-  
+
   width: 100%;
-  
 }
 .menutopo {
   width: 600px;
   justify-content: space-between;
   text-align: inherit;
-  
 }
 .placaCentral {
   display: flex;
@@ -359,7 +524,6 @@ button {
   background-color: black;
   padding: 5px;
   border-radius: 8px;
-
 }
 .placaCentral input {
   width: 50px;
@@ -376,8 +540,7 @@ button {
 .placaCentral i:active {
   background-color: rgb(0, 0, 42);
   box-shadow: inset black 0px 2px 2px 0px;
-  font-size: .9em;
-  
+  font-size: 0.9em;
 }
 .placaCentral i:hover {
   background-color: rgb(125, 125, 251);
@@ -393,7 +556,7 @@ button {
   color: white;
   border-radius: 8px;
   text-decoration: none;
-  background-color: rgb(31, 38, 135);
+  background-color: rgb(76, 85, 212);
 }
 .menutopo a:hover {
   background-color: rgb(95, 105, 235);
@@ -401,9 +564,9 @@ button {
 .menutopo a:active {
   box-shadow: inset black 0px 2px 5px 0px;
   background-color: rgb(169, 174, 242);
-  font-size: .98em;
-  
-  transform: scale(.8);
+  font-size: 0.98em;
+
+  transform: scale(0.8);
 }
 input {
   padding: 1px;
@@ -454,18 +617,18 @@ input {
   gap: 10px;
 }
 .relogioHora {
-    width: 80%;
-    /* border: black solid 1px; */
-    margin: auto;
-    font-size:4em;
-    margin-top: 5%;
-    text-align: center;
-    font-family: digital;
-    background-color: yellow;
-    border-radius: 8px;
+  width: 80%;
+  /* border: black solid 1px; */
+  margin: auto;
+  font-size: 4em;
+  margin-top: 5%;
+  text-align: center;
+  font-family: digital;
+  background-color: yellow;
+  border-radius: 8px;
 }
 .tituloInfo {
-    font-size: 1em;
+  font-size: 1em;
 }
 .faltas {
   background-color: rgb(0, 0, 0);
@@ -488,22 +651,17 @@ input {
   position: relative;
   overflow: hidden;
   margin: 10px auto;
-  
-
 }
 .menuTo img {
   width: 150px;
   margin: 10px;
   position: relative;
   overflow: hidden;
-
 }
 .menuTo .imgLogoA {
   position: relative;
-  
 }
 .unif div {
-
   display: flex;
   justify-content: space-between;
 }
@@ -512,20 +670,25 @@ input {
   rotate: 12deg;
   height: 100px;
   width: 500px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.143) , rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.136)) ;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.143),
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.136)
+  );
   position: absolute;
   top: -150px;
-  left:  -68px;
-  animation: brilho 5s infinite linear   ;
+  left: -68px;
+  animation: brilho 5s infinite linear;
 }
 @keyframes brilho {
   0% {
     top: 129px;
-  left:  -68px;
+    left: -68px;
   }
   90% {
     top: 129px;
-  left:  -68px;
+    left: -68px;
   }
 }
 
@@ -536,30 +699,32 @@ input {
   margin: auto;
   border: black solid 1px;
   padding: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border: rgb(225, 225, 225) solid 1px;
   box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
   border-radius: 0px 0px 12px 12px;
-  
 }
 #tituloAcima {
-  width:100%;
-  
+  width: 100%;
+}
+#blocoBaixo {
+  width: 100%;
 }
 .animt {
-  animation: cimaBaixo 200ms normal    ;
+  animation: cimaBaixo 200ms normal;
   transition: all;
 }
 @keyframes cimaBaixo {
-  0%{
+  0% {
     transform: scale(0);
     opacity: 0;
   }
 }
 .informacoesAdicionais {
-  max-width: 800px;
+  max-width: 100%;
   min-width: 450px;
-  margin:  auto;
+  margin: auto;
   border: rgb(225, 225, 225) solid 1px;
   box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
   border-radius: 0px 0px 12px 12px;
@@ -585,9 +750,8 @@ input {
   animation: some 600ms normal linear;
 }
 @keyframes some {
-  0%{
+  0% {
     transform: scale(1);
-    
   }
 }
 
@@ -599,31 +763,31 @@ input {
 }
 
 @keyframes rotate3D {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .showTimeA p {
-  background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 5.5px );
--webkit-backdrop-filter: blur( 5.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-height: fit-content;
-animation: stA 1s  linear   ;
-width: 1920px;
-transition: all 500ms;
-color: yellow;
-font-weight: 800;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+  animation: stA 1s linear;
+  width: 1920px;
+  transition: all 500ms;
+  color: yellow;
+  font-weight: 800;
 
--webkit-text-stroke-width:2px;
--webkit-text-stroke-color: black;
-/* margin: auto; */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  /* margin: auto; */
 }
 .showTimeB {
   width: 1920px;
@@ -633,28 +797,28 @@ font-weight: 800;
   animation: rotate3DNega 1s normal linear;
 }
 .showTimeB p {
-  background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 5.5px );
--webkit-backdrop-filter: blur( 5.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-height: fit-content;
-animation: stA 1s linear ;
-width: 1920px;
-transition: all 500ms;
-color: yellow;
--webkit-text-stroke-width: 2px;
-font-weight: 800;
--webkit-text-stroke-color: black;
-/* margin: auto; */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+  animation: stA 1s linear;
+  width: 1920px;
+  transition: all 500ms;
+  color: yellow;
+  -webkit-text-stroke-width: 2px;
+  font-weight: 800;
+  -webkit-text-stroke-color: black;
+  /* margin: auto; */
 }
 @keyframes rotate3DNega {
   from {
-      transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   to {
-      transform: rotateY(360deg);
+    transform: rotateY(360deg);
   }
 }
 @keyframes stA {
