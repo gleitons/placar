@@ -348,7 +348,7 @@
     <script>
         const qtdTimes = async (sel) => {
             const selecao = sel == 0 ? 'times' : 'times-anteriores';   
-            console.log(selecao)       
+           // console.log(selecao)       
             const resp = await fetch(`/src/${selecao}`)
             const data = await resp.json()
             qtdTimesON.textContent = data.length - 1

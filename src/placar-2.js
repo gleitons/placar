@@ -114,10 +114,22 @@ var atualizaOn = async () => {
 
     if (localStorage.getItem('intervalo') === '0') {
         document.querySelector('#intervaloOn').style.display = 'none';
-        mostrador.textContent = 'AO VIVO';
+         const linkk = window.location.pathname
+        if(linkk == '/placar-2.html') {
+            mostrador.textContent = 'AO VIVO'
+        } else {
+            mostrador.textContent = 'INTERVALO'
+        }
+        // mostrador.textContent = 'AO VIVO';
     } else {
         document.querySelector('#intervaloOn').style.display = 'block';
-        mostrador.textContent = 'INTERVALO';
+         const linkk = window.location.pathname
+        if(linkk == '/placar-2.html') {
+            mostrador.textContent = 'AO VIVO'
+        } else {
+            mostrador.textContent = 'INTERVALO'
+        }
+        // mostrador.textContent = 'INTERVALO';
 
         const alteraImgSlides = document.querySelector('#alteraImgSlides');
         const images = JSON.parse(localStorage.getItem('imagemSlide') || '[]');
@@ -232,7 +244,7 @@ function mostrarGol() {
 
 window.onstorage = function (e) {
     const verificaAudioTorcida = localStorage.getItem('audioTorcida')
-    console.log(verificaAudioTorcida)
+  
     if (verificaAudioTorcida == 1) {
         tocaSom(1)
     } else {

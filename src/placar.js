@@ -80,12 +80,18 @@ var atualizaOn = () => {
 
     const mostrador = document.querySelector('#mostrador')
     if (localStorage.getItem('intervalo') == '0') {
-        console.log('zero')
         document.querySelector('#intervaloOn').style.display = 'none'
-        mostrador.textContent = 'AO VIVO'
+        const linkk = window.location.pathname
+        if(linkk == '/placar-2.html') {
+            mostrador.textContent = 'AO VIVO'
+        } else {
+            mostrador.textContent = 'INTERVALO'
+        }
+        
+        
 
     } else {
-        console.log('Um')
+        
         document.querySelector('#intervaloOn').style.display = 'block'
         mostrador.textContent = 'INTERVALO'
         const alteraImgSlides = document.querySelector('#alteraImgSlides')
@@ -95,13 +101,7 @@ var atualizaOn = () => {
         const secon = segundos()
         let i = 0;
         setInterval( () => {
-            // const imgP = document.querySelector('img')
-            // const intervaloOn = document.querySelector('#intervaloOn')
-            // //<img id="alteraImgSlides" src="./src/logos/cartaz.jpg" alt="">
-            // imgP.setAttribute('id', 'alteraImgSlides')
-            // imgP.setAttribute('alt', 'Futuro Consultoria')
-            // intervaloOn.appendChild(imgP)
-            
+                      
             i = i < images.length - 1 ? i + 1 : 0;
             alteraImgSlides.src = images[i]
             
@@ -154,7 +154,7 @@ window.onstorage = function (e) {
         setTimeout('retiraGol()', 6000)
 
     } else {
-        console.log('2 tempo')
+        
     }
     atualizaOn()
 

@@ -712,7 +712,7 @@ input {
   width: 100%;
 }
 .animt {
-  animation: cimaBaixo 200ms normal;
+  animation: cimaBaixo 100ms normal;
   transition: all;
 }
 @keyframes cimaBaixo {

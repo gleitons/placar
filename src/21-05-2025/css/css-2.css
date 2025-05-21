@@ -1,0 +1,833 @@
+@font-face {
+  font-family: digital;
+  /* src: url(../../src/font/ialin.ttf); */
+  /* src: url(../../src/font/DS-DIGI.TTF); */
+  src: url(../../src/font/DS-DIGIB.TTF);
+}
+:root {
+  --fundoVidro: rgba(1, 57, 83, 0.795);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.placarOn {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(189, 189, 189, 0);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.placarCima {
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(243, 231, 221);
+  font-size: 3em;
+  align-items: center;
+  position: relative;
+  background: var(--fundoVidro);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: white solid 5px;
+}
+.editPlacarCima {
+  height: 76vh;
+}
+
+.fundoP {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(234, 234, 234),
+    rgb(145, 145, 145),
+    rgb(123, 122, 122)
+  );
+  box-shadow: rgba(0, 0, 0, 0.614) 0px 2px 5px 0px;
+}
+.placarImagem {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background: var(--fundoVidro);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 3em;
+  border: white solid 5px;
+  align-items: center;
+
+  margin-top: 10px;
+  padding: 10px 20px;
+}
+.placarImagem div img {
+  width: 250px;
+  border-radius: 8px;
+}
+.placarImagem .aoVivo {
+  position: absolute;
+  width: 200px;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 2px;
+  top: 0px;
+  left: 44%;
+  border-radius: 0px 0px 12px 12px;
+  font-size: x-large;
+  padding: 5px;
+  color: white;
+}
+.corCamisa {
+  width: 250px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: black 0px 0px 2px 0px;
+  position: relative;
+}
+.corCamisa::after {
+  content: "Camisa____Shorts____Meião";
+  font-size: 0.3em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(213, 213, 213);
+  border-radius: 12px;
+  padding: 0 5px;
+  bottom: 0px;
+  left: 32px;
+  position: absolute;
+}
+
+.mostraPlacar {
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(182, 182, 182),
+    rgb(102, 102, 102),
+    rgb(85, 85, 85)
+  );
+  padding: 10px;
+  border-radius: 8px;
+}
+.aoVivo {
+  position: absolute;
+  width: 200px;
+  background-color: rgb(203, 0, 0);
+  text-align: center;
+  padding: 2px;
+  top: -4px;
+  left: 44%;
+  border-radius: 12px 12px 0px 0px;
+  font-size: x-large;
+  padding: 5px;
+  color: white;
+}
+.mostraPlacar h1 {
+  font-family: digital;
+  margin-top: 5px;
+  font-size: 10em;
+  text-shadow: yellow 0px 0px 5px 0px;
+  width: 100%;
+  /* font-weight: 600; */
+  /* border: black solid 1px; */
+  border-radius: 8px;
+}
+.mostraPlacar h3 #periodoTempoMostra {
+  font-family: digital;
+  margin-top: 5px;
+  font-size: 1.5em;
+  text-shadow: yellow 0px 0px 5px 0px;
+  width: 100%;
+  /* border: black solid 1px; */
+  border-radius: 8px;
+}
+.mostraPlacar h3 span {
+  color: yellow;
+  padding: 2px 5px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  margin: 0px;
+}
+.tickSegundos {
+  animation: tick 1s infinite alternate-reverse;
+}
+.letreiroAnimado {
+  z-index: 9;
+  width: 350%;
+  background-color: rgb(0, 0, 0);
+  height: 18%;
+  position: fixed;
+  bottom: -8px;
+  margin: 10px auto;
+}
+
+.letreiroAnimado h1 {
+  text-shadow: 0px 2px 12px yellow;
+  font-size: 13em;
+  font-family: digital;
+  width: 100%;
+  color: yellow;
+  padding: 0px 0px;
+  /* background-color: rgb(0, 0, 0); */
+  border-radius: 8px;
+  margin: 0px;
+  animation: ldigital 30s infinite linear;
+  position: absolute;
+  right: 3750px;
+  bottom: 0px;
+}
+
+@keyframes ldigital {
+  0% {
+    right: -1850px;
+  }
+}
+@keyframes tick {
+  0% {
+    opacity: 0;
+  }
+}
+.mostradorTime {
+  display: block;
+}
+.NomeTime {
+  /* justify-content: space-between; */
+  /* min-width: 15%; */
+  /* background-image: url('../logos/88.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  width: 12%;
+  height: 100%;
+  border: rgb(255, 255, 255) solid 5px;
+  border-radius: 8px;
+  /* background-color: white; */
+  text-align: center;
+  /* display: flex; */
+
+  /* padding-top: 100%; */
+  padding: 5px;
+}
+.NomeTime {
+  position: relative;
+  overflow: hidden;
+  width: 20%; /* ou um valor fixo se quiser */
+  height: 100%; /* ou maior se necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(15px); /* pode aumentar para mais desfoque */
+  z-index: 0;
+}
+
+.NomeTime > *:not(.background-blur) {
+  position: relative;
+  z-index: 1;
+}
+
+.background-blur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* escurece o fundo */
+}
+
+.NomeTime p {
+  font-size: 0.6em;
+}
+.mergin {
+  margin: 500px auto;
+  width: 100%;
+}
+
+.NomeTime div img {
+  width: 100%;
+  /* height: 100px; */
+  /* border-radius: 50%; */
+  /* border: rgb(2, 74, 217) solid 5px; */
+  margin-top: 100%;
+}
+
+.mostraPlacar h1 span {
+  color: yellow;
+  padding: 2px 5px;
+
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  margin: 0px;
+}
+.generator {
+  position: fixed;
+  /* background-color: rgb(255, 255, 255); */
+  left: 5px;
+  bottom: 5px;
+  font-size: 3em;
+}
+.girand > i{
+  animation: giradodaPeste 500ms linear infinite;
+}
+
+@keyframes giradodaPeste {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.placarIntervalo {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  height: 70vh;
+}
+.placarIntervalo img {
+  width: 100%;
+  background-size: cover;
+  /* height: 60vh; */
+}
+
+.aoVivo span::after {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border-radius: 50%;
+  animation: aov 800ms infinite alternate-reverse linear;
+}
+#alteraImgSlides {
+  animation: slid 1s normal;
+}
+@keyframes slid {
+  0% {
+    opacity: 0;
+  }
+}
+.inputImagens {
+  width: 90%;
+  padding: 5px;
+  margin: 5px auto;
+}
+
+.gol {
+  position: absolute;
+  z-index: 99999999;
+  width: 100%;
+  background-image: radial-gradient(
+    rgb(242, 227, 13),
+    rgb(0, 7, 82),
+    rgb(0, 47, 255)
+  );
+  animation: grade 500ms infinite;
+}
+
+@keyframes grade {
+  0% {
+    background-image: linear-gradient(
+      to top,
+      rgb(255, 0, 0),
+      black,
+      rgb(255, 0, 0)
+    );
+  }
+}
+.gol div {
+  height: 100vh;
+  border: black solid 1px;
+  margin: auto;
+  text-align: center;
+}
+.gol div img {
+  height: 100%;
+  box-shadow: rgb(2, 74, 217) 5px 0px 100px 50px;
+  margin: auto;
+  border-radius: 50%;
+
+  animation: gira 800ms infinite alternate-reverse linear;
+}
+
+@keyframes gira {
+  0% {
+    transform: matrix(0, 1, 1, 0, 0, 0);
+
+    transform: scale(0.8);
+  }
+}
+
+.gol div::after {
+  content: "GOLLLLL!!";
+  position: absolute;
+  width: 100%;
+  border-radius: 30px;
+  top: 290px;
+  font-size: 12em;
+  background-color: rgb(2, 74, 217);
+  color: white;
+  font-weight: 700;
+  left: 0;
+  height: 30%;
+  animation: aov 800ms infinite alternate-reverse linear;
+}
+
+/*TESTE*/
+
+canvas.confetti-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100000000 !important; /* super na frente de tudo */
+}
+
+.gol-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff0000, #008cff, #ff7300, #001dff);
+  background-size: 600% 600%;
+  animation: fundoGol 5s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes fundoGol {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.conteudo-gol {
+  text-align: center;
+  animation: zoomGol 0.5s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes zoomGol {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.conteudo-gol img {
+  height: 650px;
+  border-radius: 50%;
+  border: 10px solid white;
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5);
+  animation: pulsaLogo 1.2s infinite alternate;
+}
+
+@keyframes pulsaLogo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.texto-gol {
+  font-size: 8em;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px rgb(255, 145, 0), 0 0 40px rgb(0, 47, 255),
+    0 0 60px rgb(255, 8, 0);
+  animation: pulseGol 1s infinite alternate;
+  margin-top: 20px;
+}
+
+@keyframes pulseGol {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/*OLGDFD*/
+
+button {
+  padding: 5px;
+  font-size: 1.1em;
+  background-color: rgb(2, 74, 217);
+  color: white;
+  cursor: pointer;
+}
+.dnone {
+  display: none;
+}
+.nomeCampeonato {
+  width: 100%;
+}
+.nomeCampeonato h1 {
+  text-align: center;
+  background-color: white;
+
+  width: 100%;
+}
+.menutopo {
+  width: 600px;
+  justify-content: space-between;
+  text-align: inherit;
+}
+.placaCentral {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 5px;
+  border-radius: 8px;
+}
+.placaCentral input {
+  width: 50px;
+  padding: 5px;
+  height: 50px;
+  text-align: center;
+}
+.placaCentral i {
+  background-color: blue;
+  color: white;
+  padding: 2px 5px;
+  transition: 200ms;
+}
+.placaCentral i:active {
+  background-color: rgb(0, 0, 42);
+  box-shadow: inset black 0px 2px 2px 0px;
+  font-size: 0.9em;
+}
+.placaCentral i:hover {
+  background-color: rgb(125, 125, 251);
+}
+.marcadoPlaca {
+  display: flex;
+  align-items: center;
+}
+.menutopo a {
+  text-align: center;
+  gap: 10px;
+  padding: 5px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: rgb(76, 85, 212);
+}
+.menutopo a:hover {
+  background-color: rgb(95, 105, 235);
+}
+.menutopo a:active {
+  box-shadow: inset black 0px 2px 5px 0px;
+  background-color: rgb(169, 174, 242);
+  font-size: 0.98em;
+
+  transform: scale(0.8);
+}
+input {
+  padding: 1px;
+  font-size: 1em;
+}
+.info {
+  font-size: 0.3em;
+  display: flex;
+  gap: 10px;
+  margin: 10px auto;
+}
+.apoio div img {
+  width: 300px;
+  height: 180px;
+}
+#horarioPPartida {
+  background-color: rgba(255, 0, 0, 0);
+  text-align: center;
+  width: 100%;
+  border: gray solid 1px;
+  border-radius: 8px;
+  margin: 10px auto;
+  font-size: 2em;
+}
+.info > div {
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  box-shadow: rgb(255, 255, 255) 0px 2px 5px 0px;
+  border-radius: 8px;
+  background-color: white;
+}
+.avisoS {
+  background-color: red;
+  padding: 5px;
+  color: white;
+  font-size: 1em;
+  border-radius: 8px;
+}
+.info div img {
+  width: 50px;
+}
+.info div .pp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.relogioHora {
+  width: 80%;
+  /* border: black solid 1px; */
+  margin: auto;
+  font-size: 4em;
+  margin-top: 5%;
+  text-align: center;
+  font-family: digital;
+  background-color: yellow;
+  border-radius: 8px;
+}
+.tituloInfo {
+  font-size: 1em;
+}
+.faltas {
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  color: white;
+  font-size: 1.3em;
+}
+
+@keyframes aov {
+  0% {
+    opacity: 0;
+  }
+}
+.menuTo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  text-decoration: none;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto;
+}
+.menuTo img {
+  width: 150px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.menuTo .imgLogoA {
+  position: relative;
+}
+.unif div {
+  display: flex;
+  justify-content: space-between;
+}
+.imgLogoA::after {
+  content: "";
+  rotate: 12deg;
+  height: 100px;
+  width: 500px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.143),
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.136)
+  );
+  position: absolute;
+  top: -150px;
+  left: -68px;
+  animation: brilho 5s infinite linear;
+}
+@keyframes brilho {
+  0% {
+    top: 129px;
+    left: -68px;
+  }
+  90% {
+    top: 129px;
+    left: -68px;
+  }
+}
+
+.painelControle {
+  background-color: #f7feff;
+  max-width: 800px;
+  min-width: 450px;
+  margin: auto;
+  border: black solid 1px;
+  padding: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border: rgb(225, 225, 225) solid 1px;
+  box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
+  border-radius: 0px 0px 12px 12px;
+}
+#tituloAcima {
+  width: 100%;
+}
+#blocoBaixo {
+  width: 100%;
+}
+.animt {
+  animation: cimaBaixo 200ms normal;
+  transition: all;
+}
+@keyframes cimaBaixo {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+.informacoesAdicionais {
+  max-width: 100%;
+  min-width: 450px;
+  margin: auto;
+  border: rgb(225, 225, 225) solid 1px;
+  box-shadow: rgb(160, 160, 160) 0px 5px 5px 0px;
+  border-radius: 0px 0px 12px 12px;
+  padding: 20px;
+}
+.painelControle h2 {
+  margin-top: 10px;
+}
+.areaClean img {
+  width: 50px;
+  margin: 5px auto;
+}
+.placarTimesPainel {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(224, 224, 224);
+  padding: 5px;
+  border: rgb(208, 208, 208) solid 1px;
+}
+
+.animSai {
+  transform: scale(0);
+  animation: some 600ms normal linear;
+}
+@keyframes some {
+  0% {
+    transform: scale(1);
+  }
+}
+
+.showTimeA {
+  width: 1920px;
+  font-size: 2em;
+  text-align: center;
+  animation: rotate3D 1s normal linear;
+}
+
+@keyframes rotate3D {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.showTimeA p {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+  animation: stA 1s linear;
+  width: 1920px;
+  transition: all 500ms;
+  color: yellow;
+  font-weight: 800;
+
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  /* margin: auto; */
+}
+.showTimeB {
+  width: 1920px;
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  animation: rotate3DNega 1s normal linear;
+}
+.showTimeB p {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: fit-content;
+  animation: stA 1s linear;
+  width: 1920px;
+  transition: all 500ms;
+  color: yellow;
+  -webkit-text-stroke-width: 2px;
+  font-weight: 800;
+  -webkit-text-stroke-color: black;
+  /* margin: auto; */
+}
+@keyframes rotate3DNega {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes stA {
+  from {
+    width: 192px;
+    opacity: 0;
+  }
+  to {
+    width: 1920px;
+    opacity: 1;
+  }
+}

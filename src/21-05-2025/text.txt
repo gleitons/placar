@@ -1,0 +1,53 @@
+,
+  {
+    "nome": "",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/",
+    "logom": "/src/logos/"
+  },
+  {
+    "nome": "",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/",
+    "logom": "/src/logos/"
+  },
+  {
+    "nome": "",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/",
+    "logom": "/src/logos/"
+  },
+  {
+    "nome": "",
+    "jogadores": [
+      {
+        "nome": "",
+        "nascimento": "",
+        "sexo": "",
+        "posição": ""
+      }
+    ],
+    "logo": "/src/logos/",
+    "logom": "/src/logos/"
+  }

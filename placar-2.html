@@ -10,6 +10,41 @@
 
 
     <title>Placar</title>
+    <style>
+        /* Animação ativada via classe .gol */
+        .bandeira {
+            animation: golExplosivo 1s ease-in-out infinite;
+            filter: brightness(1.5) drop-shadow(0 0 10px #ffeb3b) saturate(2);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes golExplosivo {
+            0% {
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 5px #ffeb3b);
+            }
+
+            25% {
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0 0 15px #00ffcc);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(-5deg);
+                filter: drop-shadow(0 0 25px #ff4081);
+            }
+
+            75% {
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0 0 15px #00ffcc);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 5px #ffeb3b);
+            }
+        }
+    </style>
 
 
 </head>
@@ -22,8 +57,8 @@
 
         <div class="gol-show" style="display: none" id="aberturaGol">
             <div class="confetes" id="confetes"></div>
-            <div class="conteudo-gol">
-                <img src="./src/logos/logo.png" alt="Logo do Time">
+            <div class="conteudo-gol bandeira">
+                <img class="bandeira" src="./src/logos/logo.png" alt="Logo do Time">
                 <div class="texto-gol">GOOOOL!!!</div>
             </div>
         </div>
@@ -52,8 +87,8 @@
                     <p id="mostraTimeA"
                         style="background-color: rgba(32, 32, 32, 0.582); padding: 2px; border-radius: 8px;">LAGOA DSSOS
                         PATOS</p>
-                    <div class="mostradorTime">
-                        <img style="display: block;" id="imgTimeCimaA" src="./src/logos/logo.png" alt="">
+                    <div class="mostradorTime ">
+                        <img  style="display: block;" id="imgTimeCimaA" src="./src/logos/logo.png" alt="">
                     </div>
                 </div>
 
@@ -93,16 +128,16 @@
         </div>
         <style>
             .asc {
-                display: flex;  
-                flex-direction: column; 
+                display: flex;
+                flex-direction: column;
                 padding: 10px;
             }
         </style>
         <div class="letreiroAnimado">
             <h1 id="mostraPLed">TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS</h1>
-            <div class="generator" >
+            <div class="generator">
                 <div id="asConfig" class="" style="display: none; background-color: white;">
-                     <div style="margin-left: auto; display: flex; align-items: center; gap: 5px; font-size: medium;">
+                    <div style="margin-left: auto; display: flex; align-items: center; gap: 5px; font-size: medium;">
                         <button onclick="zoomOut()">-</button>
                         <button onclick="resetZoom()">Ajustar</button>
                         <button onclick="zoomIn()">+</button>
@@ -114,7 +149,8 @@
                     </div>
                 </div>
                 <div class="girand">
-                    <i onclick="mostraConfig()" class="bi bi-gear-fill "  style="color: rgb(0, 0, 0); text-shadow: -2px -2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 1px 1px 0 black;"></i>
+                    <i onclick="mostraConfig()" class="bi bi-gear-fill "
+                        style="color: rgb(0, 0, 0); text-shadow: -2px -2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 1px 1px 0 black;"></i>
                 </div>
             </div>
         </div>
@@ -295,38 +331,38 @@
 
         </script>
         <script>
-        let zoomLevel = 1;
+            let zoomLevel = 1;
 
-        function applyZoom() {
-            document.body.style.zoom = zoomLevel;
-        }
+            function applyZoom() {
+                document.body.style.zoom = zoomLevel;
+            }
 
-        function zoomIn() {
-            zoomLevel += 0.1;
-            applyZoom();
-        }
+            function zoomIn() {
+                zoomLevel += 0.1;
+                applyZoom();
+            }
 
-        function zoomOut() {
-            zoomLevel = Math.max(0.5, zoomLevel - 0.1); // mínimo 50%
-            applyZoom();
-        }
+            function zoomOut() {
+                zoomLevel = Math.max(0.5, zoomLevel - 0.1); // mínimo 50%
+                applyZoom();
+            }
 
-        function resetZoom() {
-            zoomLevel = 1;
-            applyZoom();
-        }
-        function alternarTelaCheia() {
-    if (!document.fullscreenElement) {
-      // Ativa modo tela cheia
-      document.documentElement.requestFullscreen().catch((err) => {
-        alert(`Erro ao entrar em tela cheia: ${err.message}`);
-      });
-    } else {
-      // Sai do modo tela cheia
-      document.exitFullscreen();
-    }
-  }
-    </script>
+            function resetZoom() {
+                zoomLevel = 1;
+                applyZoom();
+            }
+            function alternarTelaCheia() {
+                if (!document.fullscreenElement) {
+                    // Ativa modo tela cheia
+                    document.documentElement.requestFullscreen().catch((err) => {
+                        alert(`Erro ao entrar em tela cheia: ${err.message}`);
+                    });
+                } else {
+                    // Sai do modo tela cheia
+                    document.exitFullscreen();
+                }
+            }
+        </script>
 
 
 
