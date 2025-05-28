@@ -287,6 +287,7 @@ button:hover {
   justify-content: space-between;
   
 }
+
 .placaCentral {
   display: flex;
   align-items: center;
@@ -302,7 +303,7 @@ button:hover {
   text-align: center;
 }
 .placaCentral i {
-  background-color: blue;
+  background-color: rgb(24, 83, 245);
   color: white;
   padding: 2px 5px;
   transition: 100ms;
@@ -516,9 +517,26 @@ input {
 .painelControle h2 {
   margin-top: 5px;
 }
+.loadFundao {
+  background-image: url(/src/logos/loadicon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; /* Centraliza a imagem */
+  
+  width: 60px;
+  height: 100px; /* Adicione uma altura para facilitar o alinhamento */
+
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente */
+  align-items: center;     /* Alinha verticalmente */
+
+  margin: auto; /* Centraliza o próprio elemento dentro do container pai */
+}
+
 .areaClean img {
-  width: 50px;
+  width: 100%;
   margin: 5px auto;
+  background-color: white;
 }
 .placarTimesPainel {
   display: flex;
