@@ -1,4 +1,4 @@
-const { createElement } = require("react");
+// const { createElement } = require("react");
 
 console.log('Criado por: Gleiton Ap. Soares de Souza')
 console.warn('www.gleiton.com.br')
