@@ -1,3 +1,5 @@
+const { createElement } = require("react");
+
 console.log('Criado por: Gleiton Ap. Soares de Souza')
 console.warn('www.gleiton.com.br')
 console.error('Todos os direitos reservados ao criador')
@@ -175,8 +177,12 @@ const geradordeTimes = async () => {
 
   aovivoTimeA.innerHTML = '<option>Selecione</option>'
   aovivoTimeB.innerHTML = '<option>Selecione</option>'
+  const createImgLoads = document.createElement('img')
+  const imagensCarregadasT = document.querySelector('#imagensCarregadasT')
 
   data.map((time) => {
+    createImgLoads.setAttribute('src', time.imageUrl)
+    imagensCarregadasT.appendChild(createImgLoads)
 
     const selTime = document.querySelectorAll('.geraTimes')
     for (let i = 0; i < selTime.length; i++) {
@@ -185,6 +191,7 @@ const geradordeTimes = async () => {
 
 
   })
+  imagensCarregadasT.remove()
 }
 geradordeTimes();
 
