@@ -339,9 +339,10 @@ button:hover {
 .menutopo a:active {
   box-shadow: inset black 0px 2px 5px 0px;
   background-color: rgb(169, 174, 242);
+  text-align: center;
   font-size: .98em;
   
-  transform: scale(.8);
+  transform: scale(.99);
 }
 input {
   padding: 1px;

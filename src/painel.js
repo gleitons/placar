@@ -351,6 +351,7 @@ function intervalo() {
 
 function mostraInfoAdd() {
   document.querySelector('#blocoCima').classList.add('dnone')
+  document.querySelector("#blocoImagens").classList.add('dnone')
   document.querySelector('#blocoBaixo').classList.remove('dnone')
   const iframe = document.querySelector('#iframeBlocoBaixo');
 
