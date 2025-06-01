@@ -178,11 +178,11 @@ const geradordeTimes = async () => {
   aovivoTimeA.innerHTML = '<option>Selecione</option>'
   aovivoTimeB.innerHTML = '<option>Selecione</option>'
   const createImgLoads = document.createElement('img')
-  const imagensCarregadasT = document.querySelector('#imagensCarregadasT')
+  // const imagensCarregadasT = document.querySelector('#imagensCarregadasT') != null ? document.querySelector('#imagensCarregadasT') : ''
 
   data.map((time) => {
-    createImgLoads.setAttribute('src', time.imageUrl)
-    imagensCarregadasT.appendChild(createImgLoads)
+    // createImgLoads.setAttribute('src', time.imageUrl)
+    // imagensCarregadasT.appendChild(createImgLoads)
 
     const selTime = document.querySelectorAll('.geraTimes')
     for (let i = 0; i < selTime.length; i++) {
