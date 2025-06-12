@@ -6,6 +6,7 @@
 }
 :root {
   --fundoVidro: rgba(1, 57, 83, 0.795);
+  --fundoMarrom: rgb(32, 32, 32);
 }
 
 * {
@@ -43,12 +44,13 @@
 }
 
 .fundoP {
-  background-image: linear-gradient(
+  background-color: var(--fundoMarrom);
+  /* background-image: linear-gradient(
     to bottom,
     rgb(234, 234, 234),
     rgb(145, 145, 145),
     rgb(123, 122, 122)
-  );
+  ); */
   box-shadow: rgba(0, 0, 0, 0.614) 0px 2px 5px 0px;
 }
 .placarImagem {
@@ -112,12 +114,12 @@
   width: 80%;
   margin: auto;
   text-align: center;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom,
     rgb(182, 182, 182),
     rgb(102, 102, 102),
     rgb(85, 85, 85)
-  );
+  ); */
   padding: 10px;
   border-radius: 8px;
 }
@@ -138,7 +140,7 @@
 .mostraPlacar h1 {
   font-family: digital;
   margin-top: 5px;
-  font-size: 10em;
+  font-size: 12em;
   text-shadow: yellow 0px 0px 5px 0px;
   width: 100%;
   /* font-weight: 600; */
@@ -278,7 +280,7 @@
   color: yellow;
   padding: 2px 5px;
 
-  background-color: rgb(0, 0, 0);
+  background-color: var(--fundoMarrom);
   border-radius: 8px;
   margin: 0px;
 }
@@ -522,7 +524,7 @@ button {
 .placaCentral {
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: rgb(32, 32, 32);
   padding: 5px;
   border-radius: 8px;
 }

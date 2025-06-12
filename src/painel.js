@@ -82,6 +82,10 @@ function golsAtivos(seta) {
 
 }
 
+function abreNovoPlacar() {
+   localStorage.setItem('audioTorcida', 1);
+  window.open("/placar-3.html", "Placar Online", "height=1000,width=1920");
+}
 
 const painelAtualiza = () => {
   localStorage.setItem('atualiza', 1)
