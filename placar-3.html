@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/css-33.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <title>Placar</title>
+    <style>
+        /* Animação ativada via classe .gol */
+        .bandeira {
+            animation: golExplosivo 1s ease-in-out infinite;
+            filter: brightness(1.5) drop-shadow(0 0 10px #ffeb3b) saturate(2);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes golExplosivo {
+            0% {
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 5px #ffeb3b);
+            }
+
+            25% {
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0 0 15px #00ffcc);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(-5deg);
+                filter: drop-shadow(0 0 25px #ff4081);
+            }
+
+            75% {
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0 0 15px #00ffcc);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0 0 5px #ffeb3b);
+            }
+        }
+
+        .placarCima {
+            /* padding: 20px; */
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            /* background-color: rgb(243, 231, 221); */
+            font-size: 3em;
+            align-items: center;
+            position: relative;
+            /* background: var(--fundoVidro); */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            /* backdrop-filter: blur(4px); */
+            /* -webkit-backdrop-filter: blur(4px); */
+            /* border-radius: 10px; */
+            /* border: white solid 5px; */
+        }
+
+        .editPlacarCima {
+            height: 100vh;
+        }
+
+        .faltas {
+            font-size: 2.0em;
+        }
+
+        .mostraPlacar h3 #periodoTempoMostra {
+            font-size: 3em;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+
+        .bg3 {
+            animation-duration: 5s;
+        }
+
+        /* .content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+} */
+
+
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(25%);
+            }
+        }
+    </style>
+
+
+</head>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+
+
+    <body>
+        <div id="po" class="placarOn ">
+
+            <audio src="/src/audios/torcida-fundo.mp3"></audio>
+            <audio src="/src/audios/gol-torcida-ah.mp3"></audio>
+
+            <div class="gol-show" style="display: none" id="aberturaGol">
+                <div class="confetes" id="confetes"></div>
+                <div class="conteudo-gol bandeira">
+                    <img class="bandeira" src="./src/logos/logo.png" alt="Logo do Time">
+                    <div class="texto-gol">GOOOOL!!!</div>
+                </div>
+            </div>
+
+
+            <!-- <div id="aberturaGol" class="gol">
+
+            <div>
+                <img id="" src="" alt="">
+            </div>
+
+        </div> -->
+            <div class="propagandasEtc">
+
+                <div class="nomeCampeonato">
+                    <h1 id="tituloAcima">TORNEIO DE FÉRIAS DE FUTSAL DE LAGOA DOS PATOS</h1>
+                </div>
+            </div>
+            <div>
+                <div class="placarCima editPlacarCima">
+                    <div class="aoVivo">
+                        <p id="mostrador">AO VIVO </p> <span></span>
+                    </div>
+                    <div class="NomeTime">
+                        <div class="background-blur" id="goldeCasa"></div> <!-- camada desfocada -->
+                        <p id="mostraTimeA"
+                            style="background-color: rgba(32, 32, 32, 0.582); padding: 2px; border-radius: 8px;">LAGOA
+                            DSSOS
+                            PATOS</p>
+                        <div class="mostradorTime ">
+                            <img style="display: block;" id="imgTimeCimaA" src="./src/logos/logo.png" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="mostraPlacar">
+                        <h1 class="fundoP"><span id="timeCasa">0</span>x<span id="timeVisitante">0</span></h1>
+                        <div>
+                            <div class="mostraPlacar">
+                                <h1 style="font-size: 1em;">TEMPO</h1>
+                                <div>
+                                    <div class="mostraPlacar">
+                                        <h3><span id="periodoTempoMostra">1</span> </h3>
+
+                                    </div>
+                                    <h6 class="faltas"><span id="faltasCasa">0</span> : FALTAS : <span
+                                            id="faltasVisitante">0</span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="NomeTime">
+
+                        <div class="background-blur" id="goldoVisitante"></div> <!-- camada desfocada -->
+                        <!-- <div>
+                        <img style="display: none;" id="imgTimeCimaB" src="./src/logos/logo.png" alt="">
+                    </div> -->
+                        <p id="mostraTimeB"
+                            style="background-color: rgba(32, 32, 32, 0.616); padding: 2px; border-radius: 8px;">LAGOA
+                            DOS
+                            PATOS</p>
+                        <div class="mostradorTime">
+                            <img style="display: block;" id="imgTimeCimaB" src="./src/logos/logo.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <style>
+                .asc {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                }
+            </style>
+            <div class="letreiroAnimado" style="display: none;">
+                <h1 id="mostraPLed">TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS</h1>
+                <div class="generator">
+                    <div id="asConfig" class="" style="display: none; background-color: white;">
+                        <div
+                            style="margin-left: auto; display: flex; align-items: center; gap: 5px; font-size: medium;">
+                            <button onclick="zoomOut()">-</button>
+                            <button onclick="resetZoom()">Ajustar</button>
+                            <button onclick="zoomIn()">+</button>
+                        </div>
+                        <br>
+                        <div style="font-size: small;">
+                            <button onclick="alternarTelaCheia()">🖥️ Tela Cheia</button>
+
+                        </div>
+                    </div>
+                    <div class="girand">
+                        <i onclick="mostraConfig()" class="bi bi-gear-fill "
+                            style="color: rgb(0, 0, 0); text-shadow: -2px -2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255), -2px 2px 0 rgb(255, 255, 255), 1px 1px 0 black;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mergin">
+                <div id="intervaloOn" class="placarIntervalo" style="display: none; ">
+                    <img id="alteraImgSlides" src="./src/logos/cartaz.jpg" alt="Futuro Consultoria">
+                </div>
+            </div>
+            <div>
+                <div id="placarComImgCimaA" class="placarImagem ">
+                    <div class="aoVivo dnone">
+                        <span id="timeTempo">20:00</span>
+                    </div>
+                    <div>
+                        <img id="timaCentroA" src="./src/logos/logo.png" alt="">
+                        <div class="corCamisa" id="uniTimeA">
+                        </div>
+                    </div>
+
+                    <div>
+
+                        <img id="timaCentroB" src="./src/logos/logo.png" alt="">
+                        <div class="corCamisa" id="uniTimeB">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="placarComImgCimaB" class="placarImagem">
+                <div class="informacoes">
+                    <p
+                        style="font-size: .7em; color: white; background-color: rgb(34, 34, 34);padding: 5px; border-radius:8px;">
+                        Informações</p>
+
+                    <div class="info">
+                        <div>
+                            <h3>Próximo Jogo</h3>
+                            <div class="pp">
+                                <p id="proPTimeA">DEPORTIVE LA CORUNHA DEL MARCIANO</p>
+                                <img id="proximoLogoTimeA" src="./src/logos/logo.png" alt="">
+                            </div>
+                            <strong>
+                                <p>X</p>
+                            </strong>
+                            <div class="pp">
+                                <p id="proPTimeB">DEPORTIVE LA CORUNHA DEL MARCIANO</p>
+                                <img id="proximoLogoTimeB" src="./src/logos/logo.png" alt="">
+                            </div>
+                            <div class="pp">
+                                <p id="horarioPPartida">00:00</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Horario atual</h3>
+                            <div class="relogioHora">
+                                <h4 id="horaAtualVivo">23:55</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>AVISO GERAL</h3>
+                            <h4 id="tituloAviso">AVISO IMPORTANTE AQUI</h4>
+                            <div class="avisoS">
+                                <p id="avisoInfoImportante">Seja responsável, divirta-se e torça para o seu time!!</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="apoio">
+                    <p
+                        style="font-size: .7em; color: white; background-color: rgb(34, 34, 34);padding: 5px; border-radius:8px;">
+                        Realização</p>
+                    <div>
+                        <img src="./src/logos/logo-lagoa.png" alt="">
+                        <img src="./src/logos/logo-secretaria.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+            <script src="./src/placar-2.js"></script>
+            <style>
+                html {
+                    z-index: -99999;
+                    --u: 1.5vmax;
+                    /* change hexagon size */
+                    --c1: #60b2f3;
+                    --c2: #489de2;
+                    --c3: #2c8cd8;
+                    --c4: #1d81d0;
+                    --gp: 50% / calc(var(--u) * 10) calc(var(--u) * 12);
+                    --glt: repeating-conic-gradient(from 210deg at 16.66% 25%,
+                            var(--c2) 0% 33.3%,
+                            #fff0 0% 100%) var(--gp);
+                    --glb: repeating-conic-gradient(from 210deg at 16.66% 75%,
+                            var(--c4) 0% 33.3%,
+                            #fff0 0% 100%) var(--gp);
+                    height: 100vh;
+                    background: repeating-linear-gradient(to bottom,
+                            var(--c1) 0% 1.5%,
+                            transparent 1.5% 23.5%,
+                            var(--c2) 23.5% 26.5%,
+                            transparent 26.5% 48.5%,
+                            var(--c3) 48.5% 51.5%,
+                            transparent 51.5% 73.5%,
+                            var(--c4) 73.5% 76.5%,
+                            transparent 76.5% 98.5%,
+                            var(--c1) 98.5% 100%) var(--gp),
+                        var(--glt), var(--glb), var(--glt), var(--glb), var(--glt), var(--glb),
+                        var(--glt), var(--glb),
+                        repeating-conic-gradient(from 150deg at 50% 75%,
+                            var(--c1) 0% 33.3%,
+                            #fff0 0% 100%) var(--gp),
+                        repeating-conic-gradient(from 90deg at 66.66% 50%,
+                            var(--c4) 0% 33.3%,
+                            #fff0 0% 100%) var(--gp),
+                        repeating-conic-gradient(from -90deg at 50% 25%,
+                            var(--c1) 0% 33.3%,
+                            var(--c2) 0% 66.4%,
+                            var(--c3) 0% 100%) var(--gp);
+
+
+                    overflow: hidden;
+                }
+
+                html:before {
+                    content: "";
+                    /* background: linear-gradient(-45deg, #002542 0%, transparent 50%, #d2ebff 100%); */
+                    position: absolute;
+                    width: 100vw;
+                    height: 100vh;
+
+                }
+            </style>
+            <script>
+                // function mostrarGol() {
+                //     const animacao = document.getElementById("golAnimado");
+                //     animacao.style.display = "flex"; // Mostrar tela
+
+                //     // Disparar confetes
+                //     const duration = 5 * 1000;
+                //     const end = Date.now() + duration;
+
+                //     (function frame() {
+                //         confetti({
+                //             particleCount: 7,
+                //             angle: 60,
+                //             spread: 90,
+                //             origin: { x: 0 },
+                //             colors: ['#ff0', '#0f0', '#00f', '#f00'],
+                //         });
+                //         confetti({
+                //             particleCount: 7,
+                //             angle: 120,
+                //             spread: 90,
+                //             origin: { x: 1 },
+                //             colors: ['#ff0', '#0f0', '#00f', '#f00'],
+                //         });
+
+                //         if (Date.now() < end) {
+                //             requestAnimationFrame(frame);
+                //         }
+                //     })();
+
+                //     // Esconde após 5 segundos
+                //     setTimeout(() => {
+                //         animacao.style.display = "none";
+                //     }, duration);
+                // }
+
+                // mostrarGol()
+
+                // // Chamada de teste
+
+            </script>
+            <script>
+                let zoomLevel = 1;
+
+                function applyZoom() {
+                    document.body.style.zoom = zoomLevel;
+                }
+
+                function zoomIn() {
+                    zoomLevel += 0.1;
+                    applyZoom();
+                }
+
+                function zoomOut() {
+                    zoomLevel = Math.max(0.5, zoomLevel - 0.1); // mínimo 50%
+                    applyZoom();
+                }
+
+                function resetZoom() {
+                    zoomLevel = 1;
+                    applyZoom();
+                }
+                function alternarTelaCheia() {
+                    if (!document.fullscreenElement) {
+                        // Ativa modo tela cheia
+                        document.documentElement.requestFullscreen().catch((err) => {
+                            alert(`Erro ao entrar em tela cheia: ${err.message}`);
+                        });
+                    } else {
+                        // Sai do modo tela cheia
+                        document.exitFullscreen();
+                    }
+                }
+            </script>
+
+
+
+    </body>
+</div>
+
+</html>
