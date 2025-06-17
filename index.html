@@ -413,6 +413,25 @@
             padding: 10px 20px;
             cursor: pointer;
         }
+        .apertado {
+            transform: scale(1.1);
+            /* font-size: 12px; */
+            box-shadow: inset black 2px 2px 5px 2px;
+            
+            /* box-shadow: blue 2px 5px 2px 2px; */
+            animation: anbrilha  infinite ease-in-out 1.5s;
+        }
+        @keyframes anbrilha {
+            from {
+                filter: brightness(.6);
+            }
+            50% {
+                 filter: brightness(1.6);
+            }
+            100% {
+                 filter: brightness(.6);
+            }
+        }
     </style>
 
 </head>
@@ -472,15 +491,16 @@
                 <button onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i
                         class="bi bi-pause-circle-fill"></i>
                 </button>
-                <button style="background-color: green;" onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA <i
+                <button id="placar1" style="background-color: green;" onclick="intervalo(), abrirNovaJanela2()">PLACAR 01 <i
                         class="bi bi-play-circle-fill"></i>
                 </button>
-                <h5>Times que estão Jogando: - Total de Times: <span id="qtdTimesON">...</span></h5>
-                <button id="aConfete" style="background-color: rgb(184, 82, 82);" onclick="ativaDesativaConfete()">DESATIVAR
-                    CONFETE - <i class="bi bi-emoji-frown-fill"></i>
+                 <button id="placar2"   style="background-color:purple;" onclick="abreNovoPlacar()">PLACAR 02 <i class="bi bi-play-circle-fill"></i>
                 </button>
-                 <button  style="background-color:purple;" onclick="abreNovoPlacar()">NEW PLACAR 
+                <h5>Times: <span id="qtdTimesON">...</span></h5>
+                <button id="aConfete" style="background-color: green" onclick="ativaDesativaConfete()">
+                    CONFETE <i class="bi bi-emoji-laughing-fill"></i>
                 </button>
+                
                 
             </div>
             <div class="placarTimesPainel ">

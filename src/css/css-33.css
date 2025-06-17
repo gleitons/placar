@@ -77,7 +77,7 @@
 }
 .placarImagem .aoVivo {
   position: absolute;
-  width: 600px;
+  width: 400px;
   background-color: rgb(0, 0, 0);
   text-align: center;
   padding: 2px;
@@ -129,7 +129,7 @@
   background-color: rgb(203, 0, 0);
   text-align: center;
   padding: 2px;
-  height: 100px;
+  height: 80px;
   top: -4px;
   left: 40%;
   border-radius: 12px 12px 0px 0px;
@@ -637,7 +637,7 @@ input {
   background-color: rgb(0, 0, 0);
   border-radius: 8px;
   color: white;
-  font-size: 1.3em;
+  font-size: 1.8em;
 }
 
 @keyframes aov {

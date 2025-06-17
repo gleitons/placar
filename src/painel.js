@@ -17,10 +17,12 @@ function ativaDesativaConfete() {
   const verificaC = localStorage.getItem('cConfete');
   if (verificaC == 1) {
     localStorage.setItem('cConfete', 0);
-    aConfete.innerHTML = 'ATIVAR CONFETE -  <i class="bi bi-emoji-laughing-fill"></i>'
+    aConfete.style.backgroundColor = 'red'
+    aConfete.innerHTML = 'CONFETE <i class="bi bi-emoji-frown-fill"></i> '
   } else {
     localStorage.setItem('cConfete', 1)
-    aConfete.innerHTML = 'DESATIVAR CONFETE - <i class="bi bi-emoji-frown-fill"></i>'
+    aConfete.style.backgroundColor = 'green'
+    aConfete.innerHTML = 'CONFETE <i class="bi bi-emoji-laughing-fill"></i>'
   }
 
 }
@@ -83,6 +85,10 @@ function golsAtivos(seta) {
 }
 
 function abreNovoPlacar() {
+  const placar2 = document.querySelector('#placar2')
+  const placar1 = document.querySelector('#placar1')
+  placar2.classList.add('apertado');
+  placar1.classList.remove('apertado');
    localStorage.setItem('audioTorcida', 1);
   window.open("/placar-3.html", "Placar Online", "height=1000,width=1920");
 }
@@ -406,6 +412,10 @@ function abrirNovaJanela() {
 
 }
 function abrirNovaJanela2() {
+  const placar2 = document.querySelector('#placar2')
+  const placar1 = document.querySelector('#placar1')
+  placar2.classList.remove('apertado');
+  placar1.classList.add('apertado');
   localStorage.setItem('audioTorcida', 1);
   window.open("/placar-2.html", "Placar Online", "height=1000,width=1920");
 }
