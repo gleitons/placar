@@ -89,7 +89,7 @@ function abreNovoPlacar() {
   const placar1 = document.querySelector('#placar1')
   placar2.classList.add('apertado');
   placar1.classList.remove('apertado');
-   localStorage.setItem('audioTorcida', 1);
+  localStorage.setItem('audioTorcida', 1);
   window.open("/placar-3.html", "Placar Online", "height=1000,width=1920");
 }
 
@@ -178,6 +178,8 @@ const linkT = 'https://cadastros-two.vercel.app'
 
 const geradordeTimes = async () => {
   // const response = await fetch('/src/times')
+  const aovivoTimeA = document.querySelector("#aovivoTimeA")
+  const aovivoTimeB = document.querySelector("#aovivoTimeB")
   const response = await fetch(`${linkT}/api/items`)
 
   const data = await response.json()
@@ -201,10 +203,25 @@ const geradordeTimes = async () => {
 
 
   })
+
   imagensCarregadasT.remove()
+
 }
 geradordeTimes();
-
+setInterval(() => {
+  const indA= aovivoTimeA.selectedIndex;
+  const indB = aovivoTimeB.selectedIndex;
+  if(indB != 0){
+    aovivoTimeB.classList.remove('vermelhoPiscante')
+  } else {
+    aovivoTimeB.classList.add('vermelhoPiscante')
+  }
+  if(indA != 0){
+    aovivoTimeA.classList.remove('vermelhoPiscante')
+  } else {
+    aovivoTimeA.classList.add('vermelhoPiscante')
+  }
+}, 1000);
 async function selecionaTime() {
   const response = await fetch(`${linkT}/api/items`)
   const data = await response.json()
@@ -366,13 +383,13 @@ function mostraInfoAdd() {
   const iframe = document.querySelector('#iframeBlocoBaixo');
 
   if (iframe) {
-    const src = iframe.getAttribute('src'); 
+    const src = iframe.getAttribute('src');
     if (src) {
       return
     } else {
       iframe.setAttribute('src', 'https://cadastros-two.vercel.app/times/')
     }
-  } 
+  }
 
   document.querySelector('#blocoImagens').classList.add('dnone')
 
@@ -381,25 +398,25 @@ function mostraInfoAdd() {
 function mostraIntervalo() {
   document.querySelector('#blocoCima').classList.add('dnone')
   document.querySelector('#blocoBaixo').classList.add('dnone')
-  
+
   document.querySelector('#blocoImagens').classList.remove('dnone')
-    const iframe = document.querySelector('#iframeBlocoImagens');
+  const iframe = document.querySelector('#iframeBlocoImagens');
 
   if (iframe) {
-    const src = iframe.getAttribute('src'); 
+    const src = iframe.getAttribute('src');
     console.log(src)
     if (src) {
       return
     } else {
       iframe.setAttribute('src', 'https://cadastros-two.vercel.app/times/imagens-intervalo')
     }
-  } 
-  
+  }
+
 
 
 }
 function mostrarInfoInicio() {
- 
+
   document.querySelector('#blocoCima').classList.remove('dnone')
   document.querySelector('#blocoBaixo').classList.add('dnone')
   document.querySelector('#blocoImagens').classList.add('dnone')
