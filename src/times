@@ -14,27 +14,10 @@
   },
   {
     "nome": "AABB Bocaiúva",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
     "logo": "/src/logos/aabb-bocaiuva.jpeg",
     "logom": "/src/logos/aabb-bocaiuva.jpeg"
-  },
-  {
+  },  {
     "nome": "Agrofeno",
-    "jogadores": [
-      {
-        "nome": "",
-        "nascimento": "",
-        "sexo": "",
-        "posição": ""
-      }
-    ],
     "logo": "/src/logos/agrofeno.png",
     "logom": "/src/logos/agrofeno.png"
   },

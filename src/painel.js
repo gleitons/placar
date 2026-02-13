@@ -10,7 +10,8 @@ const btnGols = document.querySelectorAll('.placaCentral i');
 function limpaLetDigital() {
   letDigital.value = '';
 }
-
+const usuarioID = location.href.split('usuario=')[1] || (window.location.href = '/placar-erro');
+// console.log(usuarioID)
 //DESATIVA CONFETE E SEMPRE INICIA COM ELE ATIVADO
 localStorage.setItem('cConfete', 1)
 function ativaDesativaConfete() {
@@ -173,32 +174,35 @@ if (localStorage.getItem('atualizador') == null) {
 document.addEventListener('onclick', () => {
   localStorage.setItem('atualiador', numbT + 1)
 })
-
-const linkT = 'https://cadastros-two.vercel.app'
+// 'https://apitei.com.br' || 'http://localhost:5173'
+const ondeEsta =  'https://apitei.com.br'
+const linkT = `${ondeEsta}/api/items?usuario=${usuarioID}`
 
 const geradordeTimes = async () => {
   // const response = await fetch('/src/times')
   const aovivoTimeA = document.querySelector("#aovivoTimeA")
   const aovivoTimeB = document.querySelector("#aovivoTimeB")
-  const response = await fetch(`${linkT}/api/items`)
+  const response = await fetch(linkT)
 
   const data = await response.json()
-
-  data.sort((a, b) => a.name.localeCompare(b.name))
-  qtdTimesON.innerHTML = data.length
+  // console.log(data.teams)
+  const times = data.teams;
+  times.sort((a, b) => a.nome.localeCompare(b.nome))
+  console.log(times)
+  qtdTimesON.innerHTML = times.length
 
   aovivoTimeA.innerHTML = '<option>Selecione</option>'
   aovivoTimeB.innerHTML = '<option>Selecione</option>'
   const createImgLoads = document.createElement('img')
   // const imagensCarregadasT = document.querySelector('#imagensCarregadasT') != null ? document.querySelector('#imagensCarregadasT') : ''
 
-  data.map((time) => {
+  times.map((time) => {
     // createImgLoads.setAttribute('src', time.imageUrl)
     // imagensCarregadasT.appendChild(createImgLoads)
 
     const selTime = document.querySelectorAll('.geraTimes')
     for (let i = 0; i < selTime.length; i++) {
-      selTime[i].innerHTML += `<option>${time.name}</option>`
+      selTime[i].innerHTML += `<option>${time.nome.toUpperCase()}</option>`
     }
 
 
@@ -223,10 +227,11 @@ setInterval(() => {
   }
 }, 1000);
 async function selecionaTime() {
-  const response = await fetch(`${linkT}/api/items`)
-  const data = await response.json()
+  const response = await fetch(linkT)
+  const Alldata = await response.json()
+  const data = Alldata.teams
 
-  data.sort((a, b) => a.name.localeCompare(b.name))
+  data.sort((a, b) => a.nome.localeCompare(b.nome))
 
 
 
@@ -255,15 +260,15 @@ async function selecionaTime() {
 
   const imgTimeA = document.querySelector('#imgTimeA')
 
-  imgTimeA.setAttribute('src', `${data[aoVivoA - 1].imageUrl}`)
-  localStorage.setItem('imgTimeA', `${data[aoVivoA - 1].imageUrl}`)
+  imgTimeA.setAttribute('src', `${data[aoVivoA - 1].logom}`)
+  localStorage.setItem('imgTimeA', `${data[aoVivoA - 1].logo}`)
 
 
 
   const imgTimeB = document.querySelector('#imgTimeB')
-  imgTimeB.setAttribute('src', `${data[aoVivoB - 1].imageUrl}`)
+  imgTimeB.setAttribute('src', `${data[aoVivoB - 1].logom}`)
 
-  localStorage.setItem('imgTimeB', `${data[aoVivoB - 1].imageUrl}`)
+  localStorage.setItem('imgTimeB', `${data[aoVivoB - 1].logo}`)
 
 
 
@@ -469,7 +474,8 @@ function adicionarImgSlide() {
 async function pegarImagensSlide() {
   var imgArray = []
 
-  const uData = await fetch(`${linkT}/api/imagens-intervalo`)
+  // const uData = await fetch(`${linkT}/api/imagens-intervalo`)
+  const uData = await fetch(linkT)
   const images = await uData.json();
 
   images.map((e) => {

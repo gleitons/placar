@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #16a34a;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #15803d;
+        }
+
+        .link-secundario {
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="icon">🔒</div>
+        <h1>Acesso Restrito</h1>
+        <p>
+            Para acessar esta página, é necessário estar cadastrado
+            e possuir permissões ativas (DIME).
+        </p>
+
+        <a href="https://apitei.com.br" class="btn">
+            Acessar Apitei.com.br
+        </a>
+
+        <span class="link-secundario">
+            Caso ainda não tenha cadastro, realize seu registro na plataforma.
+        </span>
+    </div>
+
+</body>
+</html>

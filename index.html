@@ -462,14 +462,207 @@
 </head>
 
 <body>
-    <div class="tela-bloqueio">
+    <!-- <div class="tela-bloqueio">
         <div class="conteudo-bloqueio">
             <h2>Insira a senha</h2>
             <input type="password" id="vdp" value="" placeholder="Senha" />
             <br />
             <button>Desbloquear</button>
         </div>
+    </div> -->
+    <div class="painelControle">
+        <nav class="menutopo">
+            
+            <div class="menuTo" style="display: flex; width: 100%; font-size: small; height: 60px;">
+                <div class="imgLogoA container">
+                    <img style="width: 80px;" class="" srcset="/src/logos/futuro-consultoria-horizonte.svg"
+                        src="/src/logos/futuro-consultoria-horizonte.svg" alt="Logo">
+                    <!-- src="https://www.salamineira.com/rede/src/img/futuro-consultoria-horizonte.svg" alt="Logo"> -->
+                    <!-- <img src="/src/logos/logo-futuro-consultoria.png" alt=""> -->
+                </div>
+                <li>Futuro Consultoria <br>26.300.217/0001-00</li>
+                <div class="infoCima" style="margin-left: 50px;">
+                    <a href="#" onclick="mostrarInfoInicio(), geradordeTimes()">INÍCIO</a>
+                    <a href="#" onclick="mostraIntervalo()">ANÚNCIOS</a>
+                    <!-- <a href="#" onclick="LetreiroDigital()">Letreiro Digital</a> -->
+                    <a href="#" onclick="mostraInfoAdd()">TIMES</a>
+                    <!-- <a href="#" onclick="abrirNovaJanela()">Placar 1</a> -->
+                    <a href="#" onclick="abrirNovaJanela2()">ABRIR PLACAR</a>
+                </div>
+            </div>
+            <div class="informativo" style="display: none;">
+                <p>Sistema desenvolvido para o torneio de férias de Lagoa dos Patos MG, tenha em seu campeonato de
+                    Futsal também, entre em contato. Insira a senha para fechar esse aviso.</p>
+                <a
+                    href="https://api.whatsapp.com/send?l=pt-BR&phone=553899167841&text=Gostaria de saber sobre o placar eletronico"><button>Entre
+                        Em contato</button></a> <span><input type="password" placeholder="Insira a Senha" name=""
+                        id="aSenha"><button onclick="tiraAviso()">Ok</button></span>
+            </div>
+        </nav>
     </div>
+    <div id="blocoCima" class="painelControle animt " style="font-size: medium;">
+        <div></div>
+        <h2>Painel de Controle - AO VIVO </h2>
+        <div class="doMobil">
+            <button onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i
+                    class="bi bi-pause-circle-fill"></i>
+            </button>
+            <button id="placar1" style="background-color: green;" onclick="intervalo(), abrirNovaJanela2()">PLACAR 01 <i
+                    class="bi bi-play-circle-fill"></i>
+            </button>
+             <button id="placar2"   style="background-color:purple;" onclick="abreNovoPlacar()">PLACAR 02 <i class="bi bi-play-circle-fill"></i>
+            </button>
+            <h5>Times: <span id="qtdTimesON">...</span></h5>
+            <button id="aConfete" style="background-color: green" onclick="ativaDesativaConfete()">
+                CONFETE <i class="bi bi-emoji-laughing-fill"></i>
+            </button>
+            
+            
+        </div>
+        <div class="placarTimesPainel ">
+            <div class="areaClean">
+                <strong>
+                    <p id="timeA">Selecione</p>
+                </strong>
+                <select name="" id="aovivoTimeA" class="geraTimes" onchange="selecionaTime()">
+                    <option>Selecione</option>
+                </select> <br>
+                <div class="loadFundao">
+                    <img id="imgTimeA" src="/src/logos/futuro-consultoria-horizonte.svg" alt="">
+                </div>
+                <button onclick="mostraShowT(0)">Mostrar Time A</button>
+            </div>
+            <div class="alinhabtn">
+                <b>
+                    <p>*Os dois times devem estar selecionados</p>
+                </b>
+                <div class="placaCentral">
+                    <div class="marcadoPlaca">
+                        <div>
+                            <i class="bi bi-chevron-up " id="maisgc" onclick="golsAtivos(0)"></i> <br> <br>
+                            <i class="bi bi-chevron-down" id="menosgc" onclick="golsAtivos(1)"></i>
+                        </div>
+                        <input style="width: 80px;" id="golCasa" type="number" name="" id="" value="0">
+                    </div>
+                    <div class="marcadoPlaca">
+                        <input style="width: 80px;" type="number" name="" id="golVisitante" value="0">
+                        <div>
+                            <i class="bi bi-chevron-up " id="maisgv" onclick="golsAtivos(2)"></i> <br> <br>
+                            <i class="bi bi-chevron-down " id="menosgv" onclick="golsAtivos(3)"></i>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="paraAnimacao()">Stop Animação</button> <br>
+                <button onclick="mostraShowT(2)">Mostrar Placar</button>
+            </div>
+            <div class="areaClean">
+                <strong>
+                    <p id="timeB">Selecione</p>
+                </strong>
+                <select name="" id="aovivoTimeB" class="geraTimes" onchange="selecionaTime()">
+                    <option>Selecione</option>
+                </select><br>
+                <div class="loadFundao">
+                    <img id="imgTimeB" src="/src/logos/futuro-consultoria-horizonte.svg" alt="">
+                </div>
+                <button onclick="mostraShowT(1)">Mostrar Time B</button>
+            </div>
+        </div>
+        <h2>Faltas Cometidas</h2>
+        <div class="placarTimesPainel">
+            <div>
+                <p id="faltasHomeA">FALTAS CASA</p>
+                <input type="number" class="fDosTimes" name="" id="fCasa" value="0">
+            </div>
+            <div class="placarTimesPainel">
+                <div>
+                    <p>TEMPO</p>
+                    <input type="number" class="fDosTimes" name="" id="periodoTempo" value="1">
+                </div>
+            </div>
+            <div>
+                <p id="faltasHomeB">FALTAS VISITANTES</p>
+                <input type="number" name="" class="fDosTimes" id="fVisitante" value="0">
+            </div>
+        </div>
+        <div id="letreiro" class="painelControle ">
+            <div class="ldigital">
+                <div>
+                    <button id="ldigital">*Abrir: Letreiro Digital</button>
+                    <button onclick="intervalo(), abrirNovaJanela(), pegarImagensSlide()">INTERVALO <i
+                            class="bi bi-pause-circle-fill"></i></button>
+                    <button onclick="intervalo(), abrirNovaJanela2()">INICIAR PARTIDA <i
+                            class="bi bi-play-circle-fill"></i></button>
+                    <button style="background-color: green;" id="torcidaAudio" onclick="desativarTorcida(0)">CONFIG -
+                        AUDIO</button>
+                    <!-- <button style="background-color: rgb(102, 0, 128);" id="torcidaAudioGol"  onclick="desativargOLTorcida()">DESATIVAR SOM GOL</button> -->
+                    <br><br>
+                    <div id="escondeJanela" style="background-color: rgb(202, 244, 218); padding: 5px;" class="dnone">
+                        <h4>Atenção:<span style="color: red;"> <strong>Não acentue</strong></span> - Qtd max de
+                            caracteres é
+                            46</h4>
+                        <h4>Aqui mensagens Padrões</h4>
+                        <h5>* Deixe a opção acima em branco</h5>
+                        <input type="text" name="" onkeyup="verificaLetras()" id="letDigital"
+                            value="TORNEIO DE FERIAS DE FUTSAL DE LAGOA DOS PATOS"> <button
+                            onclick="limpaLetDigital()">Limpar</button> Restante: <span id="cRestante">46</span> <br>
+                        <br>
+                        <div class="selmpadrao">
+                            <select name="" id="mPadrao" onchange="carregaLetreiro()">
+                                <option value="0">DESATIVADO</option>
+                                <option value="1">TIME A X TIME B</option>
+                                <option value="2">PROX: TIME A X TIME B - 00:00hs</option>
+                                <option value="3">FALTAS: TIME A: 0 - TIME B: 0</option>
+                                <option value="4">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</option>
+                            </select>
+                            <h6>Aparecerá assim:</h6>
+                            <div>
+                                <h5 id="mostraPainelS">REALIZACAO: PREFEITURA E SECRETARIA DE ESPORTE</h5>
+                            </div>
+                            <div>
+                                <h4>Velocidade das Informações ao Passar:</h4>
+                                *Essa opção estará disponível em versões futuras.
+                                <div class="velocidadesLeitorDg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <h2>Próxima Partida</h2>
+        <div id="imagensCarregadasT">
+            <p></p>
+        </div>
+        <div class="placarTimesPainel" style="visibility: hidden;">
+            <div class="areaClean">
+                <p>Time 01</p>
+                <select name="" id="sTime01" class="geraTimes" onchange="selecionaTime()">
+                </select> <br>
+                <img id="imgProximaA" src="" alt="">
+            </div>
+            <div class="areaClean">
+                <p id="timeB">Time 02</p>
+                <select name="" id="sTime02" class="geraTimes" onchange="selecionaTime()">
+                </select><br>
+                <img id="imgProximaB" src="" alt="">
+            </div>
+            <div>
+                <p>Horário:</p>
+                <input type="time" name="" id="horarioPPartida">
+            </div>
+        </div>
+    </div>
+    <div id="blocoBaixo" class="informacoesAdicionais animt  dnone" style="height: 200vh; width: 100%;">
+        <iframe id="iframeBlocoBaixo" src="" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div id="blocoImagens" class="painelControle animt  dnone" style="height: 100vh;">
+        <iframe id="iframeBlocoImagens" src="" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div style="margin-bottom: 30px;">
+    por: Gleiton Aparecido Soares de Souza
+</div>
 
     <div class="iapa">
 
